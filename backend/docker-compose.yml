@@ -1,0 +1,39 @@
+version: '3.0'
+
+services:
+  db:
+    image: postgres
+    environment:
+      POSTGRES_DB: tribu
+      POSTGRES_USER: tribuuser
+      POSTGRES_PASSWORD: tribu0419
+      
+      
+  web:
+    build: .
+    image: aplicacion1
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      NAME: DC1
+      USER: tribuuser
+      PASSWORD: tribu0419
+      HOST: db
+
+  migrate:
+    image: aplicacion1
+    command: python manage.py migrate
+    volumes:
+      - .:/code
+    depends_on:
+      - db
+    environment:
+      NAME: DC1
+      USER: tribuuser
+      PASSWORD: tribu0419
+      HOST: db
