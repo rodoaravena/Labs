@@ -1,0 +1,1248 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="media bitcoin-graph"><img src="assets/images/bitcoin/graph-icon-1.png" alt="">
+            <div class="top-bitcoin">
+              <h5>BTC</h5><span>Bitcoin</span>
+            </div>
+            <div class="media-body">
+              <div class="bitcoin-content text-right">
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 1h</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="arrow-down" [icon]="'arrow-down'"></app-feather-icons>
+                    </span> 0.12
+                  </h6>
+                </div>
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 24h</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                    </span> +0.30
+                  </h6>
+                </div>
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 7d</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="arrow-down" [icon]="'arrow-down'"></app-feather-icons>
+                    </span>
+                    -0.20</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-chart-container">
+          <x-chartist class="bitcoinchart-1" [data]="chart1.data" [type]="chart1.type" [options]="chart1.options"
+            [events]="chart1.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="media bitcoin-graph"><img src="assets/images/bitcoin/graph-icon-2.png" alt="">
+            <div class="top-bitcoin">
+              <h5>DASH</h5><span>Tranding</span>
+            </div>
+            <div class="media-body">
+              <div class="bitcoin-content text-right">
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 1h</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="arrow-down" [icon]="'arrow-down'"></app-feather-icons>
+                    </span> 0.12
+                  </h6>
+                </div>
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 24h</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                    </span> +0.30
+                  </h6>
+                </div>
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 7d</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="arrow-down" [icon]="'arrow-down'"></app-feather-icons>
+                    </span>
+                    -0.20</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-chart-container">
+          <x-chartist class="bitcoinchart-2" [data]="chart2.data" [type]="chart2.type" [options]="chart2.options"
+            [events]="chart2.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4">
+      <div class="card">
+        <div class="card-body">
+          <div class="media bitcoin-graph"><img src="assets/images/bitcoin/graph-icon-3.png" alt="">
+            <div class="top-bitcoin">
+              <h5>ETH</h5><span>Ethereum</span>
+            </div>
+            <div class="media-body">
+              <div class="bitcoin-content text-right">
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 1h</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="arrow-down" [icon]="'arrow-down'"></app-feather-icons>
+                    </span> 0.12
+                  </h6>
+                </div>
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 24h</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                    </span> +0.30
+                  </h6>
+                </div>
+                <div class="bitcoin-numbers d-inline-block">
+                  <h6 class="mb-0">% 7d</h6>
+                  <h6 class="mb-0 font-primary"><span>
+                      <app-feather-icons class="arrow-down" [icon]="'arrow-down'"></app-feather-icons>
+                    </span>
+                    -0.20</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="dashboard-chart-container">
+          <x-chartist class="bitcoinchart-3" [data]="chart3.data" [type]="chart3.type" [options]="chart3.options"
+            [events]="chart3.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-100">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <h5>Market Value</h5>
+        </div>
+        <div class="card-body">
+          <x-chartist class="market-chart" [data]="chart4.data" [type]="chart4.type" [options]="chart4.options"
+            [events]="chart4.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5 class="bitcoin-header">Buy</h5>
+            </div>
+            <div class="col-sm-6">
+              <div class="text-right right-header-color">
+                <p class="mb-0">USD Balance: $ 5000.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="bitcoin-form">
+            <div class="form-row">
+              <div class="col-xl-4 mb-3 col-sm-3">
+                <label class="f-w-600" for="validationCustom01">Parchase</label>
+                <div class="bitcoin-form-dropdown">
+                  <div class="onhover-dropdown" id="validationCustom01">
+                    <button class="btn f-12" type="button">Amount <span class="pr-0"><i
+                          class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div"><a class="d-block"  href="javascript:void(0)">Link 1</a><a class="d-block"  href="javascript:void(0)">Link
+                        2</a><a class="d-block"  href="javascript:void(0)">Link 3</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8 mb-3 col-sm-9">
+                <label class="f-w-600" for="validationCustomUsername">Units</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend"><i
+                        class="fa fa-btc font-primary"></i></span></div>
+                  <input class="form-control" id="validationCustomUsername" type="text"
+                    aria-describedby="inputGroupPrepend" required="">
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-xl-4 mb-3 col-sm-3">
+                <label class="f-w-600" for="validationCustom02">Bid</label>
+                <div class="bitcoin-form-dropdown">
+                  <div class="onhover-dropdown" id="validationCustom02">
+                    <button class="btn f-12" type="button">Limit <span class="pr-0"><i
+                          class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div"><a class="d-block"  href="javascript:void(0)">Link 1</a><a class="d-block"  href="javascript:void(0)">Link
+                        2</a><a class="d-block"  href="javascript:void(0)">Link 3</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8 mb-3 col-sm-9">
+                <label class="f-w-600" for="validationCustomUsername">Bid</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend1"><i
+                        class="fa fa-btc font-primary"></i></span></div>
+                  <input class="form-control" id="validationCustomUsername1" type="text"
+                    aria-describedby="inputGroupPrepend" required="">
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label class="f-w-600" for="validationCustomUsername">Total</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend2"><i
+                        class="fa fa-btc font-primary"></i></span></div>
+                  <input class="form-control" id="validationCustomUsername2" type="text"
+                    aria-describedby="inputGroupPrepend" required="">
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="btn-bottom">
+                  <button class="btn btn-primary" type="button">Buy Now!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5 class="bitcoin-header">Sell</h5>
+            </div>
+            <div class="col-sm-6">
+              <div class="text-right right-header-color">
+                <p class="mb-0">BTC Balance: $ 5000.00</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="bitcoin-form">
+            <div class="form-row">
+              <div class="col-xl-4 mb-3 col-sm-3">
+                <label class="f-w-600" for="validationCustom03">Sell</label>
+                <div class="bitcoin-form-dropdown">
+                  <div class="onhover-dropdown" id="validationCustom03">
+                    <button class="btn f-12" type="button">Amount <span class="pr-0"><i
+                          class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div"><a class="d-block"  href="javascript:void(0)">Link 1</a><a class="d-block"  href="javascript:void(0)">Link
+                        2</a><a class="d-block"  href="javascript:void(0)">Link 3</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8 mb-3 col-sm-9">
+                <label class="f-w-600" for="validationCustomUsername">Units</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend3"><i
+                        class="fa fa-btc font-primary"></i></span></div>
+                  <input class="form-control" id="validationCustomUsername3" type="text"
+                    aria-describedby="inputGroupPrepend" required="">
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-xl-4 mb-3 col-sm-3">
+                <label class="f-w-600" for="validationCustom04">Bid</label>
+                <div class="bitcoin-form-dropdown">
+                  <div class="onhover-dropdown" id="validationCustom04">
+                    <button class="btn f-12" type="button">Limit <span class="pr-0"><i
+                          class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div"><a class="d-block"  href="javascript:void(0)">Link 1</a><a class="d-block"  href="javascript:void(0)">Link
+                        2</a><a class="d-block"  href="javascript:void(0)">Link 3</a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="col-xl-8 mb-3 col-sm-9">
+                <label class="f-w-600" for="validationCustomUsername">Bid</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend5"><i
+                        class="fa fa-btc font-primary"></i></span></div>
+                  <input class="form-control" id="validationCustomUsername5" type="text"
+                    aria-describedby="inputGroupPrepend" required="">
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-md-12 mb-3">
+                <label class="f-w-600" for="validationCustomUsername">Total</label>
+                <div class="input-group">
+                  <div class="input-group-prepend"><span class="input-group-text" id="inputGroupPrepend6"><i
+                        class="fa fa-btc font-primary"></i></span></div>
+                  <input class="form-control" id="validationCustomUsername6" type="text"
+                    aria-describedby="inputGroupPrepend" required="">
+                  <div class="invalid-feedback">Please choose a username.</div>
+                </div>
+              </div>
+              <div class="col-md-12">
+                <div class="btn-bottom">
+                  <button class="btn btn-primary" type="button">Sell Now!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 xl-50">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <h5>Active Order</h5>
+
+        </div>
+        <div class="card-body">
+          <div class="table-responsive active-order-table">
+            <table class="table table-bordernone">
+              <thead>
+                <tr>
+                  <th scope="col">Data</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Customer</th>
+                  <th scope="col">Price</th>
+                  <th scope="col">USD</th>
+                  <th scope="col">Fee(%)</th>
+                  <th scope="col">Status</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>
+                    <p>2018-01-31</p>
+                    <p class="mb-0">6:51:51</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-pill" type="button">Buy</button>
+                  </td>
+                  <td>
+                    <div class="customers">
+                      <ul>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block">
+                          <p class="f-12">+10 More</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <p>11900.12</p>
+                  </td>
+                  <td>
+                    <p>$ 6979.78</p>
+                  </td>
+                  <td>
+                    <p>0.2</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-pill" type="button">Status</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2018-01-31</p>
+                    <p class="mb-0">06:50:50</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-secondary btn-pill" type="button">Sell</button>
+                  </td>
+                  <td>
+                    <div class="customers">
+                      <ul>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block">
+                          <p class="f-12">+10 More</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <p>11900.12</p>
+                  </td>
+                  <td>
+                    <p>$ 6979.78</p>
+                  </td>
+                  <td>
+                    <p>0.2</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-pill" type="button">Status</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2018-01-31</p>
+                    <p class="mb-0">06:49:51</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-pill" type="button">Buy</button>
+                  </td>
+                  <td>
+                    <div class="customers">
+                      <ul>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block">
+                          <p class="f-12">+10 More</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <p>11900.12</p>
+                  </td>
+                  <td>
+                    <p>$ 6979.78</p>
+                  </td>
+                  <td>
+                    <p>0.2</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-pill" type="button">Status</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <p>2018-01-31</p>
+                    <p class="mb-0">06:50:50</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-secondary btn-pill" type="button">Sell</button>
+                  </td>
+                  <td>
+                    <div class="customers">
+                      <ul>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/3.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/5.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block"><img class="img-40 rounded-circle" src="assets/images/user/1.jpg"
+                            alt=""></li>
+                        <li class="d-inline-block">
+                          <p class="f-12">+10 More</p>
+                        </li>
+                      </ul>
+                    </div>
+                  </td>
+                  <td>
+                    <p>11900.12</p>
+                  </td>
+                  <td>
+                    <p>$ 6979.78</p>
+                  </td>
+                  <td>
+                    <p>0.2</p>
+                  </td>
+                  <td>
+                    <button class="btn btn-primary btn-pill" type="button">Status</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <h5>Market News</h5>
+
+        </div>
+        <div class="card-body">
+          <div class="media markets"><img src="assets/images/bitcoin/market-1.jpg">
+            <div class="media-body">
+              <h5 class="font-primary">03 Jan</h5>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing
+                and typesetting industry. Lorem Ipsum
+              </p>
+            </div>
+          </div>
+          <div class="media markets"><img src="assets/images/bitcoin/market-2.jpg">
+            <div class="media-body">
+              <h5 class="font-primary">03 Jan</h5>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing
+                and typesetting industry. Lorem Ipsum
+              </p>
+            </div>
+          </div>
+          <div class="media markets"><img src="assets/images/bitcoin/market-3.jpg">
+            <div class="media-body">
+              <h5 class="font-primary">03 Jan</h5>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing
+                and typesetting industry. Lorem Ipsum
+              </p>
+            </div>
+          </div>
+          <div class="media markets mb-0"><img src="assets/images/bitcoin/market-4.jpg">
+            <div class="media-body">
+              <h5 class="font-primary">03 Jan</h5>
+              <p>
+                Lorem Ipsum is simply dummy text of the printing
+                and typesetting industry. Lorem Ipsum
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <h5>Sales Statistics</h5>
+
+        </div>
+        <div class="card-body">
+          <div class="show-value-top d-flex pull-right">
+            <div class="value-left d-inline-block">
+              <div class="circle-graph bg-primary d-inline-block m-r-5"></div><span>Total Earning</span>
+            </div>
+            <div class="value-right d-inline-block">
+              <div class="circle-graph d-inline-block bg-secondary m-r-5"></div><span>Total Tax</span>
+            </div>
+          </div>
+          <div class="chart-block">
+            <canvas baseChart class="chart flot-chart-placeholder" id="linecharts-bitcoin" [legend]="saleChartLegend"
+              [datasets]="saleChartData" [labels]="saleChartLable" [options]="saleChartOption"
+              [chartType]="saleChartType" [colors]="saleChartColor"></canvas>
+          </div>
+          <div class="row chart-bottom">
+            <div class="col text-center">
+              <div class="d-inline-block">
+                <h5 class="font-primary counter" [CountTo]="75000" [from]="0" [duration]="2"></h5>
+                <h6 class="mb-0">Total Sale</h6>
+              </div>
+            </div>
+            <div class="col text-center">
+              <div class="d-inline-block">
+                <h5 class="font-primary counter" [CountTo]="40000" [from]="0" [duration]="2"></h5>
+                <h6 class="mb-0">Bitcoin Sale</h6>
+              </div>
+            </div>
+            <div class="col text-center">
+              <div class="d-inline-block">
+                <h5 class="font-primary counter" [CountTo]="35000" [from]="0" [duration]="2"></h5>
+                <h6 class="mb-0">Ethereum Sale</h6>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <h5>Datatables Market</h5>
+        </div>
+        <div class="card-body tab-content">
+
+          <ngb-tabset class="card-footer b-t-primary market-tabs pb-0 pl-0 pr-0 bit-coin-tab">
+            <ngb-tab>
+              <ng-template ngbTabContent class="tab-content">
+                <div class="market-table table-responsive tab-pane active" id="htc">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Market</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Change</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 13458</p>
+                        </td>
+                        <td>
+                          <p>0.002548248</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 022157</p>
+                        </td>
+                        <td>
+                          <p>0.025486854</p>
+                        </td>
+                        <td>
+                          <p>-05.15%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 11458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>-18.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ng-template>
+              <ng-template ngbTabTitle class="nav-item nav nav-pills">Users</ng-template>
+            </ngb-tab>
+            <ngb-tab>
+              <ng-template ngbTabContent class="tab-content">
+                <div class="market-table table-responsive tab-pane active" id="htc">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Market</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Change</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 02357</p>
+                        </td>
+                        <td>
+                          <p>0.025486854</p>
+                        </td>
+                        <td>
+                          <p>-05.15%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 15458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12468</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>-18.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ng-template>
+              <ng-template ngbTabTitle class="nav-item">Email</ng-template>
+            </ngb-tab>
+            <ngb-tab>
+              <ng-template ngbTabContent class="tab-content">
+                <div class="market-table table-responsive tab-pane active" id="htc">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Market</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Change</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 10458</p>
+                        </td>
+                        <td>
+                          <p>0.0025453248</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 02157</p>
+                        </td>
+                        <td>
+                          <p>0.025486854</p>
+                        </td>
+                        <td>
+                          <p>-05.25%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.93%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12498</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>-18.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ng-template>
+              <ng-template ngbTabTitle class="nav-item">Blog</ng-template>
+            </ngb-tab>
+            <ngb-tab>
+              <ng-template ngbTabContent class="tab-content">
+                <div class="market-table table-responsive tab-pane active" id="htc">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Market</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Change</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 02157</p>
+                        </td>
+                        <td>
+                          <p>0.025486854</p>
+                        </td>
+                        <td>
+                          <p>-05.15%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>-18.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ng-template>
+              <ng-template ngbTabTitle class="nav-item">Chat</ng-template>
+            </ngb-tab>
+            <ngb-tab>
+              <ng-template ngbTabContent class="tab-content">
+                <div class="market-table table-responsive tab-pane active" id="htc">
+                  <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Market</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Change</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 02157</p>
+                        </td>
+                        <td>
+                          <p>0.025486854</p>
+                        </td>
+                        <td>
+                          <p>-05.15%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>+16.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-primary" [icon]="'arrow-up'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <p class="font-primary">BTC - 12458</p>
+                        </td>
+                        <td>
+                          <p>0.002548548</p>
+                        </td>
+                        <td>
+                          <p>-18.23%</p>
+                          <div class="text-center">
+                            <app-feather-icons class="font-secondary" [icon]="'arrow-down'"></app-feather-icons>
+                          </div>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </ng-template>
+              <ng-template ngbTabTitle class="nav-item">Ecommerce</ng-template>
+            </ngb-tab>
+          </ngb-tabset>
+
+        </div>
+
+      </div>
+    </div>
+    <div class="col-md-12 xl-100">
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body bg-primary">
+              <div class="icons-section text-center"><img src="assets/images/bitcoin/1.png" alt="">
+                <h6>Bitcoin</h6>
+                <h5><span>
+                    <app-feather-icons [icon]="'dollar-sign'"></app-feather-icons>
+                  </span>760.03 <span>
+                    <app-feather-icons [icon]="'arrow-down'"></app-feather-icons>
+                  </span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body bg-secondary">
+              <div class="icons-section text-center"><img src="assets/images/bitcoin/2.png" alt="">
+                <h6>Ethereum</h6>
+                <h5><span>
+                    <app-feather-icons [icon]="'dollar-sign'"></app-feather-icons>
+                  </span>750.03 <span>
+                    <app-feather-icons [icon]="'arrow-up'"></app-feather-icons>
+                  </span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="card">
+            <div class="card-body bg-primary">
+              <div class="icons-section text-center"><img src="assets/images/bitcoin/3.png" alt="">
+                <h6>Balance</h6>
+                <h5><span>
+                    <app-feather-icons [icon]="'dollar-sign'"></app-feather-icons>
+                  </span>9,980 <span>
+                    <app-feather-icons [icon]="'arrow-down'"></app-feather-icons>
+                  </span></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <h5>Chat</h5>
+
+        </div>
+        <div class="card-body chat-box">
+          <div class="chat-right-aside bitcoin-chat">
+            <div class="chat">
+              <div class="chat-history chat-msg-box custom-scrollbar">
+                <ul>
+                  <li>
+                    <div class="message my-message"><img class="rounded-circle float-left chat-user-img"
+                        src="assets/images/bitcoin/chat-1.jpg" alt="">
+                      <div class="message-data text-right"><span class="message-data-time">1:00 pm</span></div> Project
+                      has been already finished and
+                      I have results to show you.
+                    </div>
+                  </li>
+                  <li class="clearfix">
+                    <div class="message other-message pull-right"><img class="rounded-circle float-right chat-user-img"
+                        src="assets/images/bitcoin/chat-2.jpg" alt="">
+                      <div class="message-data"><span class="message-data-time">1:08 pm</span></div> Well I am not sure.
+                      The rest of the
+                      team is not here yet.
+                    </div>
+                  </li>
+                  <li>
+                    <div class="message my-message mb-0"><img class="rounded-circle float-left chat-user-img"
+                        src="assets/images/bitcoin/chat-1.jpg" alt="">
+                      <div class="message-data text-right"><span class="message-data-time">1:12 pm</span></div> Actually
+                      everything was fine. I'm very
+                      excited to show this to our team.
+                    </div>
+                  </li>
+                </ul>
+              </div>
+              <div class="bitcoin-message clearfix">
+                <div class="row">
+                  <div class="col-xl-12 d-flex">
+                    <div class="smiley-box bg-primary">
+                      <div class="picker"><img src="assets/images/smiley.png" alt=""></div>
+                    </div>
+                    <div class="input-group text-box">
+                      <input class="form-control input-txt-bx" id="message-to-send" type="text" name="message-to-send"
+                        placeholder="Type a message......">
+                      <div class="input-group-append">
+                        <button class="btn btn-primary" type="button">SEND</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card">
+        <div class="default-according style-1 bitcoin-accordion" id="accordionoc">
+          <ngb-accordion [closeOthers]="true" activeIds="static-1">
+            <ngb-panel id="static-1">
+              <ng-template ngbPanelTitle>
+                <div class="card-header bg-primary">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link txt-white p-0">BTC</button>
+                  </h5>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <div class="collapse p-0" id="collapse" [ngbCollapse]="isBTC">
+                  <div class="media-accordion">
+                    <div class="media">
+                      <div>
+                        <h6>BTC/USD</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>11916.9</p>
+                        <p class="font-primary">283.1 USD (+2.33%)</p>
+                        <p class="font-secondary">1029.1906 BTC</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div>
+                        <h6>BTC/EUR</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>9213.9</p>
+                        <p class="font-primary">200.1 EUR (+2.33%)</p>
+                        <p class="font-secondary">1599.1906 BTC</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div>
+                        <h6>BTC/GBP</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>1459.9</p>
+                        <p class="font-primary">-283.1 USD (-2.33%)</p>
+                        <p class="font-secondary">350.1906 BTC</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="static-2">
+              <ng-template ngbPanelTitle>
+                <div class="card-header bg-primary">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link txt-white p-0">ETH</button>
+                  </h5>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <div class="collapse" id="collapse" [ngbCollapse]="isBTC">
+                  <div class="media-accordion">
+                    <div class="media">
+                      <div>
+                        <h6>BTC/USD</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>11916.9</p>
+                        <p class="font-primary">283.1 USD (+2.33%)</p>
+                        <p class="font-secondary">1029.1906 BTC</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div>
+                        <h6>BTC/EUR</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>9213.9</p>
+                        <p class="font-primary">200.1 EUR (+2.33%)</p>
+                        <p class="font-secondary">1599.1906 BTC</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div>
+                        <h6>BTC/GBP</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>1459.9</p>
+                        <p class="font-primary">-283.1 USD (-2.33%)</p>
+                        <p class="font-secondary">350.1906 BTC</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-panel>
+            <ngb-panel id="static-3">
+              <ng-template ngbPanelTitle>
+                <div class="card-header bg-primary">
+                  <h5 class="mb-0">
+                    <button class="btn btn-link txt-white p-0">DASH</button>
+                  </h5>
+                </div>
+              </ng-template>
+              <ng-template ngbPanelContent>
+                <div class="collapse" id="collapse" [ngbCollapse]="isBTC">
+                  <div class="media-accordion">
+                    <div class="media">
+                      <div>
+                        <h6>BTC/USD</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>11916.9</p>
+                        <p class="font-primary">283.1 USD (+2.33%)</p>
+                        <p class="font-secondary">1029.1906 BTC</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div>
+                        <h6>BTC/EUR</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>9213.9</p>
+                        <p class="font-primary">200.1 EUR (+2.33%)</p>
+                        <p class="font-secondary">1599.1906 BTC</p>
+                      </div>
+                    </div>
+                    <div class="media">
+                      <div>
+                        <h6>BTC/GBP</h6>
+                        <p>24h Change</p>
+                        <p>24h Volume</p>
+                      </div>
+                      <div class="media-body text-right">
+                        <p>1459.9</p>
+                        <p class="font-primary">-283.1 USD (-2.33%)</p>
+                        <p class="font-secondary">350.1906 BTC</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </ng-template>
+            </ngb-panel>
+          </ngb-accordion>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-100">
+      <div class="card">
+        <div class="card-header b-l-primary">
+          <h5>Invest</h5>
+        </div>
+        <div class="card-body chart-block">
+          <div class="pull-right right-header invest-dropdown">
+            <div class="onhover-dropdown">
+              <button class="btn" type="button">Today <span class="pr-0"><i
+                    class="fa fa-angle-down"></i></span></button>
+              <div class="onhover-show-div right-header-dropdown"><a class="d-block"  href="javascript:void(0)">Link 1</a><a
+                  class="d-block"  href="javascript:void(0)">Link 2</a><a class="d-block"  href="javascript:void(0)">Link 3</a></div>
+            </div>
+          </div>
+          <div class="flot-chart-container">
+            <div class="flot-chart-placeholder" id="bitcoin-morris">
+              <canvas baseChart [legend]="dailyChartLegend" [data]="dailyChartData" [labels]="dailyChartLabels"
+                [options]="dailyChartOptions" [chartType]="dailyChartType" [colors]="dailyChartColors">
+              </canvas>
+            </div>
+          </div>
+          <div class="show-value-top d-flex mb-0 bottom-morris-chart">
+            <div class="value-left d-inline-block">
+              <div class="circle-graph bg-primary d-inline-block m-r-5"></div><span>Bitcoin</span>
+            </div>
+            <div class="value-right d-inline-block">
+              <div class="circle-graph d-inline-block bg-secondary m-r-5"></div><span>Ripple</span>
+            </div>
+            <div class="value-third d-inline-block">
+              <div class="circle-graph d-inline-block bg-light m-r-5"></div><span>Invest</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

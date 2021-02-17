@@ -1,0 +1,31 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 xl-40">
+      <app-job-filter></app-job-filter>
+    </div>
+    <div class="col-xl-9 xl-60">
+      <div class="row">
+        <div class="col-xl-6 xl-100" *ngFor="let job of jobs">
+          <div class="card">
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media"><img class="img-40 img-fluid m-r-20" [src]='job.logo' alt="">
+                  <div class="media-body">
+                    <h6 class="f-w-600"><a [routerLink]="['/job-search/job-desc', job.Id]">{{job.job_name}}</a><span
+                        *ngIf="job.type =='new'" class="badge badge-primary pull-right">New</span></h6>
+                    <p>{{job.job_area}} <span> {{job.job_city}} </span><span><i class="fa fa-star font-warning"></i><i
+                          class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i><i
+                          class="fa fa-star font-warning"></i><i class="fa fa-star font-warning-o"></i></span></p>
+                  </div>
+                </div>
+                <p>{{job.Job_description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

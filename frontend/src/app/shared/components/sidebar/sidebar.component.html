@@ -1,0 +1,114 @@
+<div class="main-header-left d-none d-lg-block">
+  <div class="logo-wrapper"><a href="javascript:void(0)"><img src="assets/images/endless-logo.png" alt=""></a></div>
+</div>
+<div class="sidebar custom-scrollbar">
+  <div class="sidebar-user text-center">
+    <div><img class="img-60 rounded-circle" src="assets/images/user/1.jpg" alt="#">
+      <div class="profile-edit"><a>
+          <i class="icofont icofont-pencil-alt-5"><input class="upload" type="file" (change)="readUrl($event)" /></i>
+        </a></div>
+    </div>
+    <h6 class="mt-3 f-14">ELANA</h6>
+    <p>general manager.</p>
+  </div>
+  <ul class="sidebar-menu">
+    <li *ngFor="let menuItem of menuItems" [ngClass]="{active: menuItem.active}">
+      <!-- Sub -->
+      <a href="javascript:void(0)" class="sidebar-header" *ngIf="menuItem.type === 'sub'"
+        (click)="toggletNavActive(menuItem)">
+        <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title| translate}}<span
+            class="badge badge-{{menuItem.badgeType}} ml-3"
+            *ngIf="menuItem.badgeType">{{menuItem.badgeValue}}</span></span>
+        <i class="fa fa-angle-right pull-right" *ngIf="menuItem.children"></i>
+      </a>
+      <!-- Link -->
+      <a [routerLink]="!menuItem.type ? null : [menuItem.path]" routerLinkActive="active" class="sidebar-header"
+        *ngIf="menuItem.type === 'link'">
+        <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title| translate}}<span
+            class="badge badge-{{menuItem.badgeType}} ml-3"
+            *ngIf="menuItem.badgeType">{{menuItem.badgeValue}}</span></span>
+        <i class="fa fa-angle-right pull-right" *ngIf="menuItem.children"></i>
+      </a>
+      <!-- External Link -->
+      <a href="{{ !menuItem.type ? null : menuItem.path }}" class="sidebar-header" *ngIf="menuItem.type === 'extLink'">
+        <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title| translate}}<span
+            class="badge badge-{{menuItem.badgeType}} ml-3"
+            *ngIf="menuItem.badgeType">{{menuItem.badgeValue}}</span></span>
+        <i class="fa fa-angle-right pull-right" *ngIf="menuItem.children"></i>
+      </a>
+      <!-- External Tab Link -->
+      <a href="{{ !menuItem.type ? null : menuItem.path }}" target="_blank" class="sidebar-header"
+        *ngIf="menuItem.type === 'extTabLink'">
+        <app-feather-icons [icon]="menuItem.icon"></app-feather-icons><span>{{menuItem.title| translate}}<span
+            class="badge badge-{{menuItem.badgeType}} ml-3"
+            *ngIf="menuItem.badgeType">{{menuItem.badgeValue}}</span></span>
+        <i class="fa fa-angle-right pull-right" *ngIf="menuItem.children"></i>
+      </a>
+      <!-- 2nd Level Menu -->
+      <ul class="sidebar-submenu" [ngClass]="{'menu-open': menuItem.active, 'menu-close': !menuItem.active }"
+        *ngIf="menuItem.children">
+        <li *ngFor="let childrenItem of menuItem.children" [ngClass]="{active: childrenItem.active}">
+          <!-- Sub -->
+          <a href="javascript:void(0)" *ngIf="childrenItem.type === 'sub'" (click)="toggletNavActive(childrenItem)">
+            <i class="fa fa-circle"></i><span> {{childrenItem.title| translate}} <span
+                class="badge badge-{{childrenItem.badgeType}} pull-right"
+                *ngIf="childrenItem.badgeType">{{childrenItem.badgeValue}}</span> </span>
+            <i class="fa fa-angle-down pull-right" *ngIf="childrenItem.children"></i>
+          </a>
+          <!-- Link -->
+          <a [routerLink]="!childrenItem.type ? null : [childrenItem.path]" *ngIf="childrenItem.type === 'link'"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="fa fa-circle"></i><span>{{childrenItem.title| translate}} <span
+                class="badge badge-{{childrenItem.badgeType}} pull-right"
+                *ngIf="childrenItem.badgeType">{{childrenItem.badgeValue}}</span></span>
+            <i class="fa fa-angle-down pull-right" *ngIf="childrenItem.children"></i>
+          </a>
+          <!-- External Link -->
+          <a href="{{ !childrenItem.type ? null : childrenItem.path }}" *ngIf="childrenItem.type === 'extLink'"
+            routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
+            <i class="fa fa-circle"></i><span>{{childrenItem.title| translate}} <span
+                class="badge badge-{{childrenItem.badgeType}} pull-right"
+                *ngIf="childrenItem.badgeType">{{childrenItem.badgeValue}}</span></span>
+            <i class="fa fa-angle-down pull-right" *ngIf="childrenItem.children"></i>
+          </a>
+          <!-- External Tab Link -->
+          <a href="{{ !childrenItem.type ? null : childrenItem.path }}" target="_blank"
+            *ngIf="childrenItem.type === 'extTabLink'">
+            <i class="fa fa-circle"></i><span>{{childrenItem.title| translate}} <span
+                class="badge badge-{{childrenItem.badgeType}} pull-right"
+                *ngIf="childrenItem.badgeType">{{childrenItem.badgeValue}}</span></span>
+            <i class="fa fa-angle-down pull-right" *ngIf="childrenItem.children"></i>
+          </a>
+          <!-- 3rd Level Menu -->
+          <ul class="sidebar-submenu" *ngIf="childrenItem.children">
+            <li *ngFor="let childrenSubItem of childrenItem.children">
+              <!-- Link -->
+              <a [routerLink]="!childrenSubItem.type ? null : [childrenSubItem.path]"
+                *ngIf="childrenSubItem.type === 'link'" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <i class="fa fa-circle"></i><span> {{childrenSubItem.title| translate}} <span
+                    class="badge badge-{{childrenSubItem.badgeType}} pull-right"
+                    *ngIf="childrenSubItem.badgeType">{{childrenSubItem.badgeValue}}</span> </span>
+              </a>
+              <!-- External Link -->
+              <a href="{{ !childrenSubItem.type ? null : childrenSubItem.path }}"
+                *ngIf="childrenSubItem.type === 'extLink'" routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}">
+                <i class="fa fa-circle"></i><span>{{childrenSubItem.title| translate}} <span
+                    class="badge badge-{{childrenSubItem.badgeType}} pull-right"
+                    *ngIf="childrenSubItem.badgeType">{{childrenSubItem.badgeValue}}</span></span>
+              </a>
+              <!-- External Tab Link -->
+              <a href="{{ !childrenSubItem.type ? null : childrenSubItem.path }}" target="_blank"
+                *ngIf="childrenSubItem.type === 'extTabLink'">
+                <i class="fa fa-circle"></i><span>{{childrenSubItem.title| translate}} <span
+                    class="badge badge-{{childrenSubItem.badgeType}} pull-right"
+                    *ngIf="childrenSubItem.badgeType">{{childrenSubItem.badgeValue}}</span></span>
+              </a>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</div>

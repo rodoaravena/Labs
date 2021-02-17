@@ -1,0 +1,188 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 xl-50 col-sm-6">
+      <div class="card server-card-bg">
+        <div class="card-body server-widgets">
+          <div class="media">
+            <app-feather-icons [icon]="'codepen'"></app-feather-icons>
+            <div class="top-server">
+              <h6 class="mb-0">Storage</h6>
+            </div>
+          </div>
+          <div class="bottom-server">
+            <h5 class="mb-0">85GB / <span>100Gb</span></h5>
+          </div>
+          <div class="progress">
+            <div class="progress-bar-animated bg-primary progress-bar-striped" role="progressbar" style="width: 25%"
+              aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 xl-50 col-sm-6">
+      <div class="card server-card-bg">
+        <div class="card-body server-widgets">
+          <div class="media">
+            <app-feather-icons [icon]="'clock'"></app-feather-icons>
+            <div class="top-server">
+              <h6 class="mb-0">Latency</h6>
+            </div>
+          </div>
+          <div class="bottom-server">
+            <h5><span class="second-color counter mb-0" [CountTo]="40" [from]="0" [duration]="2"></span><span>/ms</span>
+            </h5>
+          </div>
+          <div class="progress">
+            <div class="progress-bar-animated bg-primary progress-bar-striped" role="progressbar" style="width: 85%"
+              aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 xl-50 col-sm-6">
+      <div class="card server-card-bg">
+        <div class="card-body server-widgets">
+          <div class="media">
+            <app-feather-icons [icon]="'server'"></app-feather-icons>
+            <div class="top-server">
+              <h6 class="mb-0">Bandwidth</h6>
+            </div>
+          </div>
+          <div class="bottom-server">
+            <h5 class="mb-0">75GB / <span>100Gb</span></h5>
+          </div>
+          <div class="progress">
+            <div class="progress-bar-animated bg-primary progress-bar-striped" role="progressbar" style="width: 75%"
+              aria-valuenow="75" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-3 xl-50 col-sm-6">
+      <div class="card server-card-bg">
+        <div class="card-body server-widgets">
+          <div class="media">
+            <app-feather-icons [icon]="'anchor'"></app-feather-icons>
+            <div class="top-server">
+              <h6 class="mb-0">Cluster Load</h6>
+            </div>
+          </div>
+          <div class="bottom-server">
+            <h5 class="mb-0">70% <span>
+                <app-feather-icons [icon]="'trending-down'"></app-feather-icons>
+              </span></h5>
+          </div>
+          <div class="progress">
+            <div class="progress-bar-animated bg-primary progress-bar-striped" role="progressbar" style="width: 50%"
+              aria-valuenow="85" aria-valuemin="0" aria-valuemax="100"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Live CPU Usage</h5>
+        </div>
+        <div class="card-body chart-block">
+          <div class="server-chart-container">
+            <canvas baseChart class="chart flot-chart-placeholder" id="cpu-updating" [legend]="cpuChartLegend"
+              [data]="cpuChartData" [labels]="cpuChartLabels" [options]="cpuChartOptions" [chartType]="cpuChartType"
+              [colors]="cpuChartColors"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Memory Usage</h5>
+        </div>
+        <div class="card-body server-canvas">
+          <canvas baseChart class="chart" id="myGraph" [legend]="memoryChartLegend" [datasets]="memoryChartData"
+            [labels]="memoryChartLabels" [options]="memoryChartOptions" [chartType]="memoryChartType"
+            [colors]="memoryChartColors"></canvas>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 xl-100">
+      <div class="card">
+        <div class="card-header server-header">
+          <h5 class="d-inline-block">Process Explorer</h5><span
+            class="badge badge-primary m-l-10 d-inline-block mt-0">57 Process</span>
+        </div>
+        <div class="card-body server-datatable">
+          <div class="table-responsive">
+            <ngx-datatable class="bootstrap" [rows]="explorer"
+            [columns]="[{name:'name'},{name:'user'},{name:'IO'}, {name:'cpu'}, {name:'mem'}]" [columnMode]="'force'"
+            [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="10">
+        </ngx-datatable>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-100">
+      <div class="card">
+        <div class="card-header server-header">
+          <h5 class="d-inline-block">I/O Activity</h5><span class="badge badge-primary m-l-10 d-inline-block mt-0">Last
+            10 Activity</span>
+
+        </div>
+        <div class="card-body">
+          <div class="server-activity">
+            <div class="media">
+              <app-feather-icons class="font-primary m-r-10" [icon]="'arrow-down'"></app-feather-icons>
+              <span>Brandley</span>
+              <div class="media-body text-right"><span>14 KB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-primary m-r-10" [icon]="'arrow-down'"></app-feather-icons><span>Cara</span>
+              <div class="media-body text-right"><span>5 KB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-secondary m-r-10" [icon]="'arrow-up'"></app-feather-icons><span>Airi</span>
+              <div class="media-body text-right"><span>15 MB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-primary m-r-10" [icon]="'arrow-up'"></app-feather-icons><span>Cedric</span>
+              <div class="media-body text-right"><span>4 KB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-secondary m-r-10" [icon]="'arrow-down'"></app-feather-icons>
+              <span>Cara</span>
+              <div class="media-body text-right"><span>20 KB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-primary m-r-10" [icon]="'arrow-up'"></app-feather-icons><span>Airi</span>
+              <div class="media-body text-right"><span>25 MB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-primary m-r-10" [icon]="'arrow-down'"></app-feather-icons>
+              <span>Brandley</span>
+              <div class="media-body text-right"><span>14 KB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-primary m-r-10" [icon]="'arrow-down'"></app-feather-icons><span>Cara</span>
+              <div class="media-body text-right"><span>5 KB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-secondary m-r-10" [icon]="'arrow-up'"></app-feather-icons><span>Airi</span>
+              <div class="media-body text-right"><span>15 MB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-primary m-r-10" [icon]="'arrow-up'"></app-feather-icons><span>Cedric</span>
+              <div class="media-body text-right"><span>4 KB</span></div>
+            </div>
+            <div class="media">
+              <app-feather-icons class="font-secondary m-r-10" [icon]="'arrow-down'"></app-feather-icons>
+              <span>Cara</span>
+              <div class="media-body text-right"><span>20 KB</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

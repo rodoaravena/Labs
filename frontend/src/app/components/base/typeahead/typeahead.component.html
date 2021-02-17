@@ -1,0 +1,92 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Simple Typeahead</h5>
+        </div>
+        <div class="card-body">
+          A typeahead example that gets values from a static <code>string[]</code>
+          <ul>
+            <li><code>debounceTime</code> operator</li>
+            <li>kicks in only if 2+ characters typed</li>
+            <li>limits to 10 results</li>
+          </ul>
+          <label for="typeahead-basic">Search for a state:</label>
+          <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="model" [ngbTypeahead]="search" />
+          <hr>
+          <pre class="mb-0">Model: {{ model | json }}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Open on focus</h5>
+        </div>
+        <div class="card-body">
+          A typeahead example that gets values from a static <code>string[]</code>
+          <ul>
+            <li><code>debounceTime</code> operator</li>
+            <li>kicks in only if 2+ characters typed</li>
+            <li>limits to 10 results</li>
+          </ul>
+          <label for="typeahead-basic">Search for a state:</label>
+          <input id="typeahead-basic" type="text" class="form-control" [(ngModel)]="modelFocus"
+            [ngbTypeahead]="searchOnFocus" />
+          <hr>
+          <pre class="mb-0">Model: {{ modelFocus | json }}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Wikipedia search</h5>
+        </div>
+        <div class="card-body">
+          A typeahead example that gets values from the <code>WikipediaService</code>
+          <ul>
+            <li>remote data retrieval</li>
+            <li><code>debounceTime</code> operator</li>
+            <li><code>do</code> operator</li>
+            <li><code>distinctUntilChanged</code> operator</li>
+            <li><code>switchMap</code> operator</li>
+            <li><code>catch</code> operator to display an error message in case of connectivity issue</li>
+          </ul>
+          <div class="form-group">
+            <label for="typeahead-http">Search for a wiki page:</label>
+            <input id="typeahead-http" type="text" class="form-control" [class.is-invalid]="searchFailed"
+              [(ngModel)]="modelWiki" [ngbTypeahead]="searchWikipedia" placeholder="Wikipedia search" />
+            <span *ngIf="searching">searching...</span>
+            <div class="invalid-feedback" *ngIf="searchFailed">Sorry, suggestions could not be loaded.</div>
+          </div>
+          <hr>
+          <pre class="mb-0">Model: {{ modelWiki | json }}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Template for results</h5>
+        </div>
+        <div class="card-body">
+          <p>A typeahead example that uses a custom template for results display, an object as the model,
+            and the highlight directive to highlight the term inside the custom template.
+          </p>
+          <ng-template #rt let-r="result" let-t="term">
+            <img [src]="'https://upload.wikimedia.org/wikipedia/commons/thumb/' + r['flag']" class="mr-1"
+              style="width: 16px">
+            <ngb-highlight [result]="r.name" [term]="t"></ngb-highlight>
+          </ng-template>
+          <label for="typeahead-template">Search for a state:</label>
+          <input id="typeahead-template" type="text" class="form-control" [(ngModel)]="modelTemp"
+            [ngbTypeahead]="searchTemp" [resultTemplate]="rt" [inputFormatter]="formatter" />
+          <hr>
+          <pre class="mb-0">Model: {{ modelTemp | json }}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

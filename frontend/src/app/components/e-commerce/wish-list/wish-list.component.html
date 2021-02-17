@@ -1,0 +1,48 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Wishlist</h5>
+        </div>
+        <div class="card-body">
+          <div class="order-history table-responsive wishlist">
+            <table class="table table-bordernone">
+              <thead>
+                <tr>
+                  <th>Prdouct</th>
+                  <th>Prdouct Name</th>
+                  <th>Price</th>
+                  <th>Availability</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="title-orders">
+                  <td colspan="12">New Orders</td>
+                </tr>
+                <tr *ngFor="let item of selectCartItems">
+                  <td><img class="img-fluid img-60" [src]="[item.product.img]" alt="#"></td>
+                  <td>
+                    <div class="product-name"><a
+                        [routerLink]="['/ecommerce/product-details', item.product.id]">{{item.product.name}}</a></div>
+                  </td>
+                  <td>{{item.product.price | currency:productsService?.currency:'symbol'}}</td>
+                  <td>{{item.product.stock}}</td>
+                  <td>
+                    <app-feather-icons [icon]="'x-circle'" (click)=remove(item)></app-feather-icons>
+                  </td>
+                </tr>
+                <tr>
+                  <td colspan="5"><a class="btn btn-primary cart-btn-transform"
+                      [routerLink]="['/ecommerce/products']">continue shopping</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

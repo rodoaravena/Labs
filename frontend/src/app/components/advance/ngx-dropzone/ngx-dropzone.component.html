@@ -1,0 +1,60 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row dropzone-custom">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Single File Upload</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropzone dropzone-primary" [attr.dropzone]="config1" (error)="onUploadError($event)"
+            (success)="onUploadSuccess($event)">
+            <div class="dz-message needsclick">
+              <i class="icon-cloud-up"></i>
+              <h6>Drop files here or click to upload.</h6><span>(This is just a demo dropzone. Selected files are
+                <strong>not</strong> actually uploaded.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Multi File Upload</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropzone dropzone-primary" [attr.dropzone]="config2" (error)="onUploadError($event)"
+            (success)="onUploadSuccess($event)">
+            <div class="dz-message needsclick">
+              <i class="icon-cloud-up"></i>
+              <h6>Drop files here or click to upload.</h6><span>(This is just a demo dropzone. Selected files are
+                <strong>not</strong> actually uploaded.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>File Type Validation</h5>
+        </div>
+        <div class="card-body">
+          <div class="dropzone dropzone-primary" [attr.dropzone]="config3" (error)="onUploadError($event)"
+            (success)="onUploadSuccess($event)">
+            <div class="dz-message needsclick">
+              <i class="icon-cloud-up"></i>
+              <h6>Drop only .pdf files here or click to upload.</h6><span>(This is just a demo dropzone. Selected files
+                are
+                <strong>not</strong> actually uploaded.)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

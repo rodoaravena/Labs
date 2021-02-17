@@ -1,0 +1,128 @@
+<!-- Container-fluid Ends -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Dropdown</h5>
+        </div>
+        <div class="card-body">
+          <div class="row btn-showcase">
+            <div class="col">
+              <div ngbDropdown class="d-inline-block" placement="bottom">
+                <button class="btn btn-outline-primary" id="dropdownBasic1" ngbDropdownToggle >Toggle dropdown</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                  <button class="dropdown-item">Action - 1</button>
+                  <button class="dropdown-item">Another Action</button>
+                  <button class="dropdown-item">Something else is here</button>
+                </div>
+              </div>
+            </div>
+            <div class="col text-right">
+              <div ngbDropdown placement="top-right" class="d-inline-block">
+                <button class="btn btn-outline-primary mr-0" id="dropdownBasic2" ngbDropdownToggle>Toggle
+                  dropup</button>
+                <div ngbDropdownMenu aria-labelledby="dropdownBasic2">
+                  <button class="dropdown-item">Action - 1</button>
+                  <button class="dropdown-item">Another Action</button>
+                  <button class="dropdown-item">Something else is here</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Manual and custom triggers</h5>
+        </div>
+        <div class="card-body">
+          <div class="d-inline-block btn-showcase" ngbDropdown #myDrop="ngbDropdown">
+            <button class="btn btn-outline-primary mr-2" id="dropdownManual" ngbDropdownAnchor
+              (focus)="myDrop.open()">Toggle dropdown</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownManual">
+              <button class="dropdown-item">Action - 1</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+            <button class="btn btn-outline-primary mr-2" (click)="$event.stopPropagation(); myDrop.open();">Open from
+              outside</button>
+            <button class="btn btn-outline-primary mr-2" (click)="$event.stopPropagation(); myDrop.close();">Close from
+              outside</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Manual and custom triggers</h5>
+        </div>
+        <div class="card-body">
+          <div class="btn-showcase">
+            <div class="btn-group">
+              <button type="button" class="btn btn-outline-primary">Plain ol' button</button>
+              <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-outline-primary" ngbDropdownToggle>Drop me</button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                  <button class="dropdown-item">One</button>
+                  <button class="dropdown-item">Two</button>
+                  <button class="dropdown-item">Four!</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="btn-group">
+              <button type="button" class="btn btn-primary mr-0">Split me</button>
+              <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-primary dropdown-toggle-split" ngbDropdownToggle></button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                  <button class="dropdown-item">One</button>
+                  <button class="dropdown-item">Two</button>
+                  <button class="dropdown-item">Four!</button>
+                </div>
+              </div>
+            </div>
+            <div class="btn-group mr-3">
+              <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-outline-primary" ngbDropdownToggle>Select me</button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                  <button class="dropdown-item">One</button>
+                  <button class="dropdown-item">Two</button>
+                  <button class="dropdown-item">Four!</button>
+                </div>
+              </div>
+              <div class="btn-group" ngbDropdown role="group" aria-label="Button group with nested dropdown">
+                <button class="btn btn-outline-primary" ngbDropdownToggle>Or me</button>
+                <div class="dropdown-menu" ngbDropdownMenu>
+                  <button class="dropdown-item">One</button>
+                  <button class="dropdown-item">Two</button>
+                  <button class="dropdown-item">Four!</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Global configuration of dropdowns</h5>
+        </div>
+        <div class="card-body">
+          <div ngbDropdown>
+            <button class="btn btn-outline-primary" id="dropdownConfig" ngbDropdownToggle>Toggle</button>
+            <div ngbDropdownMenu aria-labelledby="dropdownConfig">
+              <button class="dropdown-item">Action - 1</button>
+              <button class="dropdown-item">Another Action</button>
+              <button class="dropdown-item">Something else is here</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

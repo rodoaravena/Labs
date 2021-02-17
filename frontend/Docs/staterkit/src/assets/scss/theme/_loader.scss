@@ -1,0 +1,121 @@
+/**=====================
+     04. Loader CSS Start
+==========================**/
+.loader-wrapper{
+  height: 100%;
+  width: 100%;
+  display: block;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  background-color: $white;
+  z-index: 1001;
+  top: 0;
+  .loader{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    text-align: center;
+    right: 0;
+    margin: 0 auto;
+    h4{
+      margin-top: 50px;
+      margin-bottom: 0;
+      span{
+        font-size: 34px;
+        color: #FFC107;
+      }
+    }
+  }
+}
+.loader {
+  .line {
+    animation: expand 1s ease-in-out infinite;
+    border-radius: 10px;
+    display: inline-block;
+    transform-origin: center center;
+    margin: 0 3px;
+    width: 1px;
+    height: 25px;
+    &:nth-child(1) {
+      background: $success-color;
+    }
+    &:nth-child(2) {
+      animation-delay: 180ms;
+      background: $primary-color;
+    }
+    &:nth-child(3) {
+      animation-delay: 360ms;
+      background: $danger-color;
+    }
+    &:nth-child(4) {
+      animation-delay: 540ms;
+      background: $info-color;
+    }
+  }
+  @keyframes expand {
+    0% {
+      transform: scale(1);
+    }
+    25% {
+      transform: scale(2);
+    }
+  }
+}
+
+.loader-box{
+  height: 150px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+}
+.rotate {
+  animation-timing-function: linear;
+  animation-duration: 3s;
+  animation-iteration-count: infinite;
+  animation-name: rotate;
+  border: 3px dotted $primary-color;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  display: block;
+  margin: 1em;
+  float: left;
+}
+@keyframes rotate {
+  to {
+    transform: rotate(360deg);
+  }
+}
+.solid {
+  border-style: solid;
+  border-color: $success-color darken($success-color,10%);
+}
+.dotted {
+  border-style: dotted;
+}
+.dashed {
+  border-style: dashed;
+}
+.double {
+  border-style: double;
+}
+.groove {
+  border-style: groove;
+}
+.ridge {
+  border-style: ridge;
+}
+.inset {
+  border-style: inset;
+}
+.outset {
+  border-style: outset;
+}
+.colored {
+  border-color: $danger-color $primary-color $success-color $info-color;
+}
+/**=====================
+     04. Loader CSS Ends
+==========================**/
+

@@ -1,0 +1,20 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Filter Table</h5>
+                </div>
+                <div class="card-body custom-datatable">
+                    <input type='text' class="filter-ngx form-control" placeholder='Type to filter the name column...'
+                        (keyup)='updateFilter($event)' />
+                    <ngx-datatable #table class='bootstrap' [columns]="columns" [columnMode]="ColumnMode.force"
+                        [headerHeight]="50" [footerHeight]="50" rowHeight="auto" [limit]="10" [rows]="rows">
+                    </ngx-datatable>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends -->

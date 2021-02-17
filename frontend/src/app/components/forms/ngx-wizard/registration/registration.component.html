@@ -1,0 +1,32 @@
+<form [formGroup]="regForm" (ngSubmit)="save(regForm)" class="ngx-form" novalidate>
+    <div class="form-group">
+        <label class="control-label" for="firstname">First Name</label>
+        <input type="text" formControlName="firstName" class="form-control" placeholder="Enter First Name..">
+        <div *ngIf="regForm.controls['firstName'].invalid && (regForm.controls['firstName'].dirty || regForm.controls['firstName'].touched)"
+            class="alert">
+            <div *ngIf="regForm.controls['firstName'].errors.required">
+                First Name is required.
+            </div>
+            <div *ngIf="regForm.controls['firstName'].errors?.pattern">
+                Number is not allowed!
+            </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <label class="control-label" for="lastname">Last Name</label>
+        <input type="text" formControlName="lastName" class="form-control" placeholder="Enter Last Name..">
+        <div *ngIf="regForm.controls['lastName'].invalid && (regForm.controls['lastName'].dirty || regForm.controls['lastName'].touched)"
+            class="alert">
+            <div *ngIf="regForm.controls['lastName'].errors.required">
+                Last Name is required.
+            </div>
+            <div *ngIf="regForm.controls['lastName'].errors?.pattern">
+                Number is not allowed!
+            </div>
+        </div>
+    </div>
+    <div class="form-group f1-buttons">
+        <button class="btn btn-primary btn-next" [disabled]="!regForm.valid" awNextStep> Next
+        </button>
+    </div>
+</form>

@@ -1,0 +1,284 @@
+/**=====================
+    26. Form CSS Start
+==========================**/
+aw-wizard-navigation-bar.horizontal {
+  ul.steps-indicator {
+    li {
+      a {
+        .label {
+          font-size: 13px !important;
+          text-transform: capitalize !important;
+          font-weight: 400 !important;
+        }
+      }
+    }
+    li.current {
+      a {
+        .label {
+          color: $primary-color;
+        }
+      }
+    }
+    li.navigable {
+      a {
+        .label {
+          color: $primary-color;
+        }
+      }
+      &:after {
+        background-color: $primary-color !important;
+      }
+      &:before {
+        background-color: $primary-color !important;
+      }
+    }
+  }
+  &.large-filled-symbols {
+    ul.steps-indicator {
+      padding: 60px 0 10px;
+      font-size: 18px;
+      li.done {
+        .step-indicator {
+          background-color: $white !important;
+          color: $primary-color !important;
+          border: 1px solid $primary-color;
+        }
+      }
+      li.current {
+        .step-indicator {
+          background-color: $primary-color !important;
+          color: #fafafa !important;
+        }
+        &:first-child {
+          &:after {
+            background-color: $primary-color !important;
+          }
+        }
+      }
+      li {
+        &:first-child {
+          &:after {
+            background-color: #e6e6e6;
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 45%;
+            top: -25px;
+            right: calc(50% + 50px / 2);
+          }
+        }
+        &:last-child {
+          &:after {
+            background-color: #e6e6e6;
+            content: "";
+            position: absolute;
+            height: 1px;
+            width: 45%;
+            top: -25px;
+            left: calc(50% + 50px / 2);
+          }
+        }
+      }
+      li.editing {
+        .step-indicator {
+          background-color: $primary-color !important;
+          color: #fafafa !important;
+        }
+      }
+    }
+  }
+}
+
+.ngx-form {
+  .f1-buttons {
+    text-align: right;
+  }
+  .f1-buttons .btn-previous {
+    margin-right: 5px;
+  }
+
+  .alert {
+    color: red;
+    padding: 0;
+    font-size: 12px;
+  }
+}
+.step-indicator {
+  .form-group {
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+.billing-form {
+  margin-bottom: -20px;
+}
+.height-35{
+  height: 35px !important;
+}
+.theme-form {
+  input[type=file] {
+    height: auto;
+  }
+  .form-control{
+    border: 1px solid $light-semi-gray;
+    :focus {
+      box-shadow: 0 0 0 0.2rem rgba(171, 140, 228, 0.05);
+    }
+  }
+  &.sm-form{
+    .form-group{
+      margin-bottom: $sm-form-margin-bottom;
+    }
+  }
+  .form-group {
+    margin-bottom: $form-group-margin-bottom;
+    textarea{
+      border-color: $form-input-border-color;
+      &::-webkit-input-placeholder{
+        color: $form-placeholder-color;
+        font-size: $form-placeholder-font-size;
+        letter-spacing: $form-placeholder-letter-spacing;
+        font-weight: $form-placeholder-font-weight;
+      }
+    }
+    input[type=text], input[type=email], input[type=search],
+    input[type=password], input[type=number], input[type=tel], input[type=date], input[type=datetime-local]
+    , input[type=time], input[type=datetime-local], input[type=month],input[type=week],
+    input[type=url],input[type=file], select {
+      border-color: $form-input-border-color;
+      background-color: $form-input-bg-color;
+      font-size: $form-placeholder-font-size;
+      color: $form-placeholder-color;
+      font-family: $font-work-sans, $font-serif;
+      &::-webkit-input-placeholder{
+        color: $form-placeholder-color;
+        font-size: $form-placeholder-font-size;
+        letter-spacing: $form-placeholder-letter-spacing;
+        font-weight: $form-placeholder-font-weight;
+      }
+    }
+    select.form-control:not([size]):not([multiple]){
+      border-color: $form-input-border-color;
+      font-size: $form-placeholder-font-size;
+    }
+  }
+  .checkbox {
+    label {
+      padding-left: 10px;
+    }
+  }
+  .form-divider {
+    position: relative;
+    clear: both;
+    height: 0;
+    margin: 30px 0;
+    border-top: 1px solid $light-semi-gray;
+    &:before {
+      position: absolute;
+      top: -11px;
+      left: 40%;
+      margin-left: -10px;
+      padding: 0 5px;
+      content: "Or Signup With";
+      color: $theme-font-color;
+      background: $white;
+    }
+  }
+  .login-divider {
+    position: relative;
+    clear: both;
+    height: 0;
+    margin: 30px 0;
+    border-top: 1px solid $light-semi-gray;
+    &:before {
+      position: absolute;
+      top: -11px;
+      left: 40%;
+      margin-left: -10px;
+      padding: 0 5px;
+      color: $theme-font-color;
+      background: $white;
+      content: "Or Login With";
+    }
+  }
+  .social {
+    .form-group {
+      justify-content: center;
+      .btn {
+        padding: 6px 15px;
+        &:last-child {
+          margin-right: 0;
+        }
+      }
+    }
+  }
+  .btn-fb {
+    background-color: $fb;
+    color: $white;
+  }
+  .btn-twitter {
+    background-color: $twitter;
+    color: $white;
+  }
+  .btn-google {
+    background-color: $google-plus;
+    color: $white;
+  }
+  .btn-github {
+    background-color: $github;
+    color: $white;
+  }
+}
+.form-inline{
+  .form-group{
+    margin-right: 15px;
+    .col-form-label
+    {
+      margin-right: 5px;
+    }
+  }
+}
+.search-form{
+  .form-group{
+    &:before{
+      position: absolute;
+      content: "";
+      width: 1px;
+      height: 25px;
+      background: #e8ebf2;
+      left: 82px;
+      top: 39px;
+    }
+    &:after{
+      position: absolute;
+      content: "\f002";
+      font-family: FontAwesome;
+      top: 41px;
+      left: 53px;
+      color: #8e8e8e;
+    }
+  }
+  input{
+    border: 1px solid $light-semi-gray;
+    padding: 10px 10px 10px 70px;
+    border-radius: 50px;
+    background-color: $light-color;
+  }
+}
+.form-label-align-right{
+  label{
+    text-align:right;
+    padding-top: 17px;
+    font-weight: 500;
+  }
+}
+.custom-file-label{
+  line-height: 1.8;
+  &::after{
+    line-height: 1.8;
+  }
+}
+/**=====================
+    26. Form CSS Ends
+==========================**/

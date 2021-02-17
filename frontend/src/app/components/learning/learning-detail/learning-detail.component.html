@@ -1,0 +1,88 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-9 xl-60">
+      <div class="blog-single">
+        <div class="blog-box blog-details"><img class="img-fluid w-100" src="assets/images/faq/learning-1.png"
+            alt="blog-main">
+          <div class="blog-details">
+            <ul class="blog-social">
+              <li class="digits">{{arr.date}}</li>
+              <li><i class="icofont icofont-user"></i>Mark <span>Jecno </span></li>
+              <li class="digits"><i class="icofont icofont-thumbs-up"></i>{{arr.hits}}<span>Hits</span></li>
+              <li class="digits"><i class="icofont icofont-ui-chat"></i>{{arr.comments}} Comments</li>
+            </ul>
+            <h4>
+              {{arr.des1}}
+            </h4>
+            <div class="single-blog-content-top" [innerHTML]="arr.des2">
+            </div>
+          </div>
+        </div>
+        <section class="comment-box">
+          <h4>Comment</h4>
+          <hr>
+          <ul>
+            <li>
+              <div class="media align-self-center"><img class="align-self-center" [src]='arr.student_img'
+                  alt="Generic placeholder image">
+                <div class="media-body">
+                  <div class="row">
+                    <div class="col-md-4 xl-100">
+                      <h6 class="mt-0">{{arr.student_name}}<span> ( {{arr.student_designation}} )</span></h6>
+                    </div>
+                    <div class="col-md-8 xl-100">
+                      <ul class="comment-social float-left float-md-right learning-comment">
+                        <li class="digits"><i class="icofont icofont-thumbs-up"></i>{{arr.hits}} Hits</li>
+                        <li class="digits"><i class="icofont icofont-ui-chat"></i>{{arr.comments}} Comments</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p>{{arr.student_comment}}</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <ul>
+                <li>
+                  <div class="media"><img class="align-self-center" [src]='arr.writer_img'
+                      alt="Generic placeholder image">
+                    <div class="media-body">
+                      <div class="row">
+                        <div class="col-xl-12">
+                          <h6 class="mt-0">{{arr.writer_name}}<span> ( {{arr.student_designation}} )</span></h6>
+                        </div>
+                      </div>
+                      <p>{{arr.writer_reply}}</p>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </li>
+            <li>
+              <div class="media"><img class="align-self-center" [src]='arr.student_img2'
+                  alt="Generic placeholder image">
+                <div class="media-body">
+                  <div class="row">
+                    <div class="col-md-4 xl-100">
+                      <h6 class="mt-0">{{arr.student_name}}<span> ( {{arr.student_designation}} )</span></h6>
+                    </div>
+                    <div class="col-md-8 xl-100">
+                      <ul class="comment-social float-left float-md-right learning-comment">
+                        <li class="digits"><i class="icofont icofont-thumbs-up"></i>{{arr.hits}} Hits</li>
+                        <li class="digits"><i class="icofont icofont-ui-chat"></i>{{arr.comments}} Comments</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p>{{arr.student_comment}}</p>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </section>
+      </div>
+    </div>
+    <div class="col-xl-3 xl-40">
+      <app-learning-filter></app-learning-filter>
+    </div>
+  </div>
+</div>

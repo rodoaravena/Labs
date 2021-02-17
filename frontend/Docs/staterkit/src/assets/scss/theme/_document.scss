@@ -1,0 +1,273 @@
+/**=====================
+     72.  Document CSS Start
+==========================**/
+.document {
+  &.page-wrapper {
+    .page-main-header{
+      height: 80px;
+      background-image: url(../../images/sidebar-pattern/5.png);
+      background-color: #2f3c4e !important;
+      .main-header-right {
+        padding: 0 0;
+      }
+      .mobile-sidebar{
+        .media-body{
+          .switch{
+            a{
+              svg{
+                line{
+                  color: $white;
+                }
+              }
+            }
+          }
+        }
+      }
+      .navbar-collapse{
+        .navbar-nav{
+          display: flex;
+          justify-content: flex-end;
+          padding-right: 0;
+          .nav-item{
+            padding-right: 15px;
+            &:last-child {
+              padding-right: 0;
+            }
+          }
+        }
+      }
+      svg {
+        line {
+          color: $white;
+        }
+      }
+      .document-right-nav {
+        .navbar {
+          .navbar-collapse {
+            .navbar-nav {
+              .nav-item {
+                .nav-link {
+                  color: $white;
+                  letter-spacing: 1px;
+                  text-transform: uppercase;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    .page-body-wrapper {
+      .page-body {
+        padding-top: 30px !important;
+        margin-top: 80px;
+      }
+    }
+  }
+  .page-sidebar{
+    h4{
+      text-transform: uppercase;
+      font-size: 15px;
+      letter-spacing: 1.5px;
+      font-weight: 500;
+      padding-bottom: 15px;
+      border-bottom: 1px solid #3c4c61;
+    }
+  }
+}
+.document-content {
+  .page-sidebar {
+    .nav-pills {
+      li {
+        color: $dark-all-font-color;
+      }
+    }
+  }
+  .logo-wrapper {
+    margin-bottom: 30px;
+    padding: 20px;
+    border-bottom: 1px solid #3c4c61;
+  }
+  ul.nav-pills {
+    overflow-y: scroll;
+    max-height: calc(100vh - 130px);
+    padding-left: 20px;
+    padding-right: 20px;
+    display: block;
+    li {
+      line-height: 25px;
+      .nav-link {
+        border-radius: .25rem;
+        font-size: 15px;
+        display: block;
+        text-decoration: none;
+        line-height: 40px;
+        color: $dark-all-font-color;
+        font-weight: 500;
+        letter-spacing: 1px;
+        padding: 0;
+        i {
+          margin-top: 7px;
+          text-decoration: none;
+          line-height: 25px;
+          margin-right: 10px;
+        }
+        &.active {
+          background-color: unset !important;
+          color: $white;
+          text-shadow: 0px 0px 0px #fff;
+        }
+      }
+      .show > .nav-link {
+        background-color: unset !important;
+        color: $white;
+        text-shadow: 0 0 0 $white;
+      }
+    }
+  }
+  .table {
+    thead {
+      th {
+        width: 50%;
+      }
+    }
+  }
+  .set-flex {
+    display: flex;
+  }
+  i {
+    &.fa-star {
+      color: $btn-search-bg-c;
+    }
+  }
+  .col-9 {
+    padding-left: 40px;
+    .set-height {
+      overflow: scroll;
+      overflow-x: hidden;
+    }
+    .tab-content {
+      overflow: auto;
+      overflow-x: hidden;
+      max-height: calc(100% - 200px);
+      position: fixed;
+      width: 976px;
+      margin-left: 30px;
+      -webkit-box-shadow: 0 0 15px 0 rgba(220, 220, 220, 0.4);
+      -o-box-shadow: 0 0 15px 0 rgba(220, 220, 220, 0.4);
+      box-shadow: 0 0 15px 0 rgba(220, 220, 220, 0.4);
+      .section-head {
+        font-weight: 600;
+        font-size: 32px;
+        margin-bottom: 40px;
+        padding: 0;
+      }
+    }
+  }
+  .card-body.tree-color {
+    padding: 0;
+  }
+  .jstree-default {
+    padding: 30px;
+    background-color: $dark-card-background;
+    box-shadow: 1px 1px 2px 1px rgba(255, 255, 255, 0.08);
+    .jstree-anchor {
+      color: #a6aaaf;
+    }
+    .jstree-hovered {
+      background-color: $dark-body-background;
+      border: 1px solid $dark-border-color;
+    }
+    .jstree-clicked {
+      color: white !important;
+      background: transparent !important;
+    }
+    .jstree-icon {
+      color: #656b78 !important;
+    }
+  }
+  hr {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    border: 0;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  .html-editor {
+    color: rgba(255, 255, 255, 0.7);
+    background-color: #2b2b2b;
+    pre {
+      color: rgba(255, 255, 255, 0.7);
+      background-color: #000;
+    }
+  }
+  .progress {
+    margin-bottom: 10px;
+  }
+  ul.list-ticked li {
+    margin-bottom: 10px;
+    padding-left: 1rem;
+  }
+  &.faq {
+    font-size: 18px;
+    .btn {
+      font-size: 18px;
+      font-weight: 600;
+      color: $primary-color;
+      &.btn-link {
+        color: $black;
+        &.collapsed {
+          color: $primary-color;
+        }
+      }
+    }
+    ul {
+      border: unset;
+      &.nav {
+        display: block;
+        li .nav-link {
+          border-radius: .25rem;
+          font-size: 18px;
+          display: block;
+          padding: 3px 20px 3px 30px;
+          text-decoration: none;
+          line-height: 30px;
+          color: $color-scarpa;
+          font-weight: 500;
+          border: unset;
+          i {
+            margin-top: 3px;
+            text-decoration: none;
+            line-height: 25px;
+            color: $primary-color;
+            margin-right: 20px;
+          }
+          &.active {
+            color: $primary-color;
+            background-color: unset;
+            border: unset;
+          }
+          &:hover {
+            border: unset;
+          }
+        }
+      }
+    }
+  }
+  .reviews{
+    background-color: $white;
+    padding: 30px 0;
+    margin-bottom: 30px;
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.08);
+    h1{
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    h5{
+      text-transform: capitalize;
+    }
+  }
+}
+
+/**=====================
+     72. Document CSS Ends
+==========================**/

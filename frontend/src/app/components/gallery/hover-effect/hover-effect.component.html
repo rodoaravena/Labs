@@ -1,0 +1,368 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">1</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-1">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+              <ks-modal-gallery [id]="2" [modalImages]="imagesRect"
+                [plainGalleryConfig]="customPlainGalleryRowDescConfig" [currentImageConfig]="{downloadable: true}"
+                [buttonsConfig]="buttonsConfigCustom" (buttonBeforeHook)="onButtonBeforeHook($event)"
+                (buttonAfterHook)="onButtonAfterHook($event)">
+              </ks-modal-gallery>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">2</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-2">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">3</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-3">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">4</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-4">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">5</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-5">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">6</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-6">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">7</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-7">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">8</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-8">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">9</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-9">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">10</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-10">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">11</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="my-gallery gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-11">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">12</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="gallery my-gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-12">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">13</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="gallery my-gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-13">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">14</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="gallery my-gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-14">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Hover Effect <span class="digits">15</span></h5>
+        </div>
+        <div class="card-body" id="aniimated-thumbnials">
+          <div class="gallery my-gallery" itemscope="">
+            <section>
+              <div class="row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="col-sm-3">
+                    <div class="img-hover hover-15">
+                      <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                    </div>
+                  </figure>
+                </ng-container>
+              </div>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

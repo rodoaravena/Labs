@@ -1,0 +1,20 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Basic Table</h5>
+                </div>
+                <div class="card-body custom-datatable noscroll">
+                    <ngx-datatable class="bootstrap" [rows]="company" [loadingIndicator]="loadingIndicator"
+                        [columns]="columns" [columnMode]="'force'" [headerHeight]="40" [summaryRow]="true"
+                        [summaryPosition]="'bottom'" [footerHeight]="40" [rowHeight]="'auto'"
+                        [reorderable]="reorderable">
+                    </ngx-datatable>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends -->

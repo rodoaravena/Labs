@@ -1,0 +1,187 @@
+<!-- Container-fluid Ends -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Simple slider in reactive form</h5>
+                </div>
+                <div class="card-body">
+                    <p>Value: {{simpleSliderControl.value}}</p>
+                    <ng5-slider [options]="simpleSliderOptions" [formControl]="simpleSliderControl"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Range slider in reactive form</h5>
+                </div>
+                <div class="card-body">
+                    <form [formGroup]="rangeSliderForm">
+                        <p>Low value: {{ rangeSliderForm.value.rangeSliderControl[0] }} | High value:
+                            {{ rangeSliderForm.value.rangeSliderControl[1] }}</p>
+                        <ng5-slider [options]="rangeSliderOptions" formControlName="rangeSliderControl"></ng5-slider>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Slider with custom style</h5>
+                </div>
+                <div class="card-body">
+                    <div class="custom-slider">
+                        <ng5-slider [(value)]="custMinValue" [(highValue)]="custMaxValue" [options]="custSlideroptions">
+                        </ng5-slider>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Range slider with noSwitching=true</h5>
+                </div>
+                <div class="card-body">
+                    <ng5-slider [(value)]="noSwatchMinValue" [(highValue)]="noSwatchMaxValue"
+                        [options]="noSwatchOption"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Slider limited to 10 through 90</h5>
+                </div>
+                <div class="card-body">
+                    <ng5-slider [(value)]="limitValue" [options]="sliderLimitOptions"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Range slider with the range limited to 10 through 50</h5>
+                </div>
+                <div class="card-body">
+                    <ng5-slider [(value)]="limitedMinValue" [(highValue)]="limitedMaxValue" [options]="limitedOptions">
+                    </ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Range slider with min range of 10, max of 30 and pushRange option</h5>
+                </div>
+                <div class="card-body">
+                    <ng5-slider [(value)]="pushRangeMinValue" [(highValue)]="pushRangemaxValue"
+                        [options]="pushRangeOptions"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Slider with custom step value</h5>
+                </div>
+                <div class="card-body">
+                    <ng5-slider [(value)]="stepValue" [options]="stepSlideroptions"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Slider with custom display function using HTML formatting</h5>
+                </div>
+                <div class="card-body">
+                    <ng5-slider [(value)]="customHtmlMinValue" [(highValue)]="customHtmlMaxValue"
+                        [options]="customHtmlSliderOptions"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Slider with dates</h5>
+                </div>
+                <div class="card-body">
+                    <ng5-slider [(value)]="valueDateRange" [options]="dateRangeOptions"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Disabled slider</h5>
+                </div>
+                <div class="card-body">
+                    <label>Disabled <input type="checkbox" [(ngModel)]="disabled" (change)="onChangeDisabled()"></label>
+                    <ng5-slider [(value)]="disabledMinValue" [(highValue)]="disabledMaxValue"
+                        [options]="disabledSliderOptions"></ng5-slider>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Read-only slider</h5>
+                </div>
+                <div class="card-body">
+                    <label>Read-only <input type="checkbox" [(ngModel)]="readOnly"
+                            (change)="onChangeReadOnly()"></label>
+                    <ng5-slider [(value)]="readOnlyValue" [options]="readOnlySliderOptions"></ng5-slider>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-12 col-xl-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Vertical sliders</h5>
+                </div>
+                <div class="card-body">
+                    <div class="container-fluid">
+                        <div class="row range-sliders" style="height: 300px">
+                            <div class="col-2 xs-slider" style="height: 100%">
+                                <ng5-slider [(value)]="verticalSlider1.value" [options]="verticalSlider1.options">
+                                </ng5-slider>
+                            </div>
+
+                            <div class="col-2 xs-slider" style="height: 100%">
+                                <ng5-slider [(value)]="verticalSlider2.minValue"
+                                    [(highValue)]="verticalSlider2.maxValue" [options]="verticalSlider2.options">
+                                </ng5-slider>
+                            </div>
+
+                            <div class="col-2 xs-slider" style="height: 100%">
+                                <ng5-slider [(value)]="verticalSlider3.value" [options]="verticalSlider3.options">
+                                </ng5-slider>
+                            </div>
+
+                            <div class="col-2 xs-slider" style="height: 100%">
+                                <ng5-slider [(value)]="verticalSlider4.minValue"
+                                    [(highValue)]="verticalSlider4.maxValue" [options]="verticalSlider4.options">
+                                </ng5-slider>
+                            </div>
+
+                            <div class="col-2 xs-slider" style="height: 100%">
+                                <ng5-slider [(value)]="verticalSlider5.value" [options]="verticalSlider5.options">
+                                </ng5-slider>
+                            </div>
+
+                            <div class="col-2 xs-slider" style="height: 100%">
+                                <ng5-slider [(value)]="verticalSlider6.value" [options]="verticalSlider6.options">
+                                </ng5-slider>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

@@ -1,0 +1,609 @@
+/**=====================
+    71. Dashboard University CSS Start
+==========================**/
+.university-datepicker {
+   width: 100%;
+   margin-bottom: 30px;
+  .ngb-dp-day, .ngb-dp-week-number, .ngb-dp-weekday, .ngb-dp-arrow {
+    height: 58px;
+    line-height: 58px;
+    font-style: inherit;
+    [ngbDatepickerDayView] {
+      height: 58px;
+      line-height: 58px;
+    }
+  }
+}
+.university-header{
+  h5{
+    padding-top: 3px;
+  }
+}
+.feather-main{
+  .feather-icon-block {
+    width: 53px;
+    background-color: $primary-color;
+    height: 53px;
+    margin-right: 30px;
+    border-radius: 50%;
+    position: relative;
+    svg{
+      width: 20px;
+      height: 20px;
+      left: 17px;
+      position: absolute;
+      top: 17px;
+      path, line, circle, polygon{
+        color: $white;
+      }
+    }
+  }
+  .media-body{
+    h6{
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 3px;
+    }
+    p{
+      color: $light-text;
+    }
+  }
+}
+.chart-university{
+  .media-body{
+    p{
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 0.9;
+      margin-top: 5px;
+    }
+  }
+}
+.professor-table{
+  .professor-block{
+    font-size: 12px;
+    font-weight: 600;
+    p{
+      font-size: 10px;
+      color: $light-text;
+      font-weight: normal;
+    }
+  }
+  table{
+    tbody{
+      tr{
+        td{
+          padding-left: 0;
+          padding-right: 0;
+          label{
+            .radio_animated{
+              margin-right: 7px;
+              margin-top: 11px;
+            }
+          }
+        }
+        &:first-child{
+          td{
+            padding-top: 0;
+          }
+        }
+        &:last-child{
+          td{
+            padding-bottom: 0;
+            .form-group{
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+.upcoming-event{
+  .upcoming-innner {
+    border-bottom: 1px solid $light-body-bg-color;
+    padding: 20px 0;
+    .left {
+      position: relative;
+      width: 50px;
+      height: 50px;
+      border-radius: 100%;
+      svg{
+        position: absolute;
+        top: 15px;
+        left: 0;
+        width: 20px;
+        height: 20px;
+        right: 0;
+        margin: 0 auto;
+      }
+    }
+    p{
+      font-size: 12px;
+      span{
+        color: $light-text;
+      }
+    }
+    h6{
+      margin: 5px 0 7px 0;
+    }
+    &:first-child{
+      padding-top: 0;
+    }
+    &:last-child{
+      border-bottom: none;
+      padding-bottom: 0;
+    }
+  }
+
+}
+.ranker{
+  h6{
+    color: $primary-color;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+}
+.height-curves{
+  max-height: 432px;
+}
+
+.notifiaction-media{
+  .media{
+    margin-bottom: 30px;
+    .media-body{
+      position: relative;
+      .circle-left{
+        position: absolute;
+        width: 19px;
+        height: 19px;
+        border-radius: 50%;
+        background-color: $primary-color;
+        border: 5px solid #f6f8fe;
+      }
+      h6{
+        padding-left: 30px;
+        font-size: 15px;
+        margin-bottom: 0;
+        span{
+          display: block;
+          padding-top: 2px;
+          color: $light-text;
+        }
+      }
+    }
+  }
+}
+.btn-more{
+  a{
+    font-weight: 600;
+  }
+}
+.header-btn{
+  padding: 2px 12px;
+  margin-top: 8px;
+}
+.header-small{
+  color: $light-text;
+  margin-top: 8px;
+}
+.buttons-right{
+  .right-header{
+    .btn{
+      letter-spacing: 0.5px;
+      padding: 2px 8px;
+      font-size: 13px;
+    }
+    .right-header-dropdown.onhover-show-div{
+      width: auto;
+      padding: 20px;
+      top: 35px;
+      &:after,
+      &:before{
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+      }
+      a{
+        color: $theme-body-font-color;
+        margin-bottom: 5px;
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+    &:first-child{
+      margin-right: 10px;
+      .btn{
+        &::after{
+          color: $white;
+        }
+      }
+    }
+    .btn-outline-light{
+      border-color: $light-gray;
+    }
+  }
+}
+.statistics{
+  text-align: right;
+  p{
+    color: $light-text;
+  }
+  .d-flex{
+    i{
+      display: flex;
+      align-items: center;
+      padding-top: 5px;
+    }
+  }
+}
+.topper-lists{
+  table{
+    tbody{
+      tr{
+        td{
+          padding: 20px 0;
+          border-bottom: 1px solid $light-body-bg-color;
+          padding-left: 3px;
+          .d-inline-block{
+            vertical-align: middle;
+            .checkbox{
+              label{
+                &::before {
+                  width: 15px;
+                  height: 15px;
+                }
+              }
+              input[type="checkbox"]:checked + label::before {
+                font-size: 10px;
+                background-color: $primary-color;
+                color: $white;
+              }
+            }
+            .check-dot{
+              position: relative;
+              width: 10px;
+              height: 10px;
+              background-color: $primary-color;
+              border-radius: 50%;
+              border: 2px solid #fff;
+              top: -13px;
+              right: 28px;
+              box-shadow: -2px 2px 4px rgba(0, 0, 0, 0.11);
+            }
+          }
+          p{
+            font-size: 10px;
+            color: $light-text;
+          }
+        }
+        &:first-child{
+          td{
+            padding-top: 0;
+          }
+        }
+        &:last-child{
+          td{
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.card-gradient{
+  background-image: $gradient-primary;
+  &:hover{
+    background-size: 100% 100%;
+  }
+  .knob-header{
+    h5{
+      color: $white;
+      text-transform: uppercase;
+      font-weight: 600;
+      margin-bottom: 0;
+      position: absolute;
+    }
+    .d-inline-block{
+      color: #fff;
+      font-weight: 600;
+      position: absolute;
+      right: 29px;
+      span{
+        color: rgba(255, 255, 255, 0.5);
+      }
+    }
+  }
+}
+.knob-center{
+  position: absolute;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  top: 0;
+}
+.round-image{
+  position: relative;
+  width: 81%;
+  margin: 0 auto;
+  -webkit-animation:spin 12s linear infinite;
+  -moz-animation:spin 12s linear infinite;
+  animation:spin 12s linear infinite;
+}
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform:rotate(360deg);
+  }
+}
+.admission-chart{
+  canvas{
+    height: 370px !important;
+  }
+}
+// animate chart css
+
+@keyframes width-pulse {
+  0% {
+    stroke-width: 2px;
+  }
+  50% {
+    stroke-width: 4px;
+  }
+  100% {
+    stroke-width: 2px;
+  }
+}
+@keyframes dashoffset-seven {
+  0% {
+    stroke-dashoffset: 7px;
+  }
+  100% {
+    stroke-dashoffset: 0px;
+  }
+}
+@keyframes dasharray-craziness {
+  0% {
+    stroke-dasharray: 7px 2px;
+  }
+  80% {
+    stroke-dasharray: 7px 30px;
+    stroke-width: 5px;
+  }
+  100% {
+    stroke-dasharray: 7px 2px;
+  }
+}
+.curves-2 {
+  .ct-golden-section{
+    svg{
+      .ct-horizontal{
+        stroke: transparent;
+      }
+      .ct-series-a {
+        .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+          stroke: $primary-color;
+        }
+      }
+    }
+  }
+  .animate-curve {
+    height: 388px;
+    .ct-series.ct-series-a {
+      .ct-line {
+        stroke-width: 5px;
+        stroke-linecap: round;
+        stroke-width: 10px;
+        stroke-linecap: round;
+        animation: width-pulse 2s infinite;
+      }
+    }
+    .ct-series.ct-series-b {
+      .ct-line {
+        stroke: #dbdfe9;
+        stroke-width: 2px;
+        stroke-dasharray: 5px 2px;
+        stroke: #dbdfe9;
+        stroke-width: 2px;
+        stroke-dasharray: 5px 2px;
+        animation: dashoffset-seven 200ms infinite linear;
+      }
+    }
+  }
+  .animate-curve2{
+    .ct-series.ct-series-b {
+      .ct-line {
+        stroke: #dbdfe9;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-dasharray: 10px 2px;
+        stroke: #dbdfe9;
+        stroke-width: 2px;
+        stroke-linecap: round;
+        stroke-dasharray: 10px 2px;
+        animation: dasharray-craziness 10s infinite linear;
+      }
+    }
+  }
+}
+// bar-chart
+.board-chart{
+  .ct-label{
+    &.ct-horizontal {
+      text-align: center;
+    }
+  }
+  .ct-bar {
+    stroke-width: 5px;
+  }
+  @media screen and (min-width: 300px) {
+    .ct-bar {
+      stroke-width: 5px;
+    }
+  }
+  @media screen and (min-width: 600px) {
+    .ct-bar {
+      stroke-width: 7px;
+    }
+  }
+}
+.board-chart{
+  svg{
+    .ct-grid {
+      stroke: rgba(0, 0, 0, 0.1);
+      &.ct-horizontal {
+        stroke: transparent;
+      }
+    }
+    .ct-series-b{
+      .ct-point,
+      .ct-line,
+      .ct-bar,
+      .ct-slice-donut {
+        stroke: $primary-color;
+      }
+    }
+    .ct-series-a{
+      .ct-point,
+      .ct-line,
+      .ct-bar,
+      .ct-slice-donut {
+        stroke: rgba($primary-color, 0.13);
+      }
+    }
+  }
+}
+// small bar chart
+.small-bar{
+  position: relative;
+  .flot-chart-container{
+    height: 67px;
+    width: 70px;
+    position: absolute;
+    right: -14px;
+    top: -15px;
+    svg {
+      .ct-series-a {
+        .ct-point, .ct-line, .ct-bar, .ct-slice-donut {
+          stroke: $primary-color;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1366px){
+  .topper-lists{
+    table{
+      min-width: 750px;
+      overflow: auto;
+    }
+  }
+}
+@media only screen and (max-width: 1199px){
+  .round-image {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 991px) {
+  .feather-main {
+    .feather-icon-block {
+      margin-right: 20px;
+    }
+  }
+  .notifiaction-media {
+    .media {
+      margin-bottom: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 575px){
+  .height-curves {
+    height: 215px;
+  }
+  .university-datepicker {
+    margin-bottom: 15px;
+  }
+  .feather-main {
+    .feather-icon-block {
+      margin-right: 15px;
+    }
+  }
+  .notifiaction-media {
+    .media {
+      margin-bottom: 15px;
+    }
+  }
+  .upcoming-event {
+    .upcoming-innner {
+      padding: 15px 0;
+    }
+  }
+  .card-header{
+    .pull-right{
+      float: none;
+      text-align: center;
+      justify-content: center;
+      margin-top: 15px;
+      .pull-right{
+        margin-top: 0;
+      }
+    }
+  }
+  .university-header{
+    h5{
+      padding-top: 0px;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px){
+  .university-datepicker {
+    .ngb-dp-header {
+      padding-top: 15px;
+    }
+    .ngb-dp-day, .ngb-dp-week-number, .ngb-dp-weekday, .ngb-dp-arrow {
+      height: 40px;
+      line-height: 40px;
+      [ngbDatepickerDayView] {
+        height: 40px;
+        line-height: 40px;
+      }
+    }
+  }
+  .university-knob {
+    canvas, div {
+      width: 178px !important;
+      height: 178px !important;
+    }
+  }
+  .datepicker{
+    padding: 0;
+  }
+  .knob-sm{
+    canvas, div {
+      width: 240px !important;
+      height: 240px !important;
+      margin: 0 auto;
+    }
+  }
+}
+/**=====================
+    71. Dashboard University  CSS End
+==========================**/

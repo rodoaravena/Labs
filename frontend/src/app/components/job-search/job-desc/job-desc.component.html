@@ -1,0 +1,76 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 xl-40">
+      <app-job-filter></app-job-filter>
+    </div>
+    <div class="col-xl-9 xl-60">
+      <div class="card">
+        <div class="job-search">
+          <div class="card-body">
+            <div class="media"><img class="img-40 img-fluid m-r-20" [src]='arr.logo' alt="">
+              <div class="media-body">
+                <h6 class="f-w-600"><a  href="javascript:void(0)">{{arr.job_name}}</a><span class="pull-right">
+                    <button class="btn btn-primary" type="button" (click)="applyClick(arr)">Apply for this
+                      job</button></span></h6>
+                <p>{{arr.job_area}}
+                  <span>{{arr.job_city}}</span>
+                  <span><i class="fa fa-star font-warning"></i>
+                    <i class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i>
+                    <i class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i>
+                  </span>
+                </p>
+              </div>
+            </div>
+            <div class="job-description">
+              <h6>Job Description</h6>
+              <p>{{arr.Job_description}}</p>
+            </div>
+            <div class="job-description">
+              <h6>{{arr.Qualifications?.title}}</h6>
+              <ul [innerHTML]="arr.Qualifications?.desc">
+              </ul>
+            </div>
+            <div class="job-description">
+              <h6>{{arr.Agency_experience?.title}}</h6>
+              <ul [innerHTML]="arr.Agency_experience?.desc">
+              </ul>
+            </div>
+            <div class="job-description">
+              <h6>{{arr.Perks?.title}}</h6>
+              <ul [innerHTML]="arr.Perks?.desc">
+              </ul>
+            </div>
+            <div class="job-description">
+              <button class="btn btn-primary mr-1" type="button"><span><i class="fa fa-check"></i></span> Save this
+                job</button>
+              <button class="btn btn-primary" type="button"><span><i class="fa fa-share-alt"></i></span> Share</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="header-faq">
+        <h6 class="mb-0 f-w-600">Similar Jobs</h6>
+      </div>
+      <div class="row">
+        <div class="col-xl-6 xl-100" *ngFor="let job of jobs | slice:0:4">
+          <div class="card">
+            <div class="job-search">
+              <div class="card-body">
+                <div class="media"><img class="img-40 img-fluid m-r-20" [src]='job.logo' alt="">
+                  <div class="media-body">
+                    <h6 class="f-w-600"><a [routerLink]="['/job-search/job-apply', job.Id]">{{job.job_name}}</a><span
+                        *ngIf="job.type =='new'" class="badge badge-primary pull-right">New</span></h6>
+                    <p>{{job.job_area}} <span> {{job.job_city}} </span><span><i class="fa fa-star font-warning"></i><i
+                          class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i><i
+                          class="fa fa-star font-warning"></i><i class="fa fa-star font-warning-o"></i></span></p>
+                  </div>
+                </div>
+                <p>{{job.Job_description}}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

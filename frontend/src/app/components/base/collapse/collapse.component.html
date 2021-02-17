@@ -1,0 +1,27 @@
+<!-- Container-fluid Ends -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Collapse</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <button type="button" class="btn btn-outline-primary" (click)="isCollapsed = !isCollapsed"
+              [attr.aria-expanded]="!isCollapsed" aria-controls="collapseExample">
+              Toggle
+            </button>
+          </p>
+          <div id="collapseExample" [ngbCollapse]="isCollapsed">
+            <div class="card mb-0">
+              <div class="card-body">
+                You can collapse this card by clicking Toggle
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

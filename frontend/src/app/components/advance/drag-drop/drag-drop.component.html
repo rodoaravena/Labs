@@ -1,0 +1,286 @@
+<!-- 1st event -->
+<div class="container-fluid">
+  <div class="row">
+    <!-- default breadcrumb start-->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Basic Drag & Drop</h5>
+          <span>Move stuff between these two containers. Note how the stuff gets inserted near the mouse
+              pointer?
+              Great stuff.
+          </span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop'>
+            <div class='wrapper'>
+              <div class='container' dragula="DRAGULA_FACTS">
+                <div>You can move these elements between these two containers</div>
+                <div>Moving them anywhere else isn't quite possible</div>
+                <div>There's also the possibility of moving elements around in the same container, changing their position
+                </div>
+              </div>
+              <div class='container' dragula="DRAGULA_FACTS">
+                <div>This is the default use case. You only need to specify the containers you want to use</div>
+                <div>More interactive use cases lie ahead</div>
+                <div>Make sure to check out the documentation on
+                  GitHub!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 2nd event -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Drag & Drop Events</h5>
+          <span>There are plenty of events along the lifetime of a drag event. all of them in the
+          docs!</span>
+        </div>
+        <div class="card-body">
+          <div class="parent drag-n-drop">
+            <div class="wrapper">
+              <div class="container" dragula="DRAGULA_EVENTS">
+                <div>As soon as you start dragging an element, a drag event is fired</div>
+                <div>Whenever an element is cloned because copy: true, a cloned event fires</div>
+                <div>The shadow event fires whenever the placeholder showing where an element would be dropped is moved to
+                  a
+                  different container or position</div>
+                <div>A drop event is fired whenever an element is dropped anywhere other than its origin <em>(where it was
+                  initially dragged from)</em></div>
+              </div>
+              <div class="container" dragula="DRAGULA_EVENTS">
+                <div>If the element gets removed from the DOM as a result of dropping outside of any containers, a remove
+                  event
+                  gets fired</div>
+                <div>A cancel event is fired when an element would be dropped onto an invalid target, but retains its
+                  original
+                  placement instead</div>
+                <div>The over event fires when you drag something over a container, and out fires when you drag it away
+                  from the
+                  container</div>
+                <div>Lastly, a dragend event is fired whenever a drag operation ends, regardless of whether it ends in a
+                  cancellation, removal, or drop</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 3d event -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Spill</h5>
+          <span>Need to be able to quickly delete stuff when it spills out of the chosen containers? Note how
+            you can easily sort the items in any containers by just dragging and dropping.</span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop spill-radius'>
+            <div class='wrapper'>
+              <div class='container' dragula="SPILL">
+                <div>Banana Boat</div>
+                <div>Orange Juice</div>
+                <div>Cuban Cigar</div>
+                <div>Terrible Comedian</div>
+                <div>Anxious Cab Driver</div>
+                <div>Thriving Venture</div>
+                <div>Calm Clam</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 4th event -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Revert</h5>
+          <span>By default, dropping an element outside of any known containers
+            will keep the
+            element in the last
+            place it went over. You can make elements go back to origin if they're dropped outside of known containers,
+            too.</span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop'>
+            <div class='wrapper'>
+              <div class='container' dragula="REVERT">
+                <div>Moving items between containers works as usual</div>
+                <div>If you try to drop an item outside of any containers, though, it'll retain its original position
+                </div>
+                <div>When that happens, a cancel event will be raised</div>
+              </div>
+              <div class='container' dragula="REVERT">
+                <div>Note that the dragged element will go back to the place you originally dragged it from, even if you
+                  move it over other containers
+                </div>
+                <div>This is useful if you want to ensure drop events only happen when the user intends for them to happen
+                  explicitly, avoiding surprises
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 5th event -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Copy</h5>
+          <span>Copying stuff is common too, so we made it easy for you.</span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop'>
+            <div class='wrapper'>
+              <div class='container' dragula="COPYABLE" id="left">
+                <div>When elements are copyable, they can't be sorted in their origin container</div>
+                <div>Copying prevents original elements from being dragged. A copy gets created and <em>that</em> gets
+                  dragged instead</div>
+                <div>Whenever that happens, a cloned event is raised</div>
+              </div>
+              <div class='container' dragula="COPYABLE" id="right">
+                <div>Note that the clones get destroyed if they're not dropped into another container</div>
+                <div>You'll be dragging a copy, so when they're dropped into another container you'll see the duplication.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 6th event -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Copy Model</h5>
+          <span>You must provide a <code>copyItem</code> function if you're using <code>copy</code> with <code>[dragulaModel]</code>.</span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop'>
+            <div class='wrapper'>
+              <div class='container' dragula="PERSON" id="left" [(dragulaModel)]="left">
+                <div *ngFor="let person of left">{{person | json}}</div>
+              </div>
+              <div class='container' dragula="PERSON" id="right" [(dragulaModel)]="right">
+                <div *ngFor="let person of right">{{person | json}}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 7th event -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Handle</h5>
+          <span>Drag handles float your cruise?</span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop'>
+            <div class='wrapper'>
+              <div class='container' dragula="HANDLES">
+                <div><span class='handle'>+</span>Move me, but you can use the plus sign to drag me around.</div>
+                <div><span class='handle'>+</span>Note that handle element in the moves handler is
+                  just the original event target.
+                </div>
+              </div>
+              <div class='container' dragula="HANDLES">
+                <div><span class='handle'>+</span>This might also be useful if you want multiple children of an element to
+                  be able to trigger a drag event.
+                </div>
+                <div><span class='handle'>+</span>You can also use the moves option to determine whether an
+                  element can be dragged at all from a container, <em>drag handle or not</em>.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 8th event -->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Click Or Drag</h5>
+          <span><strong>Click or Drag!</strong> Fires a click when the mouse button is released before a <code>mousemove</code>
+            event,
+            otherwise a drag event is fired. No extra configuration is necessary.</span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop spill-radius'>
+            <div class='wrapper'>
+              <div class='container' dragula="CLICKS">
+                <div (click)='onclick("one")'>
+                  {{clicked.one ? "Clicked!" : "Clicking on these elements triggers a regular click event you can listen to."}}
+                </div>
+                <div (click)='onclick("two")'>{{clicked.two ? "Clicked!" : "Try dragging or clicking on this element."}}
+                </div>
+                <div (click)='onclick("three")'>{{clicked.three ? "Clicked!" : "Note how you can click normally?"}}</div>
+                <div (click)='onclick("four")'>{{clicked.four ? "Clicked!" : "Drags don't trigger click events."}}</div>
+                <div (click)='onclick("five")'>{{clicked.five ? "Clicked!" : "Clicks don't end up in a drag, either."}}
+                </div>
+                <div (click)='onclick("six")'>
+                  {{clicked.six ? "Clicked!" : "This is useful if you have elements that can be both clicked or dragged."}}
+                </div>
+                <div (click)='onclick("seven")'>
+                  {{clicked.seven ? "ZOMG, THAT TICKLES! PLEASE. STOP." : "Business as usual."}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 9th event -->
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Angular Ngfor</h5>
+          <span><strong>Angular-specific example.</strong> Fancy some ngFor?</span>
+        </div>
+        <div class="card-body">
+          <div class='parent drag-n-drop'>
+            <div class='wrapper'>
+              <div class='container' [dragula]="MANY_ITEMS" [(dragulaModel)]='many'>
+                <div *ngFor='let text of many' [innerHtml]='text'></div>
+              </div>
+              <div class='container' [dragula]="MANY_ITEMS" [(dragulaModel)]='many2'>
+                <div *ngFor='let text of many2' [innerHtml]='text'></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- 10th event -->
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Nested</h5>
+          <span>
+            <strong>Angular-specific example.</strong>
+            Fancy some nested ngFor?
+          </span>
+        </div>
+        <div class="card-body">
+          <div class="parent drag-n-drop">
+            <div class="wrapper" dragula="COLUMNS" [(dragulaModel)]="groups">
+              <div class="container" *ngFor="let group of groups">
+                <span class="group-handle">{{group.name}}</span>
+                <div class="container" dragula="ITEMS" [(dragulaModel)]="group.items">
+                  <div *ngFor="let item of group.items" [innerHtml]="item.name"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,26 @@
+<div class="dark-body-only">
+  <!-- page-wrapper Start-->
+  <div class="page-wrapper"  [ngClass]="customizer.data.settings.sidebar.type"  id="canvas-bookmark">
+    <app-header></app-header>
+    <!-- Page Body Start-->
+    <div class="page-body-wrapper" [ngClass]="customizer.data.settings.sidebar.body_type">
+      <div class="page-sidebar" id="pages-sidebar" [class.open]="navServices.collapseSidebar" [ngClass]="customizer.data.settings.sidebar_backround"
+      [attr.sidebar-layout]="this.customizer.data.settings.sidebar_setting">
+        <app-sidebar></app-sidebar>
+      </div>
+      <div class="page-body">
+        <app-breadcrumb></app-breadcrumb>
+        <main>
+          <router-outlet></router-outlet>
+        </main>
+      </div>
+      <!-- footer start-->
+      <footer class="footer">
+        <app-footer></app-footer>
+      </footer>
+      <!-- footer End-->
+    </div>
+    <!-- Page Body End-->
+  </div>
+  <!-- page-wrapper End-->
+</div>

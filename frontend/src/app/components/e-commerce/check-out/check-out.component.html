@@ -1,0 +1,184 @@
+<div class="container-fluid">
+  <div class="card checkout">
+    <div class="card-header">
+      <h5>Billing Details</h5>
+    </div>
+    <div class="card-body">
+      <div class="row">
+        <div class="col-lg-6 col-sm-12">
+          <form [formGroup]="checkoutForm" novalidate>
+            <div class="form-row">
+              <div class="form-group col-sm-6">
+                <div class="field-label">First Name</div>
+                <input type="text" name="firstname" formControlName="firstname" class="form-control" placeholder=""
+                  [class.border-danger]="red_border">
+                <div
+                  *ngIf="checkoutForm.controls['firstname'].touched && checkoutForm.controls['firstname'].errors?.required"
+                  class="text text-danger">
+                  First Name is required.
+                </div>
+                <div
+                  *ngIf="checkoutForm.controls['firstname'].touched && checkoutForm.controls['firstname'].errors?.pattern"
+                  class="text text-danger">
+                  First Name must be an alphabates.
+                </div>
+              </div>
+              <div class="form-group col-sm-6">
+                <div class="field-label">Last Name </div>
+                <input type="text" name="lastname" formControlName="lastname" class="form-control" placeholder="">
+                <div
+                  *ngIf="checkoutForm.controls['lastname'].touched && checkoutForm.controls['lastname'].errors?.required"
+                  class="text text-danger">
+                  Last Name is required.
+                </div>
+                <div
+                  *ngIf="checkoutForm.controls['lastname'].touched && checkoutForm.controls['lastname'].errors?.pattern"
+                  class="text text-danger">
+                  Last Name must be an alphabates.
+                </div>
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group col-sm-6">
+                <label for="inputEmail4">Phone</label>
+                <input class="form-control" type="number" formControlName="phone" class="form-control">
+                <div *ngIf="checkoutForm.controls['phone'].touched && checkoutForm.controls['phone'].errors?.required"
+                  class="text text-danger">
+                  Phone No is required.
+                </div>
+                <div *ngIf="checkoutForm.controls['phone'].touched && checkoutForm.controls['phone'].errors?.pattern"
+                  class="text text-danger">
+                  Phone No is must be number.
+                </div>
+              </div>
+              <div class="form-group col-sm-6">
+                <label for="inputPassword4">Email Address</label>
+                <input class="form-control" type="email" formControlName="email" class="form-control">
+                <div *ngIf="checkoutForm.controls['email'].touched && checkoutForm.controls['email'].errors?.required"
+                  class="text text-danger">
+                  Email is required
+                </div>
+                <div *ngIf="checkoutForm.controls['email'].touched && checkoutForm.controls['email'].errors?.email"
+                  class="text text-danger">
+                  Invalid Email
+                </div>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputState">Country</label>
+              <select name="country" formControlName="country" class="form-control">
+                <option value="" selected>Select Country</option>
+                <option value="India">India</option>
+                <option value="USA">USA</option>
+                <option value="Australia">Australia</option>
+              </select>
+              <div *ngIf="checkoutForm.controls['country'].touched && checkoutForm.controls['country'].errors?.required"
+                class="text text-danger">
+                Country is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Address</label>
+              <input class="form-control" type="text" formControlName="address" class="form-control">
+              <div *ngIf="checkoutForm.controls['address'].touched && checkoutForm.controls['address'].errors?.required"
+                class="text text-danger">
+                Address is required
+              </div>
+              <div
+                *ngIf="checkoutForm.controls['address'].touched && checkoutForm.controls['address'].errors?.maxlength"
+                class="text text-danger">
+                Maximum 50 character
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputCity">Town/City</label>
+              <input class="form-control" id="inputCity" type="text" formControlName="town" class="form-control">
+              <div *ngIf="checkoutForm.controls['town'].touched && checkoutForm.controls['town'].errors?.required"
+                class="text text-danger">
+                City is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">State/Country</label>
+              <input class="form-control" id="inputAddress2" type="text" formControlName="state" class="form-control">
+              <div *ngIf="checkoutForm.controls['state'].touched && checkoutForm.controls['state'].errors?.required"
+                class="text text-danger">
+                State is required
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="inputAddress2">Postal Code</label>
+              <input class="form-control" id="inputAddress2" type="number" formControlName="postalcode"
+                class="form-control">
+              <div
+                *ngIf="checkoutForm.controls['postalcode'].touched && checkoutForm.controls['postalcode'].errors?.required"
+                class="text text-danger">
+                Postalcode is required
+              </div>
+            </div>
+            <div class="form-group">
+              <div class="form-check">
+                <input class="form-check-input" id="gridCheck" type="checkbox">
+                <label class="form-check-label" for="gridCheck">Check me out</label>
+              </div>
+            </div>
+          </form>
+        </div>
+        <div class="col-lg-6 col-sm-12">
+          <div class="checkout-details">
+            <div class="order-box">
+              <div class="title-box">
+                <div class="checkbox-title">
+                  <h4>Product </h4><span>Total</span>
+                </div>
+              </div>
+              <ul class="qty" *ngIf='checkOutItems.length'>
+                <li *ngFor="let item of checkOutItems"> {{ item.product.name }} × {{ item.quantity }}
+                  <span> {{ item.product.price * item.quantity | currency:productService?.currency:'symbol' }}</span>
+                </li>
+              </ul>
+              <ul class="qty" *ngIf='!checkOutItems.length'>
+                <li class="empty-checkout"> There are no products in cart </li>
+              </ul>
+              <ul class="sub-total">
+                <li>Subtotal <span
+                    class="count">{{getTotal() | async | currency:productService?.currency:'symbol'}}</span></li>
+              </ul>
+              <ul class="total">
+                <li>Total <span
+                    class="count">{{ getTotal() | async | currency:productService?.currency:'symbol'}}</span></li>
+              </ul>
+              <div class="animate-chk">
+                <div class="row">
+                  <div class="col">
+                    <label class="d-block" for="edo-ani">
+                      <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" checked=""
+                        data-original-title="" title="">Check Payments
+                    </label>
+                    <label class="d-block" for="edo-ani1">
+                      <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" data-original-title=""
+                        title="">Cash On Delivery
+                    </label>
+                    <label class="d-block" for="edo-ani2">
+                      <input class="radio_animated" id="edo-ani2" type="radio" name="rdo-ani" checked=""
+                        data-original-title="" title="">PayPal
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="text-right">
+                <button class="btn btn-primary" type="submit" [disabled]="!checkoutForm.valid"
+                  (click)="onSubmit()">Place Order
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="text-right m-t-20">
+            <button class="btn btn-primary cart-btn-transform" [routerLink]="['/ecommerce/products']">continue
+              shopping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

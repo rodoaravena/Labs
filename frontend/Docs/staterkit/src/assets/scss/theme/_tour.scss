@@ -1,0 +1,69 @@
+/**=====================
+     54. Tour  CSS Start
+==========================**/
+.intro-tour-hint-wrapper {
+  box-shadow: none;
+  background-color: $primary-color;
+  color:$white;
+  .navigate-btn {
+    box-shadow: none;
+    color: $theme-body-font-color !important;
+  }
+}
+.pencil
+{
+  position: absolute;
+  width: auto;
+  left: 0;
+  right: 0;
+  opacity: 0;
+}
+
+#demo3
+{
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+}
+
+#demo4
+{
+  background-color: #fff;
+  background-clip: border-box;
+  border-radius: 0.25rem;
+}
+.tour1{
+  .intro-tour-hint-wrapper.transformX_50
+  {
+    top: 405px !important;
+  }
+}
+.tour2{
+  .intro-tour-hint-wrapper.transformY_50.transformX_100
+  {
+    top: 530px !important;
+    left: 55% !important;
+  }
+}
+.tour3{
+  .intro-tour-hint-wrapper.transformY_50.transformX_100
+  {
+    top: 575px !important;
+    left:25% !important;
+  }
+}
+.tour4{
+  .intro-tour-hint-wrapper.transformX_50.transformY_100        {
+    top: 732px !important;
+    left:25% !important;
+  }
+}
+.tour5{
+  .intro-tour-hint-wrapper.transformX_50.transformY_100     {
+    top: 880px;
+    left: 824px;
+  }
+}
+/**=====================
+    54. Tour  CSS Ends
+==========================**/

@@ -1,0 +1,62 @@
+<div class="page-wrapper">
+	<div class="auth-bg">
+		<div class="authentication-box">
+			<div class="text-center"><img src="assets/images/endless-logo.png" alt=""></div>
+			<div class="card mt-4">
+				<div class="card-body">
+					<div class="text-center">
+						<h4>LOGIN</h4>
+						<h6>Enter your Username and Password </h6>
+					</div>
+					<form class="theme-form" [formGroup]="loginForm" *ngIf="!newUser">
+						<div class="form-group">
+							<label class="col-form-label pt-0">Email</label>
+							<input class="form-control" formControlName="email" type="email" required="">
+							<div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.required"
+								class="text text-danger mt-1">
+								Email is required
+							</div>
+							<div *ngIf="loginForm.controls.email.touched && loginForm.controls.email.errors?.email"
+								class="text text-danger mt-1">
+								Invalid Email
+							</div>
+						</div>
+						<div class="form-group">
+							<label class="col-form-label">Password</label>
+							<input class="form-control" type="password" formControlName="password" required="">
+							<div *ngIf="loginForm.controls.password.touched && loginForm.controls.password.errors?.required"
+								class="text text-danger mt-1">
+								Password is required
+							</div>
+						</div>
+						<div class="checkbox p-0">
+							<input id="checkbox1" type="checkbox">
+							<label for="checkbox1">Remember me</label>
+						</div>
+						<div class="form-group form-row mt-3 mb-0">
+							<button class="btn btn-primary btn-block btn-lg"
+								[class.loader--text]="authService.showLoader"
+								[disabled]="!loginForm.valid || authService.showLoader" (click)="login(loginForm.value)"
+								type="submit"><span>{{ authService.showLoader ? '' : 'Login' }}</span>
+							</button>
+						</div>
+						<div class="login-divider"></div>
+						<div class="social mt-3">
+							<div class="form-group btn-showcase d-flex">
+								<button class="btn social-btn btn-fb d-inline-block" (click)="loginFacebook()">
+									<i class="fa fa-facebook"></i>
+								</button>
+								<button class="btn social-btn btn-twitter d-inline-block" (click)="loginTwitter()">
+									<i class="fa fa-twitter"></i>
+								</button>
+								<button class="btn social-btn btn-google d-inline-block" (click)="loginGoogle()">
+									<i class="fa fa-google"></i>
+								</button>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

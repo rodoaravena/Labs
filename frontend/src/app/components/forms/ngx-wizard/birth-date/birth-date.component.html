@@ -1,0 +1,38 @@
+<form [formGroup]="birthdateForm" (ngSubmit)="onSubmit()" class="ngx-form" novalidate>
+  <div class="form-group">
+    <label>DD</label>
+    <input type="number" formControlName="dd" class="form-control" autocomplete="off">
+    <div
+      *ngIf="birthdateForm.controls['dd'].invalid && (birthdateForm.controls['dd'].dirty || birthdateForm.controls['dd'].touched)"
+      class="alert">
+      <div *ngIf="birthdateForm.controls['dd'].errors.required">
+        Date is required & must be 2 digit.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>MM</label>
+    <input type="number" formControlName="mm" class="form-control" autocomplete="off">
+    <div
+      *ngIf="birthdateForm.controls['mm'].invalid && (birthdateForm.controls['mm'].dirty || birthdateForm.controls['mm'].touched)"
+      class="alert">
+      <div *ngIf="birthdateForm.controls['mm'].errors.required">
+        Month is required & must be 2 digit.</div>
+    </div>
+  </div>
+  <div class="form-group">
+    <label>YYYY</label>
+    <input type="number" formControlName="yyyy" class="form-control" autocomplete="off">
+    <div
+      *ngIf="birthdateForm.controls['yyyy'].invalid && (birthdateForm.controls['yyyy'].dirty || birthdateForm.controls['yyyy'].touched)"
+      class="alert">
+      <div *ngIf="birthdateForm.controls['yyyy'].errors.required">
+        Year is required & must be 4 digit.</div>
+    </div>
+  </div>
+  <div class="f1-buttons">
+    <button class="btn btn-primary btn-previous" type="button" awPreviousStep>Previous</button>
+    <button class="btn btn-primary btn-submit" type="submit" [disabled]="!birthdateForm.valid"
+      (click)="success()">Submit
+    </button>
+  </div>
+</form>

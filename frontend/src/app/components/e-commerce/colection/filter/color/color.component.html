@@ -1,0 +1,7 @@
+<h6 class="f-w-600">Colors</h6>
+<div class="color-selector">
+  <ul>
+    <li [ngClass]="filter.color" [class.active]="activeItem == filter.color"
+      (click)="changeColor(activeItem == filter.color ? {} : filter)" *ngFor="let filter of colorsFilters"></li>
+  </ul>
+</div>

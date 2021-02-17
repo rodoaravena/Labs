@@ -1,0 +1,96 @@
+<div class="container-fluid">
+    <div class="card">
+        <div class="row product-page-main">
+            <div class="col-xl-4">
+                <section>
+                    <ks-carousel [id]="100" [images]="imagesRect" [dotsConfig]="{visible: false}"
+                        [carouselConfig]="{maxHeight: '600px', keyboardEnable: true}"
+                        [previewConfig]="{maxHeight: '125px'}">
+                    </ks-carousel>
+                </section>
+            </div>
+            <div class="col-xl-8">
+                <div class="product-page-details">
+                    <h5>{{product.name}}</h5>
+                    <div class="d-flex">
+                        <ngb-rating [rate]="3" class="rating-size-product"></ngb-rating>
+                        <span>{{product.review}}</span>
+                    </div>
+                </div>
+                <hr>
+                <p>{{product.discription}}</p>
+                <div class="product-price digits">
+                    <del>{{product.discountPrice | currency:productService?.currency:'symbol'}}
+                    </del>{{product.price | currency:productService?.currency:'symbol'}}
+                </div>
+                <hr>
+                <div>
+                    <table class="product-page-width">
+                        <tbody>
+                            <tr>
+                                <td><b>Brand : </b>{{product.tags}}</td>
+                            </tr>
+                            <tr>
+                                <td><b>Availability: </b>{{product.stock}}</td>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <hr>
+                <ul class="product-color m-t-15">
+                    <li class="bg-primary"></li>
+                    <li class="bg-secondary"></li>
+                    <li class="bg-success"></li>
+                    <li class="bg-info"></li>
+                    <li class="bg-warning"></li>
+                </ul>
+                <div class="m-t-15">
+                    <button class="btn btn-primary-gradien m-r-10" type="button"
+                        data-original-title="btn btn-info-gradien" [routerLink]="['/ecommerce/add-cart']"
+                        (click)=addToCart(product) title="">
+                        Add To Cart</button>
+                    <button class="btn btn-success-gradien" type="button" data-original-title="btn btn-info-gradien"
+                        (click)=buyNow(product) title="">Buy Now</button>
+                    <button class="btn btn-primary-gradien m-r-10 m-l-10" type="button"
+                        data-original-title="btn btn-info-gradien" [routerLink]="['/ecommerce/products']" title="">
+                        Back To Product</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="row product-page-main">
+            <div class="col-sm-12">
+                <ul class="nav nav-tabs nav-material mb-0" id="top-tab" role="tablist">
+                    <li class="nav-item"><a class="nav-link" [ngClass]="{'active': type == 'Febric'}" id="top-home-tab"
+                            data-toggle="tab" (click)="getOption(type = 'Febric')" role="tab" aria-controls="top-home"
+                            aria-selected="false">Febric</a>
+                        <div class="material-border"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" [ngClass]="{'active': type == 'Video'}"
+                            id="profile-top-tab" data-toggle="tab" (click)="getOption(type = 'Video')" role="tab"
+                            aria-controls="top-profile" aria-selected="false">Video</a>
+                        <div class="material-border"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" [ngClass]="{'active': type == 'Details'}"
+                            id="contact-top-tab" data-toggle="tab" (click)="getOption(type = 'Details')" role="tab"
+                            aria-controls="top-contact" aria-selected="true">Details</a>
+                        <div class="material-border"></div>
+                    </li>
+                    <li class="nav-item"><a class="nav-link" [ngClass]="{'active': type == 'Brand'}" id="brand-top-tab"
+                            data-toggle="tab" (click)="getOption(type = 'Brand')" role="tab" aria-controls="top-brand"
+                            aria-selected="true">Brand</a>
+                        <div class="material-border"></div>
+                    </li>
+                </ul>
+                <div class="tab-content" id="top-tabContent" *ngFor="let item of contents">
+                    <div class="tab-pane fade active show" id="top-home" role="tabpanel" aria-labelledby="top-home-tab">
+                        <p class="mb-0 m-t-20">{{item.content_1}}</p>
+                        <p class="mb-0 m-t-20">{{item.content_2}}"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

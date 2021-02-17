@@ -1,0 +1,280 @@
+/**=====================
+    70. Dashboard Server CSS Start
+==========================**/
+.ng2-smart-pagination {
+  .page-link-next, .page-link-prev {
+    font-size: 14px !important;
+  }
+}
+.server-datatable {
+  .ng2-smart-action-edit-edit, .ng2-smart-action-edit-save, .ng2-smart-action-delete-delete,  .ng2-smart-action-edit-cancel, .ng2-smart-action-add-add, .ng2-smart-action-add-create, .ng2-smart-action-add-cancel {
+    font-size: 0;
+    &:before {
+      font-family: $font-awesome;
+      font-size: 17px;
+    }
+  }
+  .ng2-smart-action-edit-edit {
+    &:before {
+      content: "\f044";
+      color: $primary-color;
+    }
+  }
+  .ng2-smart-action-delete-delete {
+    &:before {
+      content: "\f1f8";
+      color: $danger-color;
+    }
+  }
+  .ng2-smart-action-edit-save {
+    &:before {
+      content: "\f021";
+      color: $primary-color;
+    }
+  }
+  .ng2-smart-action-edit-cancel {
+    &:before {
+      content: "\f00d";
+      color: $danger-color;
+    }
+  }
+  .ng2-smart-actions-title-add{
+    padding-left: 32px !important;
+    padding-top: 15px !important;
+  }
+  .ng2-smart-action-add-add{
+    &:before {
+      content: "\f067";
+      color: $success-color;
+      font-size: 19px;
+    }
+  }
+
+  .ng2-smart-action-add-create{
+    &:before {
+      content: "\f067";
+      color: $success-color;
+    }
+  }
+  .ng2-smart-action-add-cancel{
+    &:before {
+      content: "\f00d";
+      color: $danger-color;
+    }
+  }
+  .table-responsive {
+   a {
+      color: $primary-color;
+    
+      &:hover {
+        text-decoration: none;
+      }
+    }
+    table {
+      border: 1px solid $light-semi-gray;
+       tr {
+         border-top: 1px solid #ddd;
+         &:nth-child(even) {
+           background-color: #f9f9f9;
+           td, th {
+             &:first-child {
+               background-color: $light;
+             }
+           }
+           &:hover {
+             background-color: $light;
+           }
+         }
+         &:nth-child(odd) {
+           td, th {
+             &:first-child {
+               background-color: $auth-bg-color;
+             }
+           }
+           &:hover {
+             background-color: $light;
+             td, th {
+               &:first-child {
+                 background-color: #eaeaea;
+               }
+             }
+           }
+         }
+         td, th {
+           padding: .75em 1em;
+         }
+         .ng2-smart-actions {
+           ng2-st-tbody-edit-delete, ng2-st-tbody-create-cancel, ng2-st-actions {
+             a {
+               &:first-child {
+                 margin-right: 10px;
+               }
+             }
+           }
+         }
+       }
+    }
+    ng2-smart-table-pager {
+      margin-top: 30px;
+    }
+  }
+}
+.server-chart{
+  overflow: hidden;
+  margin-left: -16px;
+  #latency-chart{
+    margin-bottom: -16px !important;
+    width:415px;
+    height:63px;
+  }
+  &.layout-server {
+    #latency-chart {
+      width: 485px;
+    }
+  }
+}
+.server-header {
+  display: flex;
+  align-items: center;
+  span{
+    &.badge{
+      color: $white;
+    }
+  }
+}
+.server-widgets{
+  .media{
+    .top-server{
+      margin-left: 10px;
+      h6{
+        padding-top: 3px;
+        font-weight: 600;
+      }
+    }
+  }
+  .bottom-server{
+    margin: 30px 0;
+    h5{
+      span{
+        color: $light-text;
+        svg {
+          vertical-align: middle;
+        }
+      }
+      .second-color{
+        color: $theme-body-font-color;
+      }
+    }
+  }
+  .last-server{
+    h6{
+      color: $light-text;
+    }
+  }
+}
+.server-card-bg{
+  background-image: url(../../images/server/hexgon.jpg);
+  background-position: right;
+  background-size: cover;
+  background-color: rgba(255, 255, 255, 0.59);
+  background-blend-mode: overlay;
+  overflow: hidden;
+}
+.server-chart-container{
+  height: 300px;
+}
+.server-canvas{
+  canvas{
+    width: 100% !important;
+    height: 300px !important;
+  }
+}
+.server-activity{
+  .media{
+    align-items: center;
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .media-body{
+      span{
+        color: $light-text;
+      }
+    }
+  }
+}
+// Server Responsive
+@media only screen and (max-width: 1366px){
+  .server-chart{
+    #latency-chart {
+      width: 542px;
+    }
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .server-chart {
+    #latency-chart {
+      height: 62px;
+    }
+  }
+}
+@media only screen and (max-width: 991px){
+  .server-datatable {
+    .table-responsive {
+      ng2-smart-table-pager {
+        margin-top: 20px;
+      }
+    }
+  }
+  .server-chart{
+    #latency-chart {
+      height: 51px;
+    }
+  }
+  .server-widgets{
+    .bottom-server {
+      margin: 20px 0;
+    }
+  }
+  .server-activity{
+    .media {
+      margin-bottom: 20px;
+    }
+  }
+}
+
+@media only screen and (max-width: 575px){
+  .server-datatable {
+    .table-responsive {
+      ng2-smart-table-pager {
+        margin-top: 15px;
+      }
+    }
+  }
+  .server-widgets{
+    .bottom-server {
+      margin: 15px 0;
+    }
+    .media{
+      svg{
+        width: 20px;
+        height: 20px;
+      }
+    }
+  }
+  .server-activity{
+    .media {
+      margin-bottom: 15px;
+    }
+  }
+}
+@media only screen and (max-width: 360px) {
+  .server-header {
+    .badge {
+      display: none !important;
+    }
+  }
+}
+/**=====================
+    70. Dashboard Server  CSS End
+==========================**/

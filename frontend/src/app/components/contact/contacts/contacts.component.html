@@ -1,0 +1,96 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid product-wrapper" [class.sidebaron]="sidebaron">
+    <div class="product-grid">
+        <div class="card">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-xl-6">
+                        <form class="search-form contact-search">
+                            <div class="form-group mb-0">
+                                <input type="text" class="form-control" [(ngModel)]="searchValue"
+                                    [ngModelOptions]="{standalone: true}" placeholder="Search by name..."
+                                    (keyup)="searchByName()">
+                            </div>
+                        </form>
+                    </div>
+                    <div class="col-xl-6">
+                        <div class="contact-filter">
+                            <h5 class="mb-0 mr-2">Filter By Age</h5>
+                            <ng5-slider [(value)]="value" [options]="options"
+                                (userChangeStart)="onUserChangeStart($event)" (userChange)="onUserChange($event)"
+                                (userChangeEnd)="onUserChangeEnd($event)"></ng5-slider>
+                            <button class="btn btn-primary ml-2" [routerLink]="['/contact/new-user']"><i
+                                    >ADD</i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="product-wrapper-grid" [class.list-view]="listView" style="opacity: 1;">
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="card">
+                        <div class="product-box table-responsive contact-table">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <h5 class="mb-0">Profile</h5>
+                                        </th>
+                                        <th>
+                                            <h5 class="mb-0">Name</h5>
+                                        </th>
+                                        <th>
+                                            <h5 class="mb-0">Surname</h5>
+                                        </th>
+                                        <th>
+                                            <h5 class="mb-0">Mobile</h5>
+                                        </th>
+                                        <th colspan="2">
+                                            <h5 class="mb-0">Age</h5>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody *ngFor="let item of items">
+                                    <tr>
+                                        <td><img class="img-60 rounded-circle" src="{{item.payload.doc.data().avatar}}"
+                                                alt="#"></td>
+                                        <td>
+                                            <h6>{{item.payload.doc.data().name}}</h6>
+                                        </td>
+                                        <td>
+                                            <h6>{{item.payload.doc.data().surname}}</h6>
+                                        </td>
+                                        <td>
+                                            <h6>{{item.payload.doc.data().mobile}}</h6>
+                                        </td>
+                                        <td>
+                                            <h6>{{item.payload.doc.data().age}}</h6>
+                                        </td>
+                                        <td><a class="btn btn-primary mr-2"
+                                                [routerLink]="['/contact/edit-user',item.payload.doc.id]">Edit</a>
+                                            <button class="btn btn-secondary" 
+                                                (click)="delete(item.payload.doc.id)">Delete</button></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                          
+                        </div>
+                       
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div *ngIf="!items?.length">
+                <div class="search-not-found text-center">
+                    <div>
+                    <img src="assets/images/search-not-found.png" alt="" class="second-search">
+                    <p>Sorry, We didn't find any results matching this search</p>
+                </div>
+                  </div>
+            </div>
+          </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

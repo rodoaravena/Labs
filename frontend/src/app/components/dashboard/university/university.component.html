@@ -1,0 +1,535 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-6 xl-100">
+      <div class="card" data-intro="This is University Earning Chart">
+        <div class="card-header university-header">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5>University Earning</h5>
+            </div>
+            <div class="col-sm-6">
+              <div class="pull-right d-flex buttons-right">
+                <div class="right-header">
+                  <div class="onhover-dropdown">
+                    <button class="btn btn-primary" type="button">Monthly <span class="pr-0"><i
+                          class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div right-header-dropdown"><a class="d-block"  href="javascript:void(0)">Average</a><a
+                        class="d-block"  href="javascript:void(0)">Maximum</a><a class="d-block"  href="javascript:void(0)">Minimum</a></div>
+                  </div>
+                </div>
+                <div class="right-header">
+                  <div class="onhover-dropdown">
+                    <button class="btn btn-light" type="button">yearly <span class="pr-0"><i
+                          class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div right-header-dropdown"><a class="d-block"  href="javascript:void(0)">Average</a><a
+                        class="d-block"  href="javascript:void(0)">Maximum</a><a class="d-block"  href="javascript:void(0)">Minimum</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body height-curves">
+          <div class="curves-2">
+            <x-chartist class="animate-curve ct-golden-section" [data]="chart1.data" [type]="chart1.type"
+              [options]="chart1.options" [events]="chart1.events">
+            </x-chartist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6 xl-100">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="media feather-main">
+                <div class="feather-icon-block">
+                  <app-feather-icons [icon]="'command'"></app-feather-icons>
+                </div>
+                <div class="media-body align-self-center">
+                  <h6>Total Admission</h6>
+                  <p>5678</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="media feather-main">
+                <div class="feather-icon-block">
+                  <app-feather-icons [icon]="'navigation'"></app-feather-icons>
+                </div>
+                <div class="media-body align-self-center">
+                  <h6>Total University Visit</h6>
+                  <p>8569</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="media chart-university">
+                <div class="media-body">
+                  <h3 class="mb-0">
+                    <app-feather-icons [icon]="'dollar-sign'"></app-feather-icons><span class="counter" [CountTo]="5683"
+                      [from]="0" [duration]="2"></span>
+                  </h3>
+                  <p>Html Course</p>
+                </div>
+                <div class="small-bar">
+                  <x-chartist class="ct-small-left flot-chart-container" [data]="chart4.data" [type]="chart4.type"
+                    [options]="chart4.options" [events]="chart4.events">
+                  </x-chartist>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <div class="media chart-university">
+                <div class="media-body">
+                  <h3 class="mb-0">
+                    <app-feather-icons [icon]="'dollar-sign'"></app-feather-icons><span class="counter" [CountTo]="7243"
+                      [from]="0" [duration]="2"></span>
+                  </h3>
+                  <p>PHP Course</p>
+                </div>
+                <div class="small-bar">
+                  <x-chartist class="ct-small-right flot-chart-container" [data]="chart5.data" [type]="chart5.type"
+                    [options]="chart5.options" [events]="chart5.events">
+                  </x-chartist>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5>Math Professors</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive professor-table">
+                <table class="table table-bordernone">
+                  <tbody>
+                    <tr>
+                      <td><img class="img-radius img-35 align-top m-r-15 rounded-circle"
+                          src="assets/images/university/math-1.jpg" alt="">
+                        <div class="professor-block d-inline-block">luson keter
+                          <p>Math Professors</p>
+                        </div>
+                      </td>
+                      <td>
+                        <label class="pull-right mb-0" for="edo-ani">
+                          <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani">
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><img class="img-radius img-25 align-top m-r-15 rounded-circle"
+                          src="assets/images/university/math-2.jpg" alt="">
+                        <div class="professor-block d-inline-block">Elan hormas
+                          <p>Bio Professors</p>
+                        </div>
+                      </td>
+                      <td>
+                        <label class="pull-right mb-0" for="edo-ani1">
+                          <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" checked="">
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="card">
+            <div class="card-header">
+              <h5>Bio Professors</h5>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive professor-table">
+                <table class="table table-bordernone">
+                  <tbody>
+                    <tr>
+                      <td><img class="img-radius img-25 align-top m-r-15 rounded-circle"
+                          src="assets/images/university/bio-1.jpg" alt="">
+                        <div class="professor-block d-inline-block">Erana siddy
+                          <p>Director</p>
+                        </div>
+                      </td>
+                      <td>
+                        <label class="pull-right mb-0" for="edo-ani2">
+                          <input class="radio_animated" id="edo-ani2" type="radio" name="rdo-ani" checked="">
+                        </label>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td><img class="img-radius img-35 align-top m-r-15 rounded-circle"
+                          src="assets/images/university/bio-2.jpg" alt="">
+                        <div class="professor-block d-inline-block">Tom kerrly
+                          <p>Director</p>
+                        </div>
+                      </td>
+                      <td>
+                        <label class="pull-right mb-0" for="edo-ani3">
+                          <input class="radio_animated" id="edo-ani3" type="radio" name="rdo-ani">
+                        </label>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card height-equal">
+        <div class="card-header">
+          <h5>Upcoming Event</h5>
+        </div>
+        <div class="card-body">
+          <div class="upcoming-event">
+            <div class="upcoming-innner media">
+              <div class="bg-primary left m-r-20">
+                <app-feather-icons [icon]="'help-circle'"></app-feather-icons>
+              </div>
+              <div class="media-body">
+                <p class="mb-0">Demo Content <span class="pull-right">Mar 18</span></p>
+                <h6 class="f-w-600">Quiz Compition</h6>
+                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum
+                </p>
+              </div>
+            </div>
+            <div class="upcoming-innner media">
+              <div class="bg-primary left m-r-20">
+                <app-feather-icons [icon]="'mic'"></app-feather-icons>
+              </div>
+              <div class="media-body">
+                <p class="mb-0">Demo Content <span class="pull-right">Sep 18</span></p>
+                <h6 class="f-w-600">Singing Compition</h6>
+                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum
+                </p>
+              </div>
+            </div>
+            <div class="upcoming-innner media">
+              <div class="bg-primary left m-r-20">
+                <app-feather-icons [icon]="'zap'"></app-feather-icons>
+              </div>
+              <div class="media-body">
+                <p class="mb-0">Demo Content <span class="pull-right">Dec 18</span></p>
+                <h6 class="f-w-600">Diwali Celebration</h6>
+                <p class="mb-0">Lorem Ipsum is simply dummy text of the printing and typesetting industry. lorem ipsum
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card height-equal" data-intro="This is Ranker Ratio">
+        <div class="card-header">
+          <h5>Ranker Ratio</h5>
+        </div>
+        <div class="card-body">
+          <div class="knob-block text-center knob-sm">
+            <div class="knob" id="ranker"></div>
+          </div>
+          <div class="ranker text-center">
+            <h6>Student</h6>
+            <h5 class="mb-0">New Ranker 2018</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-100">
+      <div class="card height-equal">
+        <div class="card-header">
+          <h5>Notification</h5>
+        </div>
+        <div class="card-body">
+          <div class="notifiaction-media">
+            <div class="media">
+              <div class="media-body">
+                <div class="circle-left"></div>
+                <h6>You are confirmation visit..<span class="pull-right f-12">1 Day Ago</span></h6>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-body">
+                <div class="circle-left"></div>
+                <h6>Lorem Ipsum has been the..<span class="pull-right f-12">5 Day Ago</span></h6>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-body">
+                <div class="circle-left"></div>
+                <h6>Standard dummy text ever..<span class="pull-right f-12">7 Day Ago</span></h6>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-body">
+                <div class="circle-left"></div>
+                <h6>When an unknown printer..<span class="pull-right f-12">9 Day Ago</span></h6>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-body">
+                <div class="circle-left"></div>
+                <h6>Took a gallery of type..<span class="pull-right f-12">6 Day Ago</span></h6>
+              </div>
+            </div>
+            <div class="media mb-0">
+              <div class="media-body">
+                <div class="circle-left"></div>
+                <h6>Scrambled it to make a type..<span class="pull-right f-12">2 Day Ago</span></h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-footer btn-more text-center"><a  href="javascript:void(0)">MORE...</a></div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5>Statistics</h5>
+              <button class="btn btn-primary btn-sm header-btn btn-pill">2017</button>
+            </div>
+            <div class="col-sm-6">
+              <div class="pull-right statistics">
+                <h5 class="counter" [CountTo]="85" [from]="0" [duration]="2"></h5>
+                <p class="f-12 mb-0">Statistics 2017</p>
+                <div class="font-primary font-weight-bold d-flex f-11 pull-right"><i
+                    class="fa fa-sort-up mr-2"></i><span class="number"><span class="counter" [CountTo]="100" [from]="0"
+                      [duration]="2"></span>%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <div class="curves-2">
+            <x-chartist class="animate-curve2 ct-golden-section" [data]="chart2.data" [type]="chart2.type"
+              [options]="chart2.options" [events]="chart2.events">
+            </x-chartist>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <div class="row">
+            <div class="col-sm-6">
+              <h5>Last 5 Year Board</h5>
+              <p class="f-12 header-small mb-0">18 september, 2018</p>
+            </div>
+            <div class="col-sm-6">
+              <div class="pull-right statistics">
+                <h5 class="counter" [CountTo]="50" [from]="0" [duration]="2"></h5>
+                <p class="f-12 mb-0">Board 2018</p>
+                <div class="font-primary font-weight-bold d-flex f-11 pull-right"><i
+                    class="fa fa-sort-up mr-2"></i><span class="number"><span class="counter" [CountTo]="78" [from]="0"
+                      [duration]="2"></span>%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="card-body">
+          <x-chartist class="board-chart ct-golden-section" [data]="chart3.data" [type]="chart3.type"
+            [options]="chart3.options" [events]="chart3.events">
+          </x-chartist>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-8 xl-50">
+      <div class="card" data-intro="This is Our Topper List">
+        <div class="card-header">
+          <h5>Our Topper List</h5>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive topper-lists">
+            <table class="table table-bordernone">
+              <tbody>
+                <tr>
+                  <td>
+                    <div class="d-inline-block align-self-center">
+                      <div class="form-group d-inline-block">
+                        <div class="checkbox">
+                          <input id="checkbox1" type="checkbox">
+                          <label for="checkbox1"></label>
+                        </div>
+                      </div><img class="img-radius img-40 align-top m-r-15 rounded-circle"
+                        src="assets/images/user/4.jpg" alt="">
+                      <div class="d-inline-block"><span class="f-w-600">Ossim Keter</span>
+                        <p>1<sup>st</sup> year</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">+48 605 562 215</span>
+                      <p>Phone Number</p>
+                    </div>
+                  </td>
+                  <td><img class="align-top" src="assets/images/university/chart-1.png" alt=""></td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">1</span>
+                      <p>Rank</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">590/600</span>
+                      <p>Total marks</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-inline-block align-self-center">
+                      <div class="form-group d-inline-block">
+                        <div class="checkbox">
+                          <input id="checkbox2" type="checkbox" checked="">
+                          <label for="checkbox2"></label>
+                        </div>
+                      </div><img class="img-radius img-40 align-top m-r-15 rounded-circle"
+                        src="assets/images/university/math-1.jpg" alt="">
+                      <div class="check-dot d-inline-block"></div>
+                      <div class="d-inline-block"><span class="f-w-600">Venter Loren</span>
+                        <p>1<sup>st</sup> year</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">+25 598 559 368</span>
+                      <p>Phone Number</p>
+                    </div>
+                  </td>
+                  <td><img class="align-top" src="assets/images/university/chart-2.png" alt=""></td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">2</span>
+                      <p>Rank</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">570/600</span>
+                      <p>Total marks</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-inline-block align-self-center">
+                      <div class="form-group d-inline-block">
+                        <div class="checkbox">
+                          <input id="checkbox3" type="checkbox">
+                          <label for="checkbox3"></label>
+                        </div>
+                      </div><img class="img-radius img-40 align-top m-r-15 rounded-circle"
+                        src="assets/images/user/2.png" alt="">
+                      <div class="d-inline-block"><span class="f-w-600">Fran Loain</span>
+                        <p>1<sup>st</sup> year</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">+65 659 145 235</span>
+                      <p>Phone Number</p>
+                    </div>
+                  </td>
+                  <td><img class="align-top" src="assets/images/university/chart-3.png" alt=""></td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">3</span>
+                      <p>Rank</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">565/600</span>
+                      <p>Total marks</p>
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td>
+                    <div class="d-inline-block align-self-center">
+                      <div class="form-group d-inline-block">
+                        <div class="checkbox">
+                          <input id="checkbox4" type="checkbox">
+                          <label for="checkbox4"></label>
+                        </div>
+                      </div><img class="img-radius img-40 align-top m-r-15 rounded-circle"
+                        src="assets/images/user/5.jpg" alt="">
+                      <div class="d-inline-block"><span class="f-w-600">Loften Horen</span>
+                        <p>1<sup>st</sup> year</p>
+                      </div>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">+37 595 367 368</span>
+                      <p>Phone Number</p>
+                    </div>
+                  </td>
+                  <td><img class="align-top" src="assets/images/university/chart-4.png" alt=""></td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">4</span>
+                      <p>Rank</p>
+                    </div>
+                  </td>
+                  <td>
+                    <div class="d-inline-block text-center"><span class="f-w-600">540/600</span>
+                      <p>Total marks</p>
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <div class="card card-gradient">
+        <div class="card-body text-center o-hidden">
+          <div class="knob-header">
+            <h5>Total Student</h5>
+            <div class="d-inline-block pull-right f-16">120 / <span>130</span></div>
+          </div>
+          <div class="knob-block text-center knob-center university-knob">
+            <div class="knob" id="student"></div>
+          </div><img class="round-image" src="assets/images/university/round.png" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50">
+      <ngb-datepicker #dp class="custom-datepicker university-datepicker" (navigate)="date = $event.next">
+      </ngb-datepicker>
+    </div>
+    <div class="col-xl-8 xl-50">
+      <div class="card">
+        <div class="card-header">
+          <h5>Admission Ratio</h5>
+        </div>
+        <div class="card-body chart-block admission-chart">
+          <canvas baseChart class="chart flot-chart-placeholder" id="myLineCharts" [legend]="admissionChartLegend"
+            [data]="admissionChartData" [labels]="admissionChartLabels" [options]="admissionChartOptions"
+            [chartType]="admissionChartType" [colors]="admissionChartColors"></canvas>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

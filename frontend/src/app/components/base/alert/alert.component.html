@@ -1,0 +1,86 @@
+<!-- Container-fluid Ends -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Basic Alert</h5>
+        </div>
+        <div class="card-body">
+          <ngb-alert [type]="'success'" [dismissible]="false">
+            This is an success alert
+          </ngb-alert>
+          <ngb-alert [type]="'info'" [dismissible]="false">
+            This is an info alert
+          </ngb-alert>
+          <ngb-alert [type]="'warning'" [dismissible]="false">
+            This is a warning alert
+          </ngb-alert>
+          <ngb-alert [type]="'danger'" [dismissible]="false">
+            This is a danger alert
+          </ngb-alert>
+          <ngb-alert [type]="'primary'" [dismissible]="false">
+            This is a primary alert
+          </ngb-alert>
+          <ngb-alert [type]="'secondary'" [dismissible]="false">
+            This is a secondary alert
+          </ngb-alert>
+          <ngb-alert [type]="'light'" [dismissible]="false">
+            This is a light alert
+          </ngb-alert>
+          <ngb-alert [type]="'dark'" [dismissible]="false">
+            This is a dark alert
+          </ngb-alert>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Closable Alert</h5>
+        </div>
+        <div class="card-body">
+          <p *ngFor="let alert of alerts">
+            <ngb-alert [type]="alert.type" [dismissible]="true" (close)="close(alert)">{{ alert.message }}</ngb-alert>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Self closing alert</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            Static self-closing alert that disappears after 20 seconds (refresh the page if it has already disappeared)
+          </p>
+          <ngb-alert *ngIf="!staticAlertClosed" (close)="staticAlertClosed = true">Check out our awesome new features!
+          </ngb-alert>
+          <hr/>
+          <p>
+            Show a self-closing success message that disappears after 5 seconds.
+          </p>
+          <ngb-alert *ngIf="successMessage" type="success" (close)="successMessage = null">{{ successMessage }}
+          </ngb-alert>
+          <p>
+            <button class="btn btn-primary" (click)="changeSuccessMessage()">Change message</button>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Custom alert</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <ngb-alert type="custom" class="alert-custom" [dismissible]="false"><strong>Whoa!</strong> This is a custom
+              alert.</ngb-alert>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

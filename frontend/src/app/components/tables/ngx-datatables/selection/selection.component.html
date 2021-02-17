@@ -1,0 +1,25 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Selection Table</h5>
+                </div>
+                <div class="card-body custom-datatable">
+                    <ngx-datatable class="bootstrap" [rows]="company" [columnMode]="'force'" [headerHeight]="50"
+                        [footerHeight]="50" [rowHeight]="'auto'" [limit]="5" [selected]="selected"
+                        [selectionType]="'checkbox'" [selectAllRowsOnPage]="false" (select)='onSelect($event)'>
+                        <ngx-datatable-column [width]="30" [sortable]="false" [canAutoResize]="false"
+                            [draggable]="false" [resizeable]="false" [headerCheckboxable]="true" [checkboxable]="true">
+                        </ngx-datatable-column>
+                        <ngx-datatable-column name="Name"></ngx-datatable-column>
+                        <ngx-datatable-column name="Gender"></ngx-datatable-column>
+                        <ngx-datatable-column name="Company"></ngx-datatable-column>
+                    </ngx-datatable>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends -->

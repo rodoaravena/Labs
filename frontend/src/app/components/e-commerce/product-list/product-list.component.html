@@ -1,0 +1,25 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <!-- Individual column searching (text inputs) Starts-->
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Individual column searching (text inputs) </h5><span>Search your product from here..</span>
+        </div>
+        <div class="card-body">
+          <div class="table-responsive product-list-custom server-datatable">
+            <div class="table-responsive">
+              <ngx-datatable class="bootstrap" [rows]="products"
+              [columns]="[{name:'img'},{name:'name'},{name:'desc'}, {name:'amount'}, {name:'stock'}, {name:'start_date'}]" [columnMode]="'force'"
+              [headerHeight]="50" [footerHeight]="50" [rowHeight]="'auto'" [limit]="10">
+             </ngx-datatable>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Individual column searching (text inputs) Ends-->
+  </div>
+</div>
+<!-- Container-fluid Ends-->

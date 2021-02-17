@@ -1,0 +1,46 @@
+<div class="bookmark pull-right">
+	<ul>
+		<li *ngFor="let item of bookmarkItems" [dragula]='"drag-icon"'>
+			<a [routerLink]="item?.path" placement="top" ngbTooltip={{item?.title}}>
+				<app-feather-icons [icon]="item?.icon"></app-feather-icons>
+			</a>
+		</li>
+		<li>
+			<a href="javacript::void(0)" (click)="openBookmarkSearch()">
+				<app-feather-icons [icon]="'star'" class="bookmark-search"></app-feather-icons>
+			</a>
+			<form class="form-inline search-form bookmark-form">
+				<div class="form-group form-control-search" [class.open]="open">
+					<input type="text" [(ngModel)]="text" [ngModelOptions]="{standalone: true}"
+						(keyup)="searchTerm(text)" placeholder="Search..">
+					<div class="Typeahead-menu" [class.is-open]="searchResult" *ngIf="menuItems?.length"
+						id="boomark-search-outer">
+						<div class="ProfileCard u-cf" *ngFor="let item of menuItems | slice:0:8">
+							<div class="ProfileCard-avatar">
+								<app-feather-icons [icon]="item.icon" class="header-search"></app-feather-icons>
+							</div>
+							<div class="ProfileCard-details">
+								<div class="ProfileCard-realName">
+									<a [routerLink]="item?.path" class="realname"
+										(click)="removeFix()">{{item?.title}}</a>
+									<span class="pull-right">
+										<a href="javacript::void(0)" (click)="addToBookmark(item)">
+											<i class="fa fa-star-o f-18 mt-1" [class.starred]="item.bookmark"></i>
+										</a>
+									</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="Typeahead-menu" [class.is-open]="searchResultEmpty">
+						<div class="tt-dataset tt-dataset-0">
+							<div class="EmptyMessage">
+								Opps!! There are no result found.
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+		</li>
+	</ul>
+</div>

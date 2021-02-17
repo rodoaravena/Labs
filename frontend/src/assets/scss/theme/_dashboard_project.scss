@@ -1,0 +1,586 @@
+/**=====================
+    69. Dashboard Project CSS Start
+==========================**/
+#project
+{
+  .nav-tabs {
+    .nav-link
+    {
+      font-size: 16px;
+      color: $theme-body-font-color;
+      padding: 10px 25px;
+      border-bottom: 2px solid $transparent-color;
+      border-top: none;
+      border-left: none;
+      border-right: none;
+      &.active {
+        border-bottom: 2px solid $primary-color;
+        color: $primary-color;
+      }
+    }
+    .nav-item {
+      .show {
+        border-bottom: 2px solid $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+  ul
+  {
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-wrap: nowrap;
+    margin-bottom: 30px;
+  }
+  .custom-ic svg {
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    stroke-width: 3px;
+  }
+  .schedule .media .schedule-dropdown .dropdown-menu {
+    top: -12px !important;
+    left: -95px !important;
+    min-width: auto;}
+}
+
+.project-charts
+{
+  height: 325px;
+}
+
+.project-small {
+  .ct-point, .ct-line, .ct-bar, .ct-slice-donut, .ct-slice-pie, .ct-slice-donut-solid, .ct-area {
+    stroke: none;
+  }
+  .ct-area {
+    fill-opacity: 1;
+  }
+}
+.project-small-chart-1 {
+  svg {
+    .ct-series-a {
+      .ct-area {
+        fill: url(#gradient5) !important;
+      }
+    }
+  }
+}
+.project-small-chart-2 {
+  svg {
+    .ct-series-a {
+      .ct-area {
+        fill: url(#gradient6) !important;
+      }
+    }
+  }
+}
+.project-small-chart-3 {
+  svg {
+    .ct-series-a {
+      .ct-area {
+        fill: url(#gradient7) !important;
+      }
+    }
+  }
+}
+.project-small-chart-4 {
+  svg {
+    .ct-series-a {
+      .ct-area {
+        fill: url(#gradient8) !important;
+      }
+    }
+  }
+}
+.project-small-chart-5 {
+  svg {
+    .ct-series-a {
+      .ct-area {
+        fill: url(#gradient9) !important;
+      }
+    }
+  }
+}
+.project-small-chart-6 {
+  svg {
+    .ct-series-a {
+      .ct-area {
+        fill: url(#gradient10) !important;
+      }
+    }
+  }
+}
+.chart-block {
+  .flot-chart-container {
+    &.budget-chart {
+      height: 412px;
+    }
+  }
+}
+.theme-tab {
+  .tab-content{
+    visibility: hidden;
+    opacity: 0;
+    height: 0;
+    opacity: 0;
+    &.visiable{
+      visibility: visible;
+      opacity: 1;
+      height: auto;
+      opacity: 1;
+    }
+  }
+  .tab-title {
+    margin-bottom: 30px;
+    border-bottom: 1px solid $horizontal-border-color;
+    li {
+      display: inline-block;
+      padding: 10px 25px;
+      border-top-left-radius: 0.25rem;
+      border-top-right-radius: 0.25rem;
+      a {
+        font-size: 16px;
+        color: $dark-color;
+        svg {
+          width: 15px;
+          height: 15px;
+          margin-right: 5px;
+          stroke-width: 3px;
+        }
+      }
+      &.current {
+        background-color: $white;
+        border-bottom: 2px solid $primary-color;
+        a {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+.github-chart {
+  height: 448px;
+}
+.tabs-project{
+  .nav-item{
+    .nav-link{
+      svg{
+        width: 15px;
+        height: 15px;
+        margin-right: 5px;
+        stroke-width: 3px;
+      }
+    }
+  }
+}
+.select2-drpdwn-project{
+  select{
+    padding-top: 0;
+    border-bottom: 1px solid $primary-color !important;
+    border: none;
+    border-radius: 0 !important;
+    height: 24px;
+    padding-bottom: 0;
+  }
+}
+
+.project-widgets{
+  margin-top: 30px;
+  h1{
+    line-height: 0.8;
+    font-size: 70px;
+  }
+}
+.project-footer{
+  h6{
+    color: $light-text;
+  }
+}
+.project-charts{
+  canvas{
+    height: 265px;
+  }
+}
+.schedule{
+  .media{
+    align-items: center;
+    margin-bottom: 30px;
+    &:last-child{
+      margin-bottom: 0;
+    }
+    .media-body{
+      h6{
+        margin-bottom: 3px;
+        font-weight: 600;
+      }
+      p{
+        color: $light-text;
+      }
+    }
+    .schedule-dropdown {
+      .dropdown-toggle{
+        padding: 0;
+        &:after{
+          display: none;
+        }
+      }
+      .dropdown-menu{
+        top: -10px !important;
+        left: -34px !important;
+        min-width: auto;
+        a{
+          font-size: 14px;
+        }
+      }
+    }
+    svg{
+      circle{
+        color: $light-text;
+      }
+    }
+  }
+}
+.more-projects{
+  div[class^="col-"]{
+    &:last-child,
+    &:nth-child(5){
+      .projects-main{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.projects-main{
+  margin-bottom: 30px;
+  .project-content{
+    margin-bottom: 10px;
+  }
+  h6{
+    color: $light-text;
+  }
+  .project-small{
+    height: 85px;
+  }
+}
+.current-progress{
+  table{
+    tbody{
+      tr{
+        td{
+          vertical-align: middle;
+          padding-bottom: 20px;
+          &:last-child{
+            width: 460px;
+          }
+          .d-inline-block{
+            > .d-inline-block{
+              padding-top: 5px;
+              h6{
+                margin-bottom: 2px;
+                font-weight: 600;
+              }
+            }
+            span{
+              &:first-child{
+                border-right: 2px solid $light-text;
+                padding-right: 20px;
+              }
+            }
+            .ml-current{
+              padding-left: 20px;
+              color: $light-text;
+              i{
+                margin-right: 20px;
+              }
+            }
+          }
+        }
+        &:first-child{
+          td{
+            padding-top: 0;
+          }
+        }
+        &:last-child{
+          td{
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.spent{
+  h6{
+    color: $light-text;
+    margin-bottom: 0;
+  }
+  .spent-graph{
+    h1{
+      span{
+        svg{
+          width: 30px;
+          height: 30px;
+        }
+      }
+    }
+    .projects-main {
+      margin-top: -14px;
+    }
+    .project-budget {
+      margin-right: 30px;
+    }
+  }
+}
+
+.project-header{
+  h5{
+    padding-top: 3px;
+  }
+}
+.team-members{
+  table{
+    tbody{
+      tr{
+        td{
+          padding-top: 15px;
+          padding-bottom: 15px;
+          div {
+            div{
+              p {
+                margin-top: 14px;
+              }
+            }
+          }
+        }
+      }
+    }
+    thead {
+      tr {
+        th {
+          padding-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1660px) {
+  .current-progress {
+    table {
+      tbody {
+        tr{
+          &:first-child {
+            td {
+              min-width: 260px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 1440px) and (min-width: 1366px) {
+  .spent {
+    .spent-graph {
+      .projects-main {
+        svg {
+          width: 360px !important;
+          .ct-bar {
+            stroke-width: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1366px){
+  .project-widgets{
+    h1 {
+      font-size: 45px;
+    }
+  }
+  .current-progress{
+    table {
+      tbody {
+        tr{
+          &:first-child {
+            td {
+              min-width: 323px;
+            }
+          }
+          td{
+            &:last-child {
+              width: 115px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .github-lg {
+    margin-top: 30px;
+  }
+  .team-members {
+    table {
+      tbody {
+        tr {
+          td {
+            min-width: 200px;
+          }
+        }
+      }
+    }
+  }
+  .projects-main {
+    .xm-mb-peity {
+      svg {
+        width: 435px !important;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .spent {
+    .spent-graph {
+      .project-budget {
+        margin-right: 20px;
+      }
+    }
+  }
+  .projects-main {
+    margin-bottom: 20px ;
+  }
+  .project-widgets {
+    margin-top: 20px;
+  }
+  .github-lg {
+    margin-top: 20px;
+  }
+  .schedule {
+    .media {
+      margin-bottom: 20px;
+    }
+  }
+  .team-members{
+    table{
+      tbody{
+        tr{
+          td{
+            padding-top: 10px;
+            padding-bottom: 10px;
+          }
+        }
+      }
+      thead {
+        tr {
+          th {
+            padding-bottom: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 767px) {
+  .spent {
+    .spent-graph {
+      .projects-main {
+        svg {
+          width: 350px !important;
+          .ct-bar {
+            stroke-width: 6px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 575px) {
+  #project {
+    ul {
+      display: inherit;
+    }
+    .nav-tabs {
+      .nav-item {
+        &:last-child {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  .more-projects {
+    div[class^="col-"]{
+      &:nth-child(5) {
+        .projects-main {
+         margin-bottom: 15px;
+        }
+      }
+    }
+  }
+  .theme-tab {
+    .tab-title {
+      li {
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+  .spent {
+    .spent-graph {
+      .project-budget {
+        margin-right: 0;
+        margin-bottom: 15px;
+      }
+      .projects-main {
+        .xm-mb-peity {
+          margin-bottom: -6px;
+        }
+      }
+      .d-flex {
+        display: inherit !important;
+      }
+    }
+  }
+  .projects-main {
+    margin-bottom: 15px ;
+    .project-content {
+      margin-bottom: 0;
+    }
+  }
+  .project-widgets {
+    margin-top: 15px;
+  }
+  .github-lg {
+    margin-top: 15px;
+  }
+  .schedule {
+    .media {
+      margin-bottom: 15px;
+    }
+  }
+  .project-header {
+    .select2-drpdwn-project {
+      width: 50%;
+      margin: 15px auto 0 auto;
+    }
+  }
+}
+@media only screen and (max-width: 360px) {
+  .spent {
+    .spent-graph {
+      .projects-main {
+        svg {
+          width: 260px !important;
+        }
+      }
+    }
+  }
+}
+
+/**=====================
+     69. Dashboard Project CSS End
+==========================**/

@@ -1,0 +1,866 @@
+/**=====================
+    67. Dashboard bitcoin css starts
+==========================**/
+.bit-coin-tab
+{
+  .nav
+  {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-top: 1px solid $primary-color;
+    border-bottom: none;
+    margin-bottom: 0;
+  }
+  .nav-tabs {
+    .nav-link{
+      border: none;
+      &.active {
+        background-color: $primary-color;
+        color: #fff;
+        border-bottom-left-radius: 4px;
+        border-bottom-right-radius: 4px;
+      }
+      &:hover {
+        border: none;
+      }
+    }
+    .nav-item{
+      &.show {
+        .nav-link {
+          background-color: $primary-color;
+          color: #fff;
+          border-bottom-left-radius: 4px;
+          border-bottom-right-radius: 4px;
+        }
+      }
+    }
+  }
+  .tab-content
+  {
+    height: 538px;
+    width: 100%;
+  }
+}
+.bitcoin-graph{
+  img {
+    height: 50px;
+    fill: $primary-color;
+    vertical-align: middle;
+  }
+  .top-bitcoin{
+    margin-left: 10px;
+    padding-top: 5px;
+    h5{
+      margin-bottom: 4px;
+      font-weight: 600;
+    }
+    span{
+      color: $light-text;
+    }
+  }
+  .media-body{
+    padding-top: 5px;
+    .bitcoin-content{
+      .bitcoin-numbers{
+        margin-right: 20px;
+        h6{
+          color: $light-text;
+          span{
+            svg{
+              width: 16px;
+              height: 16px;
+              stroke-width: 5px;
+              vertical-align: middle;
+            }
+          }
+        }
+        &:last-child{
+          margin-right: 0;
+        }
+      }
+    }
+  }
+}
+.dashboard-chart-container{
+  .bitcoinchart-1,
+  .bitcoinchart-2,
+  .bitcoinchart-3 {
+    margin-bottom: -6px;
+    svg{
+      border-bottom-left-radius: 8px;
+      border-bottom-right-radius: 8px;
+      .ct-series-a {
+        .ct-slice-pie,
+        .ct-slice-donut-solid,
+        .ct-area {
+          fill: $primary-color;
+          fill-opacity: 1;
+        }
+      }
+    }
+  }
+}
+.show-value-top{
+  .d-inline-block{
+    .circle-graph{
+      width: 10px;
+      height: 10px;
+      border-radius: 100%;
+      border: 1px solid $light-text;
+    }
+  }
+  .value-third{
+    margin-left: 30px;
+  }
+}
+.chart-bottom{
+  margin-top: 30px;
+  h5{
+    margin-bottom: 3px;
+  }
+  h6{
+    color: $light-text;
+  }
+}
+.market-table{
+  table{
+    thead{
+      tr{
+        th{
+          border-top: none;
+          padding-top: 0;
+          padding-bottom: 30px;
+          + th{
+            text-align: center;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          padding: 30px 0;
+          p{
+            color: $light-text;
+          }
+          .text-center {
+            display: flex;
+            justify-content: center;
+          }
+          svg{
+            width: 18px;
+            height: 18px;
+            stroke-width: 4px;
+          }
+          + td{
+            text-align: center;
+          }
+          + td{
+            p{
+              margin-bottom: 2px;
+            }
+          }
+        }
+        &:last-child{
+          td{
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.market-tabs{
+  .nav{
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    .nav-item{
+      width: 100%;
+      .nav-link{
+        height: 81px;
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        padding-top: 30px;
+        text-align: center;
+      }
+    }
+  }
+}
+#linecharts-bitcoin{
+  height: 408px !important;
+}
+.icons-section{
+  h6{
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+  h5{
+    margin-bottom: 0;
+    font-weight: 600;
+    span{
+      svg{
+        width: 18px;
+        height: 18px;
+        stroke-width: 4px;
+      }
+    }
+  }
+}
+.chat-box{
+  .bitcoin-chat{
+    .chat {
+      .chat-msg-box{
+        margin-bottom: 30px;
+        height: auto;
+        padding: 20px 0 0 0;
+        ul{
+          li{
+            &:nth-child(3){
+              margin-top: 21px;
+            }
+          }
+        }
+        .message {
+          width: 79%;
+          padding: 10px;
+          &.my-message{
+            background-color: rgba($primary-color, 0.15);
+            .chat-user-img{
+              border: 2px solid rgba($primary-color, 0.15);
+            }
+          }
+          &.other-message{
+            background-color: $light-gray;
+            margin-bottom: 30px;
+            margin-top: 22px;
+            .chat-user-img{
+              border: 2px solid #dad9d9;
+            }
+          }
+        }
+        .chat-user-img {
+          margin-top: -31px;
+          width: 45px;
+        }
+      }
+      .bitcoin-message{
+        .smiley-box {
+          padding: 10px;
+          border-top-left-radius: 0.25rem;
+          border-bottom-left-radius: 0.25rem;
+        }
+        .text-box{
+          input{
+            border-radius: 0;
+            height: 49px;
+            &:focus {
+              border-color: $primary-color;
+              box-shadow: none;
+            }
+            border-left: 0px;
+          }
+        }
+      }
+    }
+  }
+}
+.bitcoin-accordion{
+  button[aria-expanded="true"]:before {
+    content: "\f068" !important;
+    font-family: FontAwesome !important;
+    right: 31px !important;
+    font-weight: 100;
+    top: 31px;
+    color: $white;
+  }
+  button[aria-expanded="false"]:before {
+    content: "\f067" !important;
+    font-family: FontAwesome !important;
+    right: 31px !important;
+    font-weight: 100;
+    top: 31px;
+    color: $white;
+  }
+  .card {
+    .collapse {
+      .card-body {
+        padding: 0;
+      }
+    }
+    .card-header {
+      padding: 0;
+      .btn {
+        padding: 0;
+        .card-header {
+          h5 {
+            padding: 30px;
+          }
+        }
+      }
+      h5{
+        margin-top: 0;
+        button{
+          padding: 0;
+          line-height: 1.4;
+        }
+      }
+    }
+    .media-accordion{
+      .media{
+        padding: 30px;
+        h6{
+          font-weight: 600;
+        }
+        p{
+          margin-bottom: 2px;
+          color: $light-text;
+          + p{
+            margin-bottom: 0;
+          }
+        }
+        .media-body{
+          p{
+            color: $theme-body-font-color;
+            &:first-child{
+              font-weight: 600;
+              margin-bottom: 5px;
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+            + p{
+              margin-bottom: 1px;
+            }
+          }
+        }
+        + .media{
+          border-top: 1px solid $light-gray;
+        }
+        &:nth-child(2){
+          background-color: $light;
+        }
+      }
+    }
+  }
+}
+.market-chart{
+  height: 287px;
+}
+.invest-dropdown{
+  .btn{
+    position: relative;
+    background-color: transparent;
+    padding:0;
+    color: $light-text;
+  }
+  .right-header-dropdown.onhover-show-div{
+    padding: 20px;
+    width: 100px;
+    top: 30px;
+    left: -22px;
+    &:before,
+    &:after{
+      left: unset;
+      right: 25px;
+    }
+    a{
+      color: $theme-body-font-color;
+    }
+  }
+}
+.bitcoin-header{
+  padding-top: 1px;
+}
+.bottom-morris-chart{
+  margin-top: 35px;
+}
+.bitcoin-form{
+  .input-group{
+    .input-group-prepend{
+      .input-group-text{
+        background-color: transparent;
+      }
+    }
+  }
+  label{
+    color: $light-text;
+  }
+  .bitcoin-form-dropdown{
+    .onhover-dropdown{
+      .btn{
+        padding: 8px 0;
+        background-color: $light;
+        color: $light-text;
+        width: 100%;
+      }
+      .onhover-show-div{
+        padding: 20px;
+        width: 100px;
+        top: 50px;
+        a{
+          color: $light-text;
+        }
+      }
+    }
+  }
+  .btn-bottom{
+    .btn{
+      width: 100%;
+    }
+  }
+}
+.right-header-color p{
+  color: $light-text;
+}
+.active-order-table{
+  table{
+    th, td{
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+    thead{
+      tr{
+        th{
+          padding-top: 0;
+          border-top: none;
+          &:nth-child(2){
+            padding-left: 37px;
+          }
+        }
+      }
+    }
+    tbody{
+      tr{
+        td{
+          vertical-align: middle;
+          border-bottom: 1px solid $light-gray;
+          p{
+            margin-bottom: 3px;
+            color: $light-text;
+          }
+          .btn{
+            font-size: 13px;
+          }
+        }
+        &:last-child{
+          td{
+            border-bottom: none;
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.markets{
+  margin-bottom: 30px;
+  align-items: center;
+  .media-body{
+    margin-left: 20px;
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1440px) {
+  .media{
+    &.bitcoin-graph{
+      display: block;
+      .media-body{
+        padding-top: 30px;
+        .text-right{
+          text-align: center !important;
+        }
+        .bitcoin-content{
+          .bitcoin-numbers{
+            h6{
+              font-size: 14px;
+            }
+          }
+        }
+      }
+      .top-bitcoin{
+        display: inline-block;
+        vertical-align: middle;
+      }
+    }
+  }
+  .markets  {
+    p {
+      height: 59px;
+      overflow: auto;
+    }
+  }
+  .active-order-table {
+    table {
+      tbody {
+        tr {
+          td {
+            &:first-child {
+              min-width: 110px;
+            }
+            &:nth-child(3) {
+              min-width: 200px;
+            }
+            &:nth-child(5) {
+              min-width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (min-device-width: 1200px) and (max-device-width: 1366px) {
+  .bitcoin-graph {
+    .media-body {
+      .bitcoin-content {
+        .bitcoin-numbers {
+          margin-right: 16px;
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1366px){
+  .chat-box{
+    .chat-right-aside {
+      &.bitcoin-chat{
+        flex: 0 0 100%;
+        max-width: 100%;
+        .chat{
+          .chat-msg-box {
+            height: 100%;
+            .chat-user-img {
+              margin-top: -37px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .active-order-table{
+    max-width: 443px;
+    overflow: auto;
+    .customers{
+      width: 175px;
+      ul{
+        li{
+          p{
+            width: auto;
+          }
+        }
+      }
+    }
+    table {
+      tbody {
+        tr{
+          td {
+            p {
+              width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1199px){
+  .chat-box{
+    .chat-right-aside {
+      &.bitcoin-chat{
+        .chat {
+          .chat-msg-box{
+            .message {
+              width: 90%;
+            }
+          }
+        }
+      }
+    }
+  }
+  .active-order-table{
+    max-width: 100%;
+    overflow: auto;
+  }
+}
+@media only screen and (max-width: 991px){
+  .bit-coin-tab {
+    .tab-content {
+      height: 440px;
+    }
+  }
+  .chart-bottom {
+    margin-top: 20px;
+  }
+  .market-table {
+    table{
+      thead {
+        tr{
+          th {
+            padding-bottom: 20px;
+          }
+        }
+      }
+      tbody{
+        tr {
+          td {
+            padding: 20px 0;
+          }
+        }
+      }
+    }
+  }
+  .market-tabs {
+    .nav {
+      .nav-item{
+        .nav-link {
+          height: 60px;
+          padding-top: 20px;
+        }
+      }
+    }
+  }
+  .bitcoin-accordion{
+    button[aria-expanded="true"]:before {
+      right: 20px !important;
+      top: 20px;
+    }
+    button[aria-expanded="false"]:before {
+      right: 20px !important;
+      top: 20px;
+    }
+    .card {
+      .collapse {
+        .card-body {
+          padding: 0 !important;
+        }
+      }
+      .card-header {
+        padding: 0 !important;
+        .btn {
+          padding: 0;
+          .card-header {
+            h5 {
+              padding: 20px;
+            }
+          }
+        }
+        h5{
+          margin-top: 0;
+          button{
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  .chat-box{
+    .chat-right-aside {
+      &.bitcoin-chat{
+        .chat{
+          .chat-msg-box{
+            margin-bottom: 20px;
+            .message {
+              margin-bottom: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bitcoin-accordion{
+    .card {
+      .media-accordion {
+        .media {
+          padding: 20px;
+        }
+      }
+    }
+    button[aria-expanded="false"]:before,
+    button[aria-expanded="true"]:before{
+      right: 20px !important;
+    }
+  }
+  .bottom-morris-chart {
+    margin-top: 25px;
+  }
+  .active-order-table{
+    table{
+      th, td {
+        padding-top: 20px;
+        padding-bottom: 20px;
+      }
+    }
+  }
+  .icons-section{
+    h5{
+      span{
+        svg {
+          width: 14px;
+          height: 14px;
+        }
+      }
+    }
+  }
+  .markets {
+    margin-bottom: 20px;
+  }
+  .show-value-top{
+    .value-third {
+      margin-left: 20px;
+    }
+  }
+}
+@media only screen and (max-width: 575px){
+  .bit-coin-tab {
+    .tab-content {
+      height: 585px;
+    }
+  }
+  .chart-bottom {
+    margin-top: 15px;
+  }
+  .bitcoin-graph{
+    .media-body{
+      .bitcoin-content{
+        .bitcoin-numbers {
+          margin-right: 15px;
+        }
+      }
+    }
+  }
+  .market-table{
+    table{
+      thead {
+        tr {
+          th {
+            padding-bottom: 15px;
+          }
+        }
+      }
+      tbody {
+        tr{
+          td {
+            padding: 15px 0;
+          }
+        }
+      }
+    }
+  }
+  .market-tabs{
+    .nav {
+      .nav-item{
+        .nav-link {
+          height: 50px;
+          padding-top: 15px;
+        }
+      }
+    }
+  }
+  .icons-section {
+    h6 {
+      margin-top: 15px;
+    }
+  }
+  .chat-box{
+    .chat-right-aside{
+      &.bitcoin-chat{
+        .chat {
+          .chat-msg-box {
+            margin-bottom: 15px;
+            .message {
+              margin-bottom: 15px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bitcoin-accordion{
+    button[aria-expanded="true"]:before {
+      right: 15px !important;
+      top: 15px;
+    }
+    button[aria-expanded="false"]:before {
+      right: 15px !important;
+      top: 15px;
+    }
+    .card {
+      margin-bottom: 0 !important;
+      .collapse {
+        .card-body {
+          padding: 0 !important;
+        }
+      }
+      .card-header {
+        padding: 0 !important;
+        .btn {
+          padding: 0;
+          .card-header {
+            h5 {
+              padding: 15px;
+            }
+          }
+        }
+        h5{
+          margin-top: 0;
+          button{
+            padding: 0;
+          }
+        }
+      }
+    }
+  }
+  .active-order-table{
+    table{
+      th, td {
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+  .markets {
+    margin-bottom: 15px;
+    .media-body {
+      margin-left: 15px;
+    }
+  }
+  .show-value-top{
+    .value-third {
+      margin-left: 15px;
+    }
+  }
+  .text-right{
+    &.right-header-color{
+      text-align: center !important;
+    }
+  }
+}
+
+@media only screen and (max-width: 360px){
+  .media{
+   &.bitcoin-graph{
+     display: block;
+     .top-bitcoin {
+       display: inline-block;
+       vertical-align: middle;
+     }
+     .media-body{
+       padding-top: 15px;
+       .bitcoin-content {
+         &.text-right{
+           text-align: center !important;
+         }
+       }
+     }
+   }
+  }
+  .markets {
+    align-items: end;
+  }
+}
+
+/**=====================
+     67. Dashboard bitcoin  CSS Ends
+==========================**/

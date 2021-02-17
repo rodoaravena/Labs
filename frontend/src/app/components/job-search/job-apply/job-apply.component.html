@@ -1,0 +1,267 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-3 xl-40">
+      <app-job-filter></app-job-filter>
+    </div>
+    <div class="col-xl-9 xl-60">
+      <div class="card">
+        <div class="job-search">
+          <div class="card-body pb-0">
+            <div class="media"><img class="img-40 img-fluid m-r-20" [src]='arr.logo' alt="">
+              <div class="media-body">
+                <h6 class="f-w-600"><a  href="javascript:void(0)">{{arr.job_name}}</a><span class="pull-right">
+                    <button class="btn btn-primary" type="button"><span><i class="fa fa-check text-white"></i></span>
+                      Save this job</button></span></h6>
+                <p>{{arr.job_area}} <span>{{arr.job_city}} </span><span><i class="fa fa-star font-warning"></i><i
+                      class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i><i
+                      class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i></span></p>
+              </div>
+            </div>
+            <div class="job-description">
+              <h6 class="mb-0">Personal Details</h6>
+              <form class="form theme-form" [formGroup]="jobForm">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput1">Full Name:<span class="font-danger">*</span></label>
+                      <input class="form-control" name="name" [formControl]="jobForm.controls['name']"
+                        autocomplete="off" id="name" type="text" placeholder="Enter first name" required="required">
+                      <div *ngIf="jobForm.controls.name.touched && jobForm.controls.name.errors?.required"
+                        class="text text-danger">Your full name is required</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput3">Email:<span class="font-danger">*</span></label>
+                      <input class="form-control" name="email" [formControl]="jobForm.controls['email']"
+                        autocomplete="off" id="email" type="email" placeholder="Enter email" required="required">
+                      <div *ngIf="jobForm.controls.email.touched && jobForm.controls.email.errors?.email"
+                        class="text text-danger">Invalid Email</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="exampleFormControlpassword">Password:<span class="font-danger">*</span></label>
+                      <input class="form-control" name="password" [formControl]="jobForm.controls['password']"
+                        autocomplete="off" id="password" type="password" placeholder="Enter password"
+                        required="required">
+                      <div *ngIf="jobForm.controls.password.touched && jobForm.controls.password.errors?.required"
+                        class="text text-danger">Invalid Password</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="exampleFormControlpassword1">Repeat Password:<span
+                          class="font-danger">*</span></label>
+                      <input class="form-control" id="rpassword" name="rpassword"
+                        [formControl]="jobForm.controls['rpassword']" autocomplete="off" type="password"
+                        placeholder="Repeat password" required="required">
+                      <div *ngIf="jobForm.controls.rpassword.touched && jobForm.controls.rpassword.errors?.required"
+                        class="text text-danger">Invalid Repeat Password</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="col-form-label pt-0">Birth Date</div>
+                    <div class="form-group">
+                      <div class="input-group custom-datepicker job-input-datepicker">
+                        <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model1"
+                          [ngModelOptions]="{standalone: true}" ngbDatepicker #d="ngbDatepicker">
+                        <div class="input-group-append">
+                          <button class="btn btn-primary" (click)="d.toggle()" type="button"><i
+                              class="fa fa-calendar"></i></button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput4">Phone Number:</label>
+                      <input class="form-control" id="phone" name="phone" [formControl]="jobForm.controls['phone']"
+                        autocomplete="off" type="email" placeholder="Enter Phone no." required="required">
+                      <div *ngIf="jobForm.controls.phone.touched && jobForm.controls.phone.errors?.required"
+                        class="text text-danger">Phone is required</div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <h6 class="mb-0">Your Education</h6>
+              <form class="form theme-form">
+                <div class="row">
+                  <div class="col-xl-6 xl-100">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput5">College Name:<span class="font-danger">*</span></label>
+                      <input class="form-control" id="collegename" name="collegename"
+                        [formControl]="jobForm.controls['collegename']" autocomplete="off" type="email"
+                        placeholder="Enter college name" required="required">
+                      <div *ngIf="jobForm.controls.collegename.touched && jobForm.controls.collegename.errors?.required"
+                        class="text text-danger">collegename is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 xl-100 xl-mt-job">
+                    <label class="col-form-label text-right pt-0">Period:<span class="font-danger">*</span></label>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <div class="input-group custom-datepicker job-input-datepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model2"
+                              [ngModelOptions]="{standalone: true}" ngbDatepicker #sd="ngbDatepicker">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" (click)="sd.toggle()" type="button"><i
+                                  class="fa fa-calendar"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <div class="input-group custom-datepicker job-input-datepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model3"
+                              [ngModelOptions]="{standalone: true}" ngbDatepicker #ed="ngbDatepicker">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" (click)="ed.toggle()" type="button"><i
+                                  class="fa fa-calendar"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="col-form-label pt-0">Degree Level:<span class="font-danger">*</span></div>
+                    <select class="js-example-basic-single col-sm-12 job-select2 form-group">
+                      <optgroup label="Choose a Option">
+                        <option value="student">Student</option>
+                        <option value="Bachelor">Bachelor</option>
+                        <option value="Master">Master</option>
+                        <option value="Associate">Associate</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="col-lg-6">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput6">Specialization:<span class="font-danger">*</span></label>
+                      <input class="form-control" id="specialization" name="specialization"
+                        [formControl]="jobForm.controls['specialization']" autocomplete="off" type="email"
+                        placeholder="Enter specialization">
+                      <div
+                        *ngIf="jobForm.controls.specialization.touched && jobForm.controls.specialization.errors?.required"
+                        class="text text-danger">specialization is required</div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <h6 class="mb-0">Your Experience</h6>
+              <form class="form theme-form">
+                <div class="row">
+                  <div class="col-xl-6 xl-100">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput7">Location:<span class="font-danger">*</span></label>
+                      <input class="form-control" id="location" name="location"
+                        [formControl]="jobForm.controls['location']" autocomplete="off" type="email"
+                        placeholder="Enter Location">
+                      <div *ngIf="jobForm.controls.location.touched && jobForm.controls.location.errors?.required"
+                        class="text text-danger">location is required</div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 xl-100">
+                    <label class="col-form-label text-right pt-0">Period:<span class="font-danger">*</span></label>
+                    <div class="row">
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <div class="input-group custom-datepicker job-input-datepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model4"
+                              [ngModelOptions]="{standalone: true}" ngbDatepicker #psd="ngbDatepicker">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" (click)="psd.toggle()" type="button"><i
+                                  class="fa fa-calendar"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-6">
+                        <div class="form-group">
+                          <div class="input-group custom-datepicker job-input-datepicker">
+                            <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model5"
+                              [ngModelOptions]="{standalone: true}" ngbDatepicker #ped="ngbDatepicker">
+                            <div class="input-group-append">
+                              <button class="btn btn-primary" (click)="ped.toggle()" type="button"><i
+                                  class="fa fa-calendar"></i></button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-6 xl-100">
+                    <div class="col-form-label pt-0">Position:<span class="font-danger">*</span></div>
+                    <select class="js-example-basic-single col-sm-12 job-select2 form-group">
+                      <optgroup label="Enter Position">
+                        <option value="position">Choose a option</option>
+                        <option value="Web designer">Web Designer</option>
+                        <option value="Graphic designer">Graphic Designer</option>
+                        <option value="UI designer">UI Designer</option>
+                        <option value="UI/UX designer">UI/UX Designer</option>
+                      </optgroup>
+                    </select>
+                  </div>
+                  <div class="col-xl-6 xl-100">
+                    <div class="form-group">
+                      <label for="exampleFormControlInput8">Company Name:<span class="font-danger">*</span></label>
+                      <input class="form-control" id="company_name" name="company_name"
+                        [formControl]="jobForm.controls['company_name']" autocomplete="off" type="email" type="email"
+                        placeholder="Enter Company Name">
+                      <div
+                        *ngIf="jobForm.controls.company_name.touched && jobForm.controls.company_name.errors?.required"
+                        class="text text-danger">company_name is required</div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+              <h6 class="mb-0">Upload Your Files</h6>
+              <form class="form theme-form">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="col-form-label pt-0">Upload Your CV:<span class="font-danger">*</span></label>
+                      <input class="form-control" type="file">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label class="col-form-label pt-0">Upload Cover Letter:<span class="font-danger">*</span></label>
+                      <input class="form-control" type="file">
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group mb-0">
+                      <label class="col-form-label pt-0">Upload Recommendations:</label>
+                      <input class="form-control" type="file">
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="card-footer">
+            <button class="btn btn-primary mr-1" [disabled]="!jobForm.valid" type="submit">Submit</button>
+            <input class="btn btn-light" type="reset" value="Cancel">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

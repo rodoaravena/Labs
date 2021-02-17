@@ -1,0 +1,109 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Contextual progress bars</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <ngb-progressbar type="success" [value]="25"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="info" [value]="50"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="warning" [value]="75"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="danger" [value]="100"></ngb-progressbar>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Progress bars with current value labels</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <ngb-progressbar showValue="true" type="success" [value]="25"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar [showValue]="true" type="info" [value]="50"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar showValue="true" type="warning" [value]="150" [max]="200"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar [showValue]="true" type="danger" [value]="150" [max]="150"></ngb-progressbar>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Striped progress bars</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <ngb-progressbar type="success" [value]="25" [striped]="true"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="info" [value]="50" [striped]="true"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="warning" [value]="75" [striped]="true"></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="danger" [value]="100" [striped]="true"></ngb-progressbar>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Progress bars with custom labels</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <ngb-progressbar type="success" [value]="25">25</ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="info" [value]="50">Copying file <b>2 of 4</b>...</ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="warning" [value]="75" [striped]="true" [animated]="true"><i>50%</i></ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="danger" [value]="100" [striped]="true">Completed!</ngb-progressbar>
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Progress bars with height</h5>
+        </div>
+        <div class="card-body">
+          <p>
+            <ngb-progressbar type="success" [value]="25">default</ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="info" [value]="50" height="10px">10px</ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="warning" [value]="75" height=".5rem">.5rem</ngb-progressbar>
+          </p>
+          <p>
+            <ngb-progressbar type="danger" [value]="100" height=".3rem">.3rem</ngb-progressbar>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

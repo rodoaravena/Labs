@@ -1,0 +1,147 @@
+<!-- Page Header Start-->
+<div class="page-main-header" [ngClass]="{'open' : navServices.collapseSidebar}" id="page-main-header">
+  <div class="main-header-right row">
+    <div class="main-header-left d-lg-none">
+      <div class="logo-wrapper"><a href="javascript:void(0)"><img src="assets/images/endless-logo.png" alt=""></a></div>
+    </div>
+    <div class="mobile-sidebar">
+      <div class="media-body text-right switch-sm">
+        <label class="switch">
+          <a href="javascript:void(0)" (click)="collapseSidebar()">
+            <app-feather-icons id="sidebar-toggle" [icon]="'align-left'"></app-feather-icons>
+          </a>
+        </label>
+      </div>
+    </div>
+    <div class="nav-right col">
+      <ul class="nav-menus" [ngClass]="{'open' : openNav}">
+        <li>
+          <form class="form-inline search-form">
+            <div class="form-group">
+              <input class="form-control-plaintext" [class.open]="isOpenMobile" [(ngModel)]="text"
+                [ngModelOptions]="{standalone: true}" (keyup)="searchTerm(text)" type="text" autocomplete="off"
+                placeholder="Search..">
+              <span class="d-sm-none mobile-search">
+                <app-feather-icons [icon]="'search'" (click)="isOpenMobile=!isOpenMobile"></app-feather-icons>
+              </span>
+              <div class="Typeahead-menu" [class.is-open]="searchResult" *ngIf="menuItems?.length" id="search-outer">
+                <div class="ProfileCard u-cf" *ngFor="let menuItem of menuItems | slice:0:8">
+                  <div class="ProfileCard-avatar">
+                    <app-feather-icons [icon]="menuItem.icon" class="header-search"></app-feather-icons>
+                  </div>
+                  <div class="ProfileCard-details">
+                    <div class="ProfileCard-realName">
+                      <a [routerLink]="menuItem?.path" class="realname" (click)="removeFix()">{{menuItem?.title}}</a>
+                    </div>
+                  </div>
+                </div>
+
+              </div>
+              <div class="Typeahead-menu" [class.is-open]="searchResultEmpty">
+                <div class="tt-dataset tt-dataset-0">
+                  <div class="EmptyMessage">
+                    Opps!! There are no result found.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </li>
+        <li>
+          <a href="javascript:void(0)" class="text-dark" (click)="toggleFullScreen()">
+            <app-feather-icons [icon]="'maximize'"></app-feather-icons>
+          </a>
+        </li>
+        <li class="onhover-dropdown">
+          <a class="txt-dark" href="javascript:void(0)">
+            <h6>EN</h6>
+          </a>
+          <ul class="language-dropdown onhover-show-div p-20">
+            <li><a href="javascript:void(0)" data-lng="en" (click)="changeLanguage('en')"><i
+                  class="flag-icon flag-icon-is"></i> English</a></li>
+            <li><a href="javascript:void(0)" data-lng="es" (click)="changeLanguage('es')"><i
+                  class="flag-icon flag-icon-um"></i> Spanish</a></li>
+            <li><a href="javascript:void(0)" data-lng="pt" (click)="changeLanguage('pt')"><i
+                  class="flag-icon flag-icon-uy"></i> Portuguese</a></li>
+            <li><a href="javascript:void(0)" data-lng="fr" (click)="changeLanguage('fr')"><i
+                  class="flag-icon flag-icon-nz"></i> French</a></li>
+          </ul>
+        </li>
+        <li class="onhover-dropdown">
+          <app-feather-icons [icon]="'bell'"></app-feather-icons><span class="dot"></span>
+          <ul class="notification-dropdown onhover-show-div">
+            <li>Notification <span class="badge badge-pill badge-primary pull-right">3</span></li>
+            <li>
+              <div class="media">
+                <div class="media-body">
+                  <h6 class="mt-0"><span>
+                      <app-feather-icons class="shopping-color" [icon]="'shopping-bag'"></app-feather-icons>
+                    </span>Your order ready for Ship..!<small class="pull-right">9:00 AM</small></h6>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="media-body">
+                  <h6 class="mt-0 txt-success"><span>
+                      <app-feather-icons class="download-color font-success" [icon]="'download'"></app-feather-icons>
+                    </span>Download Complete<small class="pull-right">2:30 PM</small></h6>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer.</p>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="media">
+                <div class="media-body">
+                  <h6 class="mt-0 txt-danger"><span>
+                      <app-feather-icons class="alert-color font-danger" [icon]="'alert-circle'"></app-feather-icons>
+                    </span>250 MB trush files<small class="pull-right">5:00 PM</small></h6>
+                  <p class="mb-0">Lorem ipsum dolor sit amet, consectetuer.</p>
+                </div>
+              </div>
+            </li>
+            <li class="bg-light txt-dark"><a href="javascript:void(0)">All</a> notification</li>
+          </ul>
+        </li>
+        <li><a>
+            <app-feather-icons class="right_side_toggle" [icon]="'message-circle'" (click)="right_side_bar()">
+            </app-feather-icons><span class="dot"></span>
+          </a></li>
+        <li class="onhover-dropdown">
+          <div class="media align-items-center" *ngIf="!authService.userData as user"><img
+              class="align-self-center pull-right img-50 rounded-circle" src="assets/images/dashboard/user.png"
+              alt="header-user">
+            <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
+          </div>
+          <div class="media align-items-center" *ngIf="authService.userData as user"><img
+              class="align-self-center pull-right img-50 rounded-circle"
+              [src]="user.photoURL ==null ? 'assets/images/user/1.jpg' : user.photoURL" alt="header-user">
+            <div class="dotted-animation"><span class="animate-circle"></span><span class="main-circle"></span></div>
+          </div>
+          <ul class="profile-dropdown onhover-show-div p-20">
+            <li><a href="javascript:void(0)">
+                <app-feather-icons [icon]="'user'"></app-feather-icons>Edit Profile
+              </a></li>
+            <li><a href="javascript:void(0)">
+                <app-feather-icons [icon]="'mail'"></app-feather-icons>Inbox
+              </a></li>
+            <li><a href="javascript:void(0)">
+                <app-feather-icons [icon]="'lock'"></app-feather-icons>Lock Screen
+              </a></li>
+            <li><a href="javascript:void(0)">
+                <app-feather-icons [icon]="'settings'"></app-feather-icons>Settings
+              </a></li>
+            <li *ngIf="authService.userData as user"><a href="javascript:void(0)" (click)="authService.SignOut()">
+                <app-feather-icons [icon]="'log-out'"></app-feather-icons>Logout
+              </a></li>
+          </ul>
+        </li>
+      </ul>
+      <div class="d-lg-none mobile-toggle pull-right" (click)="openMobileNav()">
+        <app-feather-icons [icon]="'more-horizontal'"></app-feather-icons>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Page Header Ends -->

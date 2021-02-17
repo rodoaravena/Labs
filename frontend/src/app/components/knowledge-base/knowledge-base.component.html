@@ -1,0 +1,321 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-4 xl-50 col-sm-6">
+      <div class="card bg-primary">
+        <div class="card-body">
+          <div class="media faq-widgets">
+            <div class="media-body">
+              <h5>Knowledge Base</h5>
+              <p>Ouch found swore much dear conductively hid submissively hatchet vexed far inanimately alongside
+                candidly</p>
+            </div>
+            <app-feather-icons [icon]="'book-open'"></app-feather-icons>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-50 col-sm-6">
+      <div class="card bg-primary">
+        <div class="card-body">
+          <div class="media faq-widgets">
+            <div class="media-body">
+              <h5>Support center</h5>
+              <p>Dear spryly growled much far jeepers vigilantly less and far hideous and some mannishly less jeepers
+                less and and crud</p>
+            </div>
+            <app-feather-icons [icon]="'aperture'"></app-feather-icons>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-4 xl-100">
+      <div class="card bg-primary">
+        <div class="card-body">
+          <div class="media faq-widgets">
+            <div class="media-body">
+              <h5>Articles and news</h5>
+              <p>Diabolically somberly astride crass one endearingly blatant depending peculiar antelope piquantly
+                popularly adept</p>
+            </div>
+            <app-feather-icons [icon]="'file-text'"></app-feather-icons>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="row">
+        <div class="col-sm-6">
+          <div class="header-faq">
+            <h5 class="mb-0">Browse articles by category</h5>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <form class="form-inline search-form pull-right search-knowledge">
+            <div class="form-group mr-0">
+              <input class="form-control-plaintext" name="search" [(ngModel)]="term" type="text" placeholder="Search..">
+            </div>
+          </form>
+        </div>
+        <div class="col-sm-12">
+          <div class="card">
+            <div class="card-header">
+              <h5>Browse Articles</h5>
+            </div>
+            <div class="card-body">
+              <div class="row browse">
+                <div class="col-xl-4 xl-50" *ngFor="let kb of Kb | filter:term">
+                  <div class="browse-articles browse-bottom">
+                    <h6><span>
+                        <app-feather-icons [icon]="'archive'"></app-feather-icons>
+                      </span>{{kb.title}}</h6>
+                    <ul [innerHTML]="kb.desc">
+                    </ul>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div *ngIf="!(Kb | filter:term).length">
+                    <div class="search-not-found knowledge-search-height text-center">
+                      <div class="">
+                        <img src="assets/images/search-not-found.png" class="second-search">
+                        <h6>Sorry, We didn't find any articles matching this search</h6>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="header-faq">
+        <h5 class="mb-0">Featured articles and tutorials</h5>
+      </div>
+      <div class="row">
+        <div class="col-xl-3 xl-50">
+          <div class="card features-faq product-box">
+            <div class="faq-image product-img"><img class="img-fluid" src="assets/images/faq/1.jpg" alt="">
+              <div class="product-hover">
+                <ul>
+                  <li><i class="icon-link"></i></li>
+                  <li><i class="icon-import"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6>For ostrich much</h6>
+              <p>Some various less crept gecko the jeepers dear forewent far the ouch far a incompetent saucy wherever
+                towards</p>
+            </div>
+            <div class="card-footer"><span>Dec 15, 2018</span><span class="pull-right"><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star font-primary"></i></span></div>
+          </div>
+        </div>
+        <div class="col-xl-3 xl-50">
+          <div class="card features-faq product-box">
+            <div class="faq-image product-img"><img class="img-fluid" src="assets/images/faq/2.jpg" alt="">
+              <div class="product-hover">
+                <ul>
+                  <li><i class="icon-link"></i></li>
+                  <li><i class="icon-import"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6>Considering far</h6>
+              <p>Kookaburra so hey a less tritely far congratulated this winked some under had unblushing beyond
+                sympathetic</p>
+            </div>
+            <div class="card-footer"><span>Dec 15, 2018</span><span class="pull-right"><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star-o font-primary"></i></span></div>
+          </div>
+        </div>
+        <div class="col-xl-3 xl-50">
+          <div class="card features-faq product-box">
+            <div class="faq-image product-img"><img class="img-fluid" src="assets/images/faq/3.jpg" alt="">
+              <div class="product-hover">
+                <ul>
+                  <li><i class="icon-link"></i></li>
+                  <li><i class="icon-import"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6>Despite perversely</h6>
+              <p>Coming merits and was talent enough far. Sir joy northward sportsmen education. Put still any about
+                manor heard</p>
+            </div>
+            <div class="card-footer"><span>Dec 15, 2018</span><span class="pull-right"><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star font-primary"></i></span></div>
+          </div>
+        </div>
+        <div class="col-xl-3 xl-50">
+          <div class="card features-faq product-box">
+            <div class="faq-image product-img"><img class="img-fluid" src="assets/images/faq/4.jpg" alt="">
+              <div class="product-hover">
+                <ul>
+                  <li><i class="icon-link"></i></li>
+                  <li><i class="icon-import"></i></li>
+                </ul>
+              </div>
+            </div>
+            <div class="card-body">
+              <h6>Helpfully stolidly</h6>
+              <p>Hippopotamus aside while a shrewdly this after kookaburra wow in haphazardly much salmon buoyantly
+                sullen gosh</p>
+            </div>
+            <div class="card-footer"><span>Dec 15, 2018</span><span class="pull-right"><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star font-primary"></i><i class="fa fa-star font-primary"></i><i
+                  class="fa fa-star-half-o font-primary"></i></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+      <div class="header-faq">
+        <h5 class="mb-0">Latest articles and videos</h5>
+      </div>
+      <div class="row">
+        <div class="col-xl-4 col-md-6">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'codepen'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Contemptibly bleakly</h6>
+                      <p>Speechless far goodness bent as boa crud because vague far koala the that lantern alas sold</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'codepen'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Stretched flamboyant</h6>
+                      <p>Some when foolhardy dangerous so less less aimlessly along hazardously oversaw much</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'codepen'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Bound befell well</h6>
+                      <p>Since left before understandably much groomed along burped through dear</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4 col-md-6">
+          <div class="row">
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'file-text'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Blamelessly wow hence</h6>
+                      <p>A without walking some objective hiccupped some this overlay immorally crud and gosh</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'file-text'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Walking away fallaciously</h6>
+                      <p>Ouch licentiously lackadaisical crud together began gregarious below near darn goodness</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'file-text'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Porcupine strict nodded</h6>
+                      <p>Left extravagant leered crab repaid outgrew said knelt hello astride within oh disbanded</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="col-xl-4">
+          <div class="row">
+            <div class="col-xl-12 col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'youtube'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Manatee broadcast</h6>
+                      <p>Some where indecently manta floated raptly youthful unlike swept dragonfly pulled moth</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12 col-md-6">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'youtube'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Ducked ravenously dear</h6>
+                      <p>Reran sincere said monkey one slapped jeepers rubbed fleetly incongruously due yet llama</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-12">
+              <div class="card">
+                <div class="card-body">
+                  <div class="media">
+                    <app-feather-icons class="m-r-30" [icon]="'youtube'"></app-feather-icons>
+                    <div class="media-body">
+                      <h6 class="f-w-600">Porcupine strict nodded</h6>
+                      <p>Left extravagant leered crab repaid outgrew said knelt hello astride within oh disbanded</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

@@ -1,0 +1,26 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Form Wizard with icon</h5>
+        </div>
+        <div class="card-body step-indicator">
+          <aw-wizard navBarLayout="large-filled-symbols">
+            <aw-wizard-step [navigationSymbol]="{ symbol: '&#xf007;', fontFamily: 'FontAwesome ' }"
+              stepTitle="Registration">
+              <app-registration></app-registration>
+            </aw-wizard-step>
+            <aw-wizard-step [navigationSymbol]="{ symbol: '&#xf084;', fontFamily: 'FontAwesome' }" stepTitle="Email">
+              <app-email></app-email>
+            </aw-wizard-step>
+            <aw-wizard-step [navigationSymbol]="{ symbol: '&#xf099;', fontFamily: 'FontAwesome' }"
+              stepTitle="Birth Date">
+              <app-birth-date></app-birth-date>
+            </aw-wizard-step>
+          </aw-wizard>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

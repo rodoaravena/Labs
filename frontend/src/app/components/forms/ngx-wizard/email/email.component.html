@@ -1,0 +1,47 @@
+<form [formGroup]="emailForm" class="ngx-form" novalidate>
+  <div class="form-group">
+    <label class="sr-only" for="email">Email</label>
+    <input type="email" formControlName="emailAdd" class="form-control" autocomplete="off"
+      pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" [email]="true" required="required" placeholder="Enter Email..">
+    <div
+      *ngIf="emailForm.controls['emailAdd'].invalid && (emailForm.controls['emailAdd'].dirty || emailForm.controls['emailAdd'].touched)"
+      class="alert">
+      <div *ngIf="emailForm.controls['emailAdd'].errors?.pattern">
+        Email is required and format should be <i>john@doe.com</i>
+      </div>
+      <div *ngIf="emailForm.controls['emailAdd'].errors.required ">Email is required.</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="f1-password">Password</label>
+    <input type="password" formControlName="password" class="form-control" autocomplete="off"
+      placeholder="Enter Password..">
+    <div
+      *ngIf="emailForm.controls['password'].invalid && (emailForm.controls['password'].dirty || emailForm.controls['password'].touched)"
+      class="alert">
+      <div *ngIf="emailForm.controls['password'].errors.required">
+        Password is required.</div>
+      <div *ngIf="emailForm.controls['password'].errors?.minlength">Password must be at least 6 characters</div>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label class="sr-only" for="f1-repeat-password">Repeat password</label>
+    <input type="password" formControlName="confirmPassword" class="form-control" autocomplete="off"
+      placeholder="Enter Repeat Password ..">
+    <div
+      *ngIf="emailForm.controls['confirmPassword'].invalid && (emailForm.controls['confirmPassword'].dirty || emailForm.controls['confirmPassword'].touched)"
+      class="alert">
+      <div *ngIf="emailForm.controls['confirmPassword'].errors.required">
+        Password is required.</div>
+      <div *ngIf="emailForm.controls['confirmPassword'].errors?.mustMatch">
+        Password does not match
+      </div>
+    </div>
+  </div>
+  <div class="f1-buttons">
+    <button class="btn btn-primary btn-previous" type="button" awPreviousStep>Previous</button>
+    <button class="btn btn-primary btn-next" type="button" [disabled]="!emailForm.valid" awNextStep>Next</button>
+  </div>
+</form>

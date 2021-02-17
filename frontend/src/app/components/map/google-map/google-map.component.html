@@ -1,0 +1,201 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Map at a specified location</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m1" [longitude]="lng_m1" [zoom]="zoom_m1" [scrollwheel]="false"
+              [disableDoubleClickZoom]="true" [mapDraggable]="false" [zoomControl]="false" [mapTypeControl]="true">
+              <agm-marker>
+                <agm-info-window [disableAutoPan]="true">
+                  Hi, this is the content of the <strong>info window</strong>
+                </agm-info-window>
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Map at a specified location with Marker</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m2" [longitude]="lng_m2" [zoom]="zoom_m2" [disableDefaultUI]="false"
+              [zoomControl]="false" (mapClick)="mapClicked($event)">
+              <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng"
+                [label]="m.label" [draggable]="false">
+                <agm-info-window>
+                  <strong>InfoWindow content</strong>
+                </agm-info-window>
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>MultiLanguage Map</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m3" [longitude]="lng_m3" [zoom]="zoom_m3">
+              <agm-marker>
+                <agm-info-window [disableAutoPan]="true">
+                  Hi, this is the content of the <strong>info window</strong>
+                </agm-info-window>
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Tertain</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m4" [longitude]="lng_m4" [zoom]=zoom_m4 [mapTypeControl]="true">
+              <agm-marker>
+                <agm-info-window [disableAutoPan]="true">
+                  Hi, this is the content of the <strong>info window</strong>
+                </agm-info-window>
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Zoom into Bound</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m5" [longitude]="lng_m5" [zoom]="zoom_m5">
+              <agm-marker>
+                <agm-info-window [disableAutoPan]="true">
+                  Hi, this is the content of the <strong>info window</strong>
+                </agm-info-window>
+                <agm-circle [latitude]="lat_m5_c1" [longitude]="lng_m5_c1" [radius]="500000" [editable]="false"
+                  [fillColor]="'blue'" [circleDraggable]="false" [strokeColor]="'blue'">
+                </agm-circle>
+                <agm-circle [latitude]="lat_m5_c2" [longitude]="lng_m5_c2" [radius]="180000" [editable]="false"
+                  [fillColor]="'red'" [circleDraggable]="false" [strokeColor]="'blue'">
+                </agm-circle>
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>FullScreen Map</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m6" [longitude]="lng_m6" [zoom]="zoom_m6" [fullscreenControl]="true">
+              <agm-polygon [paths]="paths_m6">
+              </agm-polygon>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Draggable Marker</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m7" [longitude]="lng_m7" [zoom]="zoom_m7" [disableDefaultUI]="false"
+              [zoomControl]="false" (mapClick)="mapClicked($event)">
+              <agm-marker *ngFor="let m of markers; let i = index" [latitude]="m.lat" [longitude]="m.lng"
+                [label]="m.label" [markerDraggable]="m.draggable" (dragEnd)="markerDragEnd(m, $event)">
+
+                <agm-info-window>
+                  <strong>InfoWindow content</strong>
+                </agm-info-window>
+
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Polyline</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m8" [longitude]="lng_m8" [zoom]="zoom_m8">
+              <agm-polyline [strokeColor]="strokecolor_m8" [strokeWeight]="strokewidth_m8">
+                <agm-polyline-point [latitude]="lat_m8_A" [longitude]="lng_m8_A">
+                </agm-polyline-point>
+                <agm-polyline-point [latitude]="lat_m8_B" [longitude]="lng_m8_B">
+                </agm-polyline-point>
+                <agm-polyline-point [latitude]="lat_m8_c" [longitude]="lng_m8_c">
+                </agm-polyline-point>
+                <agm-polyline-point [latitude]="lat_m8_d" [longitude]="lng_m8_d">
+                </agm-polyline-point>
+              </agm-polyline>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Polygon</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m9" [longitude]="lng_m9" [zoom]="zoom_m9" [panControl]="true"
+              [rotateControl]="true">
+              <agm-polygon [paths]="paths_m9" [fillColor]="fillcolor_m9" [strokeColor]="strokeColor_m9"
+                [strokeWeight]="pstrokeweight_m9" [fillOpacity]="fillOpacity_m9">
+              </agm-polygon>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Polygon on the map draggable</h5>
+        </div>
+        <div class="card-body">
+          <div class="map-js-height">
+            <agm-map [latitude]="lat_m10" [longitude]="lng_m10" [zoom]="zoom_m10">
+              <agm-marker>
+                <agm-info-window [disableAutoPan]="true">
+                  Hi, this is the content of the <strong>info window</strong>
+                </agm-info-window>
+                <agm-circle [latitude]="lat_m10_c1" [longitude]="lng_m10_c1" [radius]="300000" [editable]="false"
+                  [fillColor]="'red'" [circleDraggable]="true" [strokeColor]="'blue'">
+                </agm-circle>
+              </agm-marker>
+            </agm-map>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

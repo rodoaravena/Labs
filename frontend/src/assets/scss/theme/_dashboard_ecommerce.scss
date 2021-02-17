@@ -1,0 +1,429 @@
+/**=====================
+      68. Dashboard Ecommerce CSS Start
+==========================**/
+.ecommerce-icons{
+  svg{
+    line, path, polyline, circle{
+      color: $primary-color;
+    }
+  }
+  div{
+    padding: 15px 0;
+    span{
+      color: $dark-gray;
+    }
+  }
+}
+.sellers, .shopping-table{
+  table{
+    thead{
+      th{
+        border-bottom: none !important;
+        color: $dark-gray;
+        font-weight: 300;
+        padding-top: 0;
+        padding-bottom: 0;
+      }
+    }
+    th, td{
+      border-top: none !important;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+    tbody{
+      tr{
+        td{
+          vertical-align: middle;
+          color: $theme-body-font-color;
+          font-weight: 600;
+          .btn{
+            padding: 5px 10px;
+            letter-spacing: 0.5px;
+          }
+          svg{
+            width: 16px;
+            height: 16px;
+            line{
+              color: $primary-color;
+            }
+          }
+          div{
+            div{
+              p{
+                margin-top: 5px;
+              }
+            }
+          }
+        }
+        &:last-child{
+          td{
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.number-widgets{
+  .media{
+    .media-body{
+      h6{
+        text-transform: uppercase;
+        color: $theme-font-color;
+        font-weight: 600;
+      }
+    }
+    .radial-bar {
+      width: 69px;
+      height: 69px;
+      font-size: 12px;
+      font-weight: 600;
+      color: $dark-gray;
+      &:after {
+        width: 61px;
+        height: 61px;
+        margin-left: 4px;
+        margin-top: 4px;
+        line-height: 63px;
+      }
+    }
+  }
+}
+.progress-block{
+  margin-bottom: 30px;
+  .progress-title{
+    margin-bottom: 5px;
+    span{
+      font-size: 13px;
+      font-weight: 600;
+      + span{
+        color: $dark-gray;
+      }
+    }
+  }
+}
+.log-content {
+  .logs-element{
+    margin-bottom: 21px;
+    .circle-double-odd{
+      position: relative;
+      &:before{
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 3px solid $primary-color;
+        top: 2px;
+        left: 0;
+      }
+    }
+    .circle-double-even{
+      position: relative;
+      &:before{
+        position: absolute;
+        content: "";
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 3px solid $black;
+        top: 2px;
+        left: 0;
+      }
+    }
+    span{
+      display: inline-block;
+      margin-left: 30px;
+      font-size: 13px;
+      font-weight: 600;
+      + span{
+        color: $dark-gray;
+      }
+    }
+  }
+}
+
+.charts-box{
+  .flot-chart-container{
+    height: 222px;
+    #graph123{
+      svg{
+        path{
+          fill: transparent;
+        }
+      }
+    }
+  }
+}
+.updating-chart{
+  .upadates{
+    padding-bottom: 30px;
+    h2{
+      font-weight: 600;
+      margin-bottom: 0;
+      svg{
+        stroke-width: 3;
+      }
+    }
+  }
+  .flot-chart-container{
+    height: 233px;
+    #updating-data-morris-chart{
+      path{
+        stroke-width: 1.9;
+      }
+      circle{
+        r:5;
+        stroke-width: 0;
+      }
+    }
+  }
+}
+
+#owl-carousel-14 {
+  padding: 0 15px;
+}
+.support-table {
+  overflow-x: inherit;
+  &:hover{
+    overflow-x: auto;
+  }
+  table{
+    tbody{
+      tr{
+        td{
+          vertical-align: middle;
+          border-top: none;
+          padding: 10px;
+          &:first-child {
+            padding-left: 0;
+          }
+          &:first-child {
+            padding-left: 0;
+          }
+          &:last-child {
+            padding-right: 0;
+          }
+          h6{
+            padding-top: 5px;
+            small{
+              padding-left: 10px;
+            }
+          }
+          .circle-rounded{
+            position: relative;
+            padding: 24px 10px;
+            border-radius: 50%;
+            background-color: $primary-color;
+            width: 51px;
+            height: 30px;
+            h6{
+              position: absolute;
+              top: 7px;
+              left: 19px;
+              font-size: 20px;
+              color: $white;
+              margin-bottom: 0;
+            }
+          }
+          svg {
+            width: 15px;
+            height: 15px;
+          }
+          .assign-dropdown {
+            top: 35px;
+            left: -11px;
+            padding: 15px 0;
+            li {
+              a{
+                color: $theme-body-font-color;
+                padding: 0 15px;
+                &:hover {
+                  color: $primary-color;
+                }
+              }
+              .form {
+                .form-group {
+                  position: relative;
+                  input {
+                    border: none;
+                    border-bottom: 1px solid $primary-color;
+                    border-radius: 0;
+                  }
+                  i {
+                    position: absolute;
+                    right: 13px;
+                    top: 12px;
+                  }
+                }
+              }
+              &:nth-child(2) {
+                padding-top: 15px;
+              }
+            }
+          }
+          .status-dropdown {
+            top: 35px;
+            left: -11px;
+            padding: 15px;
+            li {
+              padding: 2px;
+               a{
+                 color: $theme-body-font-color;
+                 &:hover {
+                   color: $primary-color;
+                 }
+               }
+              &:first-child {
+                padding-top: 0;
+              }
+              &:last-child {
+                padding-bottom: 0;
+              }
+            }
+          }
+        }
+        &:first-child {
+          td {
+            padding-top: 0;
+          }
+        }
+        &:last-child {
+          td {
+            padding-bottom: 0;
+          }
+        }
+      }
+    }
+  }
+}
+.ecommerce-knob{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  vertical-align: middle;
+  .knob-block {
+    margin-bottom: -5px;
+  }
+}
+@media only screen and (min-width: 1440px){
+  .sellers{
+    table{
+      min-width: 500px;
+      overflow: auto;
+    }
+  }
+}
+@media only screen and (max-width: 1660px){
+  .support-table {
+    table{
+      tbody{
+        tr{
+          td{
+            .circle-rounded{
+              width: 51px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1366px){
+  .support-table {
+    table{
+      tbody{
+        tr{
+          td{
+            + td {
+              min-width: 147px;
+            }
+            &:nth-child(2) {
+              min-width: 330px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 1199px) {
+  .support-table {
+    overflow-x: auto;
+  }
+}
+@media only screen and (max-width: 991px){
+  .progress-block {
+    margin-bottom: 20px;
+  }
+  .updating-chart {
+    .upadates {
+      padding-bottom: 20px;
+    }
+  }
+  .log-content {
+    .logs-element {
+      margin-bottom: 15px;
+    }
+  }
+}
+@media only screen and (max-width: 575px){
+  .shopping-table {
+    table {
+      tbody {
+        tr {
+          td {
+            &:nth-child(4) {
+              min-width: 100px;
+            }
+          }
+        }
+      }
+    }
+  }
+  .updating-chart {
+    .upadates {
+      padding-bottom: 15px;
+    }
+  }
+  .progress-block {
+    margin-bottom: 15px;
+  }
+  .sellers, .shopping-table{
+    table{
+      th, td{
+        border-top: none;
+        padding-top: 15px;
+        padding-bottom: 15px;
+      }
+    }
+  }
+  .ecommerce-knob{
+    canvas, div {
+      width: 250px !important;
+      height: 250px !important;
+    }
+  }
+}
+@media only screen and (max-width: 360px){
+  .sellers{
+    table{
+      min-width: 500px;
+      overflow: auto;
+    }
+  }
+  .animate-curve2 {
+    span{
+      &.ct-label{
+        &.ct-horizontal{
+          &.ct-end {
+            font-size: 10px;
+          }
+        }
+      }
+    }
+  }
+}
+/**=====================
+     68. Dashboard Ecommerce  CSS End
+==========================**/

@@ -1,0 +1,24 @@
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Ck Editor</h5>
+                </div>
+                <div class="card-body">
+                    <ck-editor name="editor1" skin="moono-lisa" language="en" [fullPage]="true"></ck-editor>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>KolKov Editor</h5>
+                </div>
+                <div class="card-body">
+                    <angular-editor [(ngModel)]="htmlContent" [config]="config"></angular-editor>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

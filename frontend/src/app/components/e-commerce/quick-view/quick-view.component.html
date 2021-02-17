@@ -1,0 +1,46 @@
+<div class="modal-header">
+  <div class="product-box row">
+    <div class="product-img col-md-6"><img class="img-fluid" [src]="[productDetail?.img]" alt=""></div>
+    <div class="product-details col-md-6 text-left">
+      <h1>{{productDetail?.category}}</h1>
+      <div class="product-price">
+        <del>{{productDetail?.discountPrice | currency:productService?.currency:'symbol'}}</del>{{productDetail?.price | currency:productService?.currency:'symbol'}}
+      </div>
+      <div class="product-view">
+        <h6 class="f-w-600">Product Details</h6>
+        <p class="mb-0">Sed ut perspiciatis, unde omnis iste natus error sit voluptatem accusantium doloremque
+          laudantium, totam rem aperiam eaque ipsa, quae ab illo.</p>
+      </div>
+      <div class="product-size">
+        <ul>
+          <li>
+            <button class="btn btn-outline-light" type="button">M</button>
+          </li>
+          <li>
+            <button class="btn btn-outline-light" type="button">L</button>
+          </li>
+          <li>
+            <button class="btn btn-outline-light" type="button">Xl</button>
+          </li>
+        </ul>
+      </div>
+      <div class="product-qnty">
+        <h6 class="f-w-600">Quantity</h6>
+        <div class="qty-box1">
+          <div class="input-group">
+            <i class="fa fa-minus btnGtr1" (click)="decrement()"></i>
+            <input class="touchspin1 text-center" #qty name="quantity" type="text" value="{{counter}}">
+            <i class="fa fa-plus btnLess1" (click)="increment()"></i>
+          </div>
+        </div>
+        <div class="addcart-btn">
+          <button class="btn btn-primary-gradien m-r-10" type="button" data-original-title="btn btn-info-gradien"
+            [routerLink]="['/ecommerce/add-cart']" (click)=addToCart(productDetail,qty.value) title="">
+            Add To Cart</button>
+          <button class="btn btn-success-gradien" type="button" data-original-title="btn btn-info-gradien"
+            (click)=buyNow(productDetail,qty.value) title="">Buy Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

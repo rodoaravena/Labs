@@ -1,0 +1,79 @@
+/**=====================
+    24. According CSS start
+==========================**/
+.accordion {
+    & > .card {
+        .card-header {
+            margin: -1px;
+            padding: 20px;
+            .btn {
+                padding: 0;
+            }
+            .btn-link {
+                color: $theme-body-font-color;
+                font-weight: 600;
+                &:hover, &:focus {
+                    text-decoration: none;
+                }
+            }
+        }
+        &:last-child {
+            margin-bottom: 0 !important;
+        }
+    }
+}
+.default-according{
+    .card{
+        margin-bottom: 0;
+        &+.card{
+            margin-top: $according-card-top-margin;
+        }
+        .btn-link{
+            font-weight: $according-btn-weight;
+            color: $theme-body-font-color;
+        }
+        .btn-link{
+            &:focus,&:hover{
+                text-decoration: none;
+            }
+        }
+        .card-header{
+            padding: $according-card-header-padding;
+            i{
+                position: absolute;
+                left: 18px;
+                font-size: 20px;
+                top: 20px;
+            }
+            h5{
+                margin-top: 2px;
+            }
+        }
+    }
+}
+.default-according.style-1{
+    button{
+        width: 100%;
+        text-align: left;
+        &:before{
+            right: 20px;
+            position: absolute;
+            transition: 0.4s;
+        }
+        &[aria-expanded="true"]{
+            &:before{
+                content: $according-open-icon;
+                font-family: $according-card-header-icon;
+            }
+        }
+        &[aria-expanded="false"]{
+            &:before{
+                content: $according-close-icon;
+                font-family: $according-card-header-icon;
+            }
+        }
+    }
+}
+/**=====================
+     24. According CSS Ends
+==========================**/

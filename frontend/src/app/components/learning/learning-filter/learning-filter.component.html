@@ -1,0 +1,145 @@
+<div class="default-according style-1 faq-accordion job-accordion" id="accordionoc">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link pl-0" (click)="isCourse = !isCourse" [attr.aria-expanded]="!isCourse"
+              aria-controls="collapse">Find Course</button>
+          </h5>
+        </div>
+        <div class="collapse show" [ngbCollapse]="isCourse">
+          <div class="card-body filter-cards-view animate-chk">
+            <div class="job-filter">
+              <div class="faq-form">
+                <input class="form-control" type="text" placeholder="Search..">
+                <app-feather-icons class="search-icon" [icon]="'search'"></app-feather-icons>
+              </div>
+            </div>
+            <div class="checkbox-animated">
+              <div class="learning-header"><span class="f-w-600">Categories</span></div>
+              <label class="d-block" for="chk-ani">
+                <input class="checkbox_animated" id="chk-ani" type="checkbox"> Accounting
+              </label>
+              <label class="d-block" for="chk-ani1">
+                <input class="checkbox_animated" id="chk-ani1" type="checkbox"> Design
+              </label>
+              <label class="d-block" for="chk-ani2">
+                <input class="checkbox_animated" id="chk-ani2" type="checkbox"> Development
+              </label>
+              <label class="d-block" for="chk-ani3">
+                <input class="checkbox_animated" id="chk-ani3" type="checkbox"> Management
+              </label>
+            </div>
+            <div class="checkbox-animated mt-0">
+              <div class="learning-header"><span class="f-w-600">Duration</span></div>
+              <label class="d-block" for="chk-ani4">
+                <input class="checkbox_animated" id="chk-ani4" type="checkbox"> 0-50 hours
+              </label>
+              <label class="d-block" for="chk-ani5">
+                <input class="checkbox_animated" id="chk-ani5" type="checkbox"> 50-100 hours
+              </label>
+              <label class="d-block" for="chk-ani6">
+                <input class="checkbox_animated" id="chk-ani6" type="checkbox"> 100+ hours
+              </label>
+            </div>
+            <div class="checkbox-animated mt-0">
+              <div class="learning-header"><span class="f-w-600">Price</span></div>
+              <label class="d-block" for="edo-ani">
+                <input class="radio_animated" id="edo-ani" type="radio" name="rdo-ani" checked=""> All Courses
+              </label>
+              <label class="d-block" for="edo-ani1">
+                <input class="radio_animated" id="edo-ani1" type="radio" name="rdo-ani" checked=""> Paid Courses
+              </label>
+              <label class="d-block" for="edo-ani2">
+                <input class="radio_animated" id="edo-ani2" type="radio" name="rdo-ani" checked=""> Free Courses
+              </label>
+            </div>
+            <div class="checkbox-animated mt-0">
+              <div class="learning-header"><span class="f-w-600">Status</span></div>
+              <label class="d-block" for="chk-ani7">
+                <input class="checkbox_animated" id="chk-ani7" type="checkbox"> Registration
+              </label>
+              <label class="d-block" for="chk-ani8">
+                <input class="checkbox_animated" id="chk-ani8" type="checkbox"> Progress
+              </label>
+              <label class="d-block" for="chk-ani9">
+                <input class="checkbox_animated" id="chk-ani9" type="checkbox"> Completed
+              </label>
+            </div>
+            <button class="btn btn-primary text-center" type="button">Filter</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link pl-0" (click)="isCategories = !isCategories"
+              [attr.aria-expanded]="!isCategories" aria-controls="collapse">Categories</button>
+          </h5>
+        </div>
+        <div class="collapse show" id="collapseicon1" [ngbCollapse]="isCategories">
+          <div class="categories">
+            <div class="learning-header"><span class="f-w-600">Design</span></div>
+            <ul>
+              <li><a  href="javascript:void(0)">Graphic Design</a><span class="badge badge-primary pull-right">20</span></li>
+              <li><a  href="javascript:void(0)">Web Design</a><span class="badge badge-primary pull-right">42</span></li>
+              <li><a  href="javascript:void(0)">Interface Design</a><span class="badge badge-primary pull-right">15</span></li>
+              <li><a  href="javascript:void(0)">User Experience</a><span class="badge badge-primary pull-right">63</span></li>
+            </ul>
+          </div>
+          <div class="categories pt-0">
+            <div class="learning-header"><span class="f-w-600">Development</span></div>
+            <ul>
+              <li><a  href="javascript:void(0)">Frontend Development</a><span class="badge badge-primary pull-right">74</span></li>
+              <li><a  href="javascript:void(0)">Backend Development</a><span class="badge badge-primary pull-right">53</span></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5 class="mb-0">
+            <button class="btn btn-link pl-0" (click)="isUpcomimngCourse = !isUpcomimngCourse"
+              [attr.aria-expanded]="!isUpcomimngCourse" aria-controls="collapse">Upcoming Courses</button>
+          </h5>
+        </div>
+        <div class="collapse show" [ngbCollapse]="isUpcomimngCourse">
+          <div class="upcoming-course card-body">
+            <div class="media">
+              <div class="media-body"><span class="f-w-600">Business Development</span><span class="d-block">Course By
+                  <a  href="javascript:void(0)">Badi Zaman</a></span><span class="d-block"><i class="fa fa-star font-warning"></i><i
+                    class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i><i
+                    class="fa fa-star font-warning"></i><i class="fa fa-star-half-o font-warning"></i></span></div>
+              <div>
+                <h5 class="mb-0 font-primary">09</h5><span class="d-block">Nov</span>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-body"><span class="f-w-600">Web design strategy</span><span class="d-block">Course By <a
+                     href="javascript:void(0)">Zaky Hanania</a></span><span class="d-block"><i class="fa fa-star font-warning"></i><i
+                    class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i><i
+                    class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i></span></div>
+              <div>
+                <h5 class="mb-0 font-primary">18</h5><span class="d-block">Dec</span>
+              </div>
+            </div>
+            <div class="media">
+              <div class="media-body"><span class="f-w-600">User experience design</span><span class="d-block">Course By
+                  <a  href="javascript:void(0)">Majida Handal</a></span><span class="d-block"><i class="fa fa-star font-warning"></i><i
+                    class="fa fa-star font-warning"></i><i class="fa fa-star font-warning"></i><i
+                    class="fa fa-star font-warning"></i><i class="fa fa-star-o font-warning"></i></span></div>
+              <div>
+                <h5 class="mb-0 font-primary">24</h5><span class="d-block">Dec</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

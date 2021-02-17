@@ -1,0 +1,7 @@
+<h6 class="f-w-600">Brand</h6>
+<div class="checkbox-animated mt-0">
+  <label class="d-block" for="{{filter.brand}}" *ngFor="let filter of tagsFilters">
+    <input class="checkbox_animated" type="checkbox" [value]="filter.brand" (change)=checkedFilter($event)
+      id="{{filter.brand}}"> {{filter.brand}}
+  </label>
+</div>

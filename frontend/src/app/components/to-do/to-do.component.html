@@ -1,0 +1,73 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>To-Do</h5>
+        </div>
+        <div class="card-body">
+          <div class="todo">
+            <div class="todo-list-wrapper">
+              <div class="todo-list-container">
+                <div class="mark-all-tasks">
+                  <div class="mark-all-tasks-container">
+                    <span class="mark-all-btn" [ngClass]="{'move-up':completed}" id="mark-all-finished" role="button">
+                      <span class="btn-label">Mark all as finished</span>
+                      <span class="action-box completed" (click)="markAllAction(true);">
+                        <i class="icon"><i class="icon-check"></i></i>
+                      </span>
+                    </span>
+                    <span class="mark-all-btn" [ngClass]="{'move-down':!completed}" id="mark-all-incomplete"
+                      role="button">
+                      <span class="btn-label">Mark all as completed</span>
+                      <span class="action-box" (click)="markAllAction(false);">
+                        <i class="icon"><i class="icon-check"></i></i>
+                      </span>
+                    </span>
+                  </div>
+                </div>
+                <div class="todo-list-body">
+                  <ul id="todo-list">
+                    <li class="task" [ngClass]="{'completed':todo.completed}" *ngFor="let todo of todos;let i=index">
+                      <div class="task-container">
+                        <h4 class="task-label">{{todo.text}}</h4>
+                        <span class="task-action-btn">
+                          <span class="action-box large delete-btn" title="Delete Task" (click)="taskDeleted(i)"><i
+                              class="icon"><i class="icon-trash"></i></i></span>
+                          <span class="action-box large complete-btn" title="Mark Complete"
+                            (click)="taskCompleted(todo)"><i class="icon"><i class="icon-check"></i></i></span>
+                        </span>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="todo-list-footer">
+                  <div class="add-task-btn-wrapper">
+                    <span class="add-task-btn" [ngClass]="{'hide':visible}">
+                      <button class="btn btn-primary" (click)="visible=true">
+                        <i class="icon-plus mr-1"></i>Add new task
+                      </button>
+                    </span>
+                  </div>
+                  <div class="new-task-wrapper" [ngClass]="{'visible':visible}">
+                    <textarea id="new-task" placeholder="Enter new task here. . ." [(ngModel)]="text"
+                      [class.border-danger]="red_border"></textarea>
+                    <button class="btn btn-danger cancel-btn" id="close-task-panel"
+                      (click)="visible=false">Close</button>
+                    <button class="btn btn-success ml-3 add-new-task-btn" id="add-task" (click)="addTask(text)">Add
+                      Task</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="notification-popup hide">
+              <p><span class="task"></span><span class="notification-text"></span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

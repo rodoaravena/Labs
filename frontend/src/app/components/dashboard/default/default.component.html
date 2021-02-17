@@ -1,0 +1,459 @@
+  <!-- Container-fluid starts-->
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-xl-8 xl-100">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="chart-widget-dashboard">
+                  <div class="media">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-0 f-w-600"><app-feather-icons [icon]="'dollar-sign'"></app-feather-icons><span class="counter" [CountTo]="5789" [from]="0" [duration]="2"></span></h5>
+                      <p>Total Visits</p>
+                    </div><app-feather-icons [icon]="'tag'"></app-feather-icons>
+                  </div>
+                  <div class="dashboard-chart-container">
+                    <x-chartist class="small-chart-gradient-1" [data]="chart1.data" [type]="chart1.type" [options]="chart1.options" [events]="chart1.events">
+                    </x-chartist>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="chart-widget-dashboard">
+                  <div class="media">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-0 f-w-600"><app-feather-icons [icon]="'dollar-sign'"></app-feather-icons><span class="counter" [CountTo]="4986" [from]="0" [duration]="2"></span></h5>
+                      <p>Total Sale</p>
+                    </div><app-feather-icons [icon]="'shopping-cart'"></app-feather-icons>
+                  </div>
+                  <div class="dashboard-chart-container">
+                    <x-chartist class="small-chart-gradient-2" [data]="chart2.data" [type]="chart2.type" [options]="chart2.options" [events]="chart2.events">
+                    </x-chartist>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="chart-widget-dashboard">
+                  <div class="media">
+                    <div class="media-body">
+                      <h5 class="mt-0 mb-0 f-w-600"><app-feather-icons [icon]="'dollar-sign'"></app-feather-icons><span class="counter" [CountTo]="8568" [from]="0" [duration]="2"></span></h5>
+                      <p>Total Value</p>
+                    </div><app-feather-icons [icon]="'sun'"></app-feather-icons>
+                  </div>
+                  <div class="dashboard-chart-container">
+                    <x-chartist class="small-chart-gradient-3" [data]="chart3.data" [type]="chart3.type" [options]="chart3.options" [events]="chart3.events">
+                    </x-chartist>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-header">
+                <h5>Production Valuation</h5>
+              </div>
+              <div class="card-body">
+                <div class="show-value-top d-flex">
+                  <div class="value-left d-inline-block">
+                    <div class="square bg-primary d-inline-block"></div><span>Total Earning</span>
+                  </div>
+                  <div class="value-right d-inline-block">
+                    <div class="square d-inline-block bg-secondary"></div><span>Total Tax</span>
+                  </div>
+                </div>
+                <x-chartist class="smooth-chart flot-chart-container" [data]="chart4.data" [type]="chart4.type" [options]="chart4.options" [events]="chart4.events">
+                </x-chartist>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 xl-100">
+        <div class="card">
+          <div class="card-header">
+            <h5>Activity</h5>
+          </div>
+          <div class="card-body activity-scroll">
+            <div class="activity">
+              <div class="media">
+                <div class="gradient-round m-r-30 gradient-line-1"><app-feather-icons [icon]="'shopping-cart'"></app-feather-icons></div>
+                <div class="media-body">
+                  <h6>New Sale <span class="pull-right f-14">New</span></h6>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="gradient-round m-r-30 gradient-line-1"><app-feather-icons [icon]="'message-circle'"></app-feather-icons></div>
+                <div class="media-body">
+                  <h6>New Message <span class="pull-right f-14">14m Ago</span></h6>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="gradient-round m-r-30 small-line"><app-feather-icons [icon]="'minus-circle'"></app-feather-icons></div>
+                <div class="media-body">
+                  <h6>New Report <span class="pull-right f-14">14m Ago</span></h6>
+                  <p>Lorem Ipsum is simply dummy text.</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="gradient-round m-r-30 gradient-line-1"><app-feather-icons [icon]="'shopping-bag'"></app-feather-icons></div>
+                <div class="media-body">
+                  <h6>New Sale <span class="pull-right f-14">14m Ago</span></h6>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.</p>
+                </div>
+              </div>
+              <div class="media">
+                <div class="gradient-round m-r-30 medium-line"><app-feather-icons [icon]="'tag'"></app-feather-icons></div>
+                <div class="media-body">
+                  <h6>New Visits <span class="pull-right f-14">14m Ago</span></h6>
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.Lorem Ipsum has been the industry.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 xl-50 col-md-6">
+        <div class="card">
+          <div class="card-header">
+            <h5>Total Profit</h5><span class="d-block fonts-dashboard">All Custom Income</span>
+          </div>
+          <div class="card-body">
+            <div class="knob-block text-center">
+               <div class="knob" id="profit"></div>
+            </div>
+            <div class="show-value d-flex">
+              <div class="value-left">
+                <div class="square bg-primary d-inline-block"></div><span>Total Profit</span>
+              </div>
+              <div class="value-right">
+                <div class="square bg-light d-inline-block"></div><span>Total Investment</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 xl-50 col-md-6">
+        <div class="row">
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body progress-media">
+                <div class="media">
+                  <div class="media-body">
+                    <h5>Total Review</h5><span class="mb-0 d-block">Customer Review</span>
+                  </div><app-feather-icons [icon]="'thumbs-up'"></app-feather-icons>
+                </div>
+                <div class="progress-bar-showcase">
+                  <div class="progress sm-progress-bar">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 90%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress-change"><span>Change</span><span class="pull-right">95%</span></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="card">
+              <div class="card-body progress-media">
+                <div class="media">
+                  <div class="media-body">
+                    <h5>Total Feedback</h5><span class="mb-0 d-block">Feedback</span>
+                  </div><app-feather-icons [icon]="'message-circle'"></app-feather-icons>
+                </div>
+                <div class="progress-bar-showcase">
+                  <div class="progress sm-progress-bar">
+                    <div class="progress-bar bg-primary" role="progressbar" style="width: 85%" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <div class="progress-change"><span>Change</span><span class="pull-right">85%</span></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-4 xl-100">
+        <div class="card user-card">
+          <div class="card-body">
+            <div class="online-user">
+              <h5 class="font-primary f-18 mb-0">Online</h5>
+            </div>
+            <div class="user-card-image"><img class="img-fluid rounded-circle image-radius" src="assets/images/dashboard/designer.jpg" alt=""></div>
+            <div class="user-deatils text-center">
+              <h5>Marshi Kisteen</h5>
+              <h6 class="mb-0">marshikisteen@gmail.com</h6>
+            </div>
+            <div class="user-badge text-center"><a class="badge badge-pill badge-light"  href="javascript:void(0)">Dashboard</a><a class="badge badge-pill badge-light"  href="javascript:void(0)">Ui</a><a class="badge badge-pill badge-light"  href="javascript:void(0)">Xi</a><a  href="javascript:void(0)"><span class="badge badge-pill badge-light active">2+</span></a></div>
+            <div class="card-footer row pb-0 text-center">
+              <div class="col-6">
+                <div class="d-flex user-footer"><app-feather-icons class="m-r-10"  [icon]="'message-square'"></app-feather-icons>
+                  <h6 class="f-18 mb-0">Message</h6>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="d-flex user-footer"><app-feather-icons class="m-r-10"  [icon]="'briefcase'"></app-feather-icons>
+                  <h6 class="f-18 mb-0">Portfolio</h6>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="card">
+          <div class="card-header card-header-border">
+            <div class="row">
+              <div class="col-sm-6">
+                <h5>New User</h5>
+              </div>
+              <div class="col-sm-6">
+                <div class="pull-right right-header"><span>Month</span><span>
+                    <button class="btn btn-primary btn-pill">Today</button></span></div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="new-users">
+              <div class="media"><img class="rounded-circle image-radius m-r-15" src="assets/images/user/2.png" alt="">
+                <div class="media-body">
+                  <h6 class="mb-0 f-w-700">Nick Stone</h6>
+                  <p>Visual Designer, Github Inc</p>
+                </div><span class="pull-right">
+                  <button class="btn btn-pill btn-outline-light">Follow</button></span>
+              </div>
+              <div class="media"><img class="rounded-circle image-radius m-r-15" src="assets/images/user/5.jpg" alt="">
+                <div class="media-body">
+                  <h6 class="mb-0 f-w-700">Milano Esco</h6>
+                  <p>Visual Designer, Github Inc</p>
+                </div><span class="pull-right">
+                  <button class="btn btn-pill btn-outline-light">Follow</button></span>
+              </div>
+              <div class="media"><img class="rounded-circle image-radius m-r-15" src="assets/images/user/3.jpg" alt="">
+                <div class="media-body">
+                  <h6 class="mb-0 f-w-700">Wiltor Noice</h6>
+                  <p>Visual Designer, Github Inc</p>
+                </div><span class="pull-right">
+                  <button class="btn btn-pill btn-outline-light">Follow</button></span>
+              </div>
+              <div class="media"><img class="rounded-circle image-radius m-r-15" src="assets/images/user/4.jpg" alt="">
+                <div class="media-body">
+                  <h6 class="mb-0 f-w-700">Anna Strong</h6>
+                  <p>Visual Designer, Github Inc</p>
+                </div><span class="pull-right">
+                  <button class="btn btn-pill btn-outline-light">Follow</button></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-6">
+        <div class="card">
+          <div class="card-header card-header-border">
+            <div class="row">
+              <div class="col-sm-6">
+                <h5>Recent Notification</h5>
+              </div>
+              <div class="col-sm-6">
+                <div class="pull-right right-header">
+                  <div class="onhover-dropdown">
+                    <button class="btn btn-primary btn-pill" type="button">All <span class="pr-0"><i class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div right-header-dropdown"><a class="d-block"  href="javascript:void(0)">Order</a><a class="d-block"  href="javascript:void(0)">Download</a><a class="d-block"  href="javascript:void(0)">Trash</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body recent-notification">
+            <div class="media">
+              <h6>09:00</h6>
+              <div class="media-body"><span>Lorem ipsum dolor sit amit,consectetur eiusmdd.</span>
+                <p class="f-12">By Kan</p>
+              </div>
+            </div>
+            <div class="media">
+              <h6>10:50</h6>
+              <div class="media-body"><span>Lorem ipsum.</span>
+                <p class="f-12">By Tailer</p>
+              </div>
+            </div>
+            <div class="media">
+              <h6>01:00</h6>
+              <div class="media-body"><span>Lorem ipsum dolor sit amit,consectetur eiusmdd.</span>
+                <p class="f-12">By Kaint</p>
+              </div>
+            </div>
+            <div class="media">
+              <h6>05:00</h6>
+              <div class="media-body"><span>Lorem ipsum dolor sit amit.</span>
+                <p class="f-12">By call</p>
+              </div>
+            </div>
+            <div class="media">
+              <h6>12:00</h6>
+              <div class="media-body"><span>Lorem ipsum dolor sit.</span>
+                <p class="f-12">By Waiter</p>
+              </div>
+            </div>
+            <div class="media">
+              <h6>08:20</h6>
+              <div class="media-body"><span>Lorem ipsum dolor sit amit,consectetur eiusmdd dolor sit amit.</span>
+                <p class="f-12">By Comman</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-12">
+        <div class="card">
+          <div class="card-header">
+            <h5>Calculation</h5>
+          </div>
+          <div class="card-body">
+            <div class="show-value-top d-flex">
+              <div class="value-left d-inline-block">
+                <div class="square bg-primary d-inline-block"></div><span>Total Income</span>
+              </div>
+              <div class="value-right d-inline-block">
+                <div class="square d-inline-block bg-smooth-chart"></div><span>Total Loss</span>
+              </div>
+            </div>
+            <x-chartist class="ct-svg flot-chart-container" [data]="chart5.data" [type]="chart5.type" [options]="chart5.options" [events]="chart5.events">
+            </x-chartist>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-7 xl-100">
+        <div class="card">
+          <div class="card-header card-header-border">
+            <div class="row">
+              <div class="col-sm-6">
+                <h5>Conversations</h5>
+              </div>
+              <div class="col-sm-6">
+                <div class="right-header pull-right m-t-5">
+                  <div class="onhover-dropdown"><app-feather-icons [icon]="'more-horizontal'"></app-feather-icons>
+                    <div class="onhover-show-div right-header-dropdown more-dropdown"><a class="d-block"  href="javascript:void(0)">View</a><a class="d-block"  href="javascript:void(0)">Media</a><a class="d-block"  href="javascript:void(0)">Search</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body chat-box dashboard-chat">
+            <div class="chat">
+              <div class="media left-side-chat"><img class="rounded-circle chat-user-img img-60 m-r-20" src="assets/images/user/4.jpg" alt="">
+                <div class="media-body">
+                  <div class="message-main">
+                    <p class="mb-0">Lorem Ipsum is simply dummy text of the </p>
+                  </div>
+                </div>
+              </div>
+              <div class="media right-side-chat">
+                <div class="media-body text-right">
+                  <div class="message-main">
+                    <p class="pull-right">Lorem Ipsum is simply dummy text of the printing and Lorem Ipsum has been the industry's</p>
+                    <div class="clearfix"></div>
+                  </div>
+                  <div class="sub-message message-main">
+                    <p class="pull-right mb-0">Lorem Ipsum is simply dummy text of the </p>
+                    <div class="clearfix"></div>
+                  </div>
+                </div><img class="rounded-circle chat-user-img img-60 m-l-20" src="assets/images/user/5.jpg" alt="">
+              </div>
+              <div class="media left-side-chat"><img class="rounded-circle chat-user-img img-60 m-r-20" src="assets/images/user/4.jpg" alt="">
+                <div class="media-body">
+                  <div class="message-main">
+                    <p>Lorem Ipsum is simply dummy text of the printing</p>
+                  </div>
+                  <div class="sub-message message-main smiley-bg"><img src="assets/images/dashboard/smily.png" alt=""></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="media chat-footer bg-primary"><i class="icon-face-smile"></i>
+            <div class="media-body">
+              <input class="form-control" type="text" placeholder="Type your message" required="">
+            </div><app-feather-icons [icon]="'send'"></app-feather-icons>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-5 xl-100">
+        <div class="card">
+          <div class="card-header card-header-border">
+            <div class="row">
+              <div class="col-sm-6">
+                <h5>Selling Update</h5>
+              </div>
+              <div class="col-sm-6">
+                <div class="pull-right right-header">
+                  <div class="onhover-dropdown">
+                    <button class="btn btn-primary btn-pill" type="button">All <span class="pr-0"><i class="fa fa-angle-down"></i></span></button>
+                    <div class="onhover-show-div right-header-dropdown"><a class="d-block"  href="javascript:void(0)">shipping</a><a class="d-block"  href="javascript:void(0)">Purchase</a><a class="d-block"  href="javascript:void(0)">Total Sell</a></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-4">
+                <div class="selling-update text-center"><app-feather-icons [icon]="'activity'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">+500</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center"><app-feather-icons [icon]="'anchor'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">+120</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center"><app-feather-icons [icon]="'box'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">-410</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center"><app-feather-icons [icon]="'book'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">-155</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center"><app-feather-icons [icon]="'compass'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">+920</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center"><app-feather-icons [icon]="'cpu'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">+500</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center mb-0 xs-mb-selling"><app-feather-icons [icon]="'dollar-sign'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">+500</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center mb-0 xs-mb-selling"><app-feather-icons [icon]="'slack'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">+120</h5>
+                </div>
+              </div>
+              <div class="col-sm-4">
+                <div class="selling-update text-center mb-0"><app-feather-icons [icon]="'umbrella'"></app-feather-icons>
+                  <h5 class="mb-0 f-18">-410</h5>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Container-fluid Ends-->

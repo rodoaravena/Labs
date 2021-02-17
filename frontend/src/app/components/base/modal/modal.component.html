@@ -1,0 +1,122 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Modal with default options</h5>
+        </div>
+        <div class="card-body">
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Profile update</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="dateOfBirth">Date of birth</label>
+                  <div class="input-group">
+                    <input id="dateOfBirth" class="form-control" placeholder="yyyy-mm-dd" name="dp" ngbDatepicker
+                      #dp="ngbDatepicker">
+                    <div class="input-group-append">
+                      <button class="btn btn-outline-secondary calendar" (click)="dp.toggle()" type="button"></button>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="modal.close('Save click')">Save</button>
+            </div>
+          </ng-template>
+          <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button>
+          <hr>
+          <pre class="mb-0">Result : {{closeResult}}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>
+            Components as content</h5>
+        </div>
+        <div class="card-body">
+          <p>You can pass an existing component as content of the modal window. In this case remember to add content
+            component
+            as an <code>entryComponents</code> section of your <code>NgModule</code>.</p>
+          <button class="btn btn-lg btn-outline-primary" (click)="openModal()">Launch demo modal</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Stacked modals</h5>
+        </div>
+        <div class="card-body">
+          <button class="btn btn-lg btn-outline-primary" (click)="openStackedModal()">Launch demo modal</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Global configuration of modals</h5>
+        </div>
+        <div class="card-body">
+          <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modal-header">
+              <h4 class="modal-title" id="modal-basic-title">Hi there!</h4>
+              <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>Hello, World!</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-outline-dark" (click)="c('Save click')">Save</button>
+            </div>
+          </ng-template>
+          <button class="btn btn-lg btn-outline-primary" (click)="openCustomModal(content)">Launch demo modal</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Modal with options</h5>
+        </div>
+        <div class="card-body">
+          <ng-template #content let-modal>
+            <div class="modal-header">
+              <h4 class="modal-title">Modal title</h4>
+              <button type="button" class="close" aria-label="Close" (click)="modal.dismiss('Cross click')">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+              <p>One fine body&hellip;</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-light" (click)="modal.close('Close click')">Close</button>
+            </div>
+          </ng-template>
+          <div class="btn-showcase modal-options-p-xs">
+            <button class="btn btn-outline-primary" (click)="openWindowCustomClass(content)">Modal with window custom
+              class</button>
+            <button class="btn btn-outline-primary" (click)="openBackDropCustomClass(content)">Modal with backdrop
+              custom class</button>
+            <button class="btn btn-outline-primary" (click)="openSm(content)">Small modal</button>
+            <button class="btn btn-outline-primary" (click)="openLg(content)">Large modal</button>
+            <button class="btn btn-outline-primary" (click)="openVerticallyCentered(content)">Modal vertically
+              centered</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

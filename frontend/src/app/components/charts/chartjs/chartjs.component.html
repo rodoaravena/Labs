@@ -1,0 +1,83 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Bar Chart</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart" [datasets]="barChartData" [labels]="barChartLabels"
+                        [options]="barChartOptions" [colors]="barChartColors" [legend]="barChartLegend"
+                        [chartType]="barChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Line Graph</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart" [datasets]="lineGraphData" [labels]="lineGraphLabels"
+                        [options]="lineGraphOptions" [colors]="lineGraphColors" [legend]="lineGraphLegend"
+                        [chartType]="lineGraphType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Radar Graph</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart" [datasets]="radarGraphData" [labels]="radarGraphLabels"
+                        [options]="radarGraphOptions" [colors]="radarGraphColors" [legend]="radarGraphLegend"
+                        [chartType]="radarGraphType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Line Chart</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart" [datasets]="lineChartData" [labels]="lineChartLabels"
+                        [options]="lineChartOptions" [colors]="lineChartColors" [legend]="lineChartLegend"
+                        [chartType]="lineChartType" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Doughnut Chart</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart" [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                        [options]="doughnutChartOptions" [chartType]="doughnutChartType" [colors]="doughnutChartColors"
+                        (chartHover)="chartHovered($event)" (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+        <div class="col-xl-6 col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Polar Chart</h5>
+                </div>
+                <div class="card-body chart-block">
+                    <canvas baseChart class="chart chartjs-custom" [data]="polarAreaChartData"
+                        [options]="polarChartOptions" [labels]="polarAreaChartLabels" [legend]="polarAreaLegend"
+                        [chartType]="polarAreaChartType" [colors]="ploarChartColors" (chartHover)="chartHovered($event)"
+                        (chartClick)="chartClicked($event)"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends -->

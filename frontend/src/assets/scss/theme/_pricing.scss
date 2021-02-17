@@ -1,0 +1,283 @@
+/**=====================
+     34. Pricing CSS Start
+==========================**/
+.pricing-content{
+  div{
+    .pricing-simple, .pricing-block{
+      margin-bottom: 0;
+    }
+    .pricing-simple {
+      .btn-block {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+      }
+    }
+  }
+}
+.pricing-content-ribbons{
+  div {
+    .pricing-block{
+      margin-bottom: 30px;
+    }
+    &:last-child,
+    &:nth-child(7),
+    &:nth-child(8){
+      .pricing-block{
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+.pricing-card-design-2{
+  .pricing-block{
+    .pricing-inner{
+      ul{
+        margin-bottom: 30px;
+        li{
+          border-bottom: 1px solid $light-body-bg-color;
+        }
+      }
+    }
+  }
+}
+$svg-dark: $primary-color;
+.pricing-active {
+  svg {
+    g {
+      path {
+        $svg-dark1: darken($svg-dark, 5%);
+        fill: $svg-dark1 !important;
+      }
+    }
+  }
+}
+.pricing-block {
+  box-shadow: 0 0 10px 5px rgba($primary-color, 0.05);
+  svg {
+    g {
+      path {
+        fill: $primary-color;
+      }
+    }
+  }
+  &.bg-primary{
+    .pricing-inner{
+      .btn-primary{
+        $svg-dark1: darken($svg-dark, 5%);
+        background-color: $svg-dark1 !important;
+        border-color: $svg-dark1 !important;
+      }
+    }
+  }
+  svg {
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    margin-left: -1px;
+  }
+  .pricing-inner {
+    padding: 30px 0 30px;
+    ul {
+      padding: 0;
+      margin-bottom: 9px;
+      li {
+        h6{
+          line-height: 45px;
+          margin-bottom: 0;
+        }
+      }
+    }
+    h3 {
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 9px;
+    }
+  }
+}
+.pricing-simple{
+  box-shadow: 0 0 10px 5px rgba($primary-color, 0.05);
+  .card-body{
+    border-bottom: none;
+    h3{
+      position: relative;
+      margin-bottom: 38px;
+      &:before{
+        position: absolute;
+        content: '';
+        width: 80px;
+        height: 1px;
+        margin: 0 auto;
+        left: 0;
+        right: 0;
+        bottom: -10px;
+        background-color: $light-text;
+      }
+    }
+    h1{
+      font-size: 80px;
+      line-height: 0.9;
+      margin-bottom: 30px;
+    }
+  }
+}
+@media only screen and (max-width: 1366px){
+  .pricing-content{
+    div{
+      &:nth-child(2),
+      &:first-child{
+        .pricing-simple {
+          margin-bottom: 30px;
+        }
+      }
+    }
+  }
+}
+@media screen and (min-device-width: 768px) and (max-device-width: 1199px){
+  .pricing-block{
+    .ribbon-vertical-left {
+      left: 3px;
+      top: 0px;
+    }
+    .ribbon-bookmark{
+      top: 0;
+      left: -1px;
+    }
+    .ribbon-clip-right{
+      top: 0;
+    }
+  }
+}
+@media only screen and (max-width: 1199px){
+  .pricing-block{
+    .pricing-inner{
+      h3 {
+        font-size: 20px;
+      }
+      ul{
+        li{
+          h6{
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 991px) {
+  .pricing-content{
+    div{
+      &:nth-child(2),
+      &:first-child{
+        .pricing-simple {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  .pricing-block {
+    .pricing-inner {
+      padding: 20px 0 20px;
+      ul, h3 {
+        margin-bottom: 1px;
+      }
+    }
+  }
+  .pricing-simple{
+    .card-body{
+      h1 {
+        margin-bottom: 20px;
+      }
+      h3 {
+        margin-bottom: 28px;
+      }
+    }
+  }
+  .pricing-card-design-2 {
+    .pricing-block{
+      .pricing-inner{
+        ul {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 767px) {
+  .pricing-content-ribbons{
+    div {
+      .pricing-block{
+        margin-bottom: 20px !important;
+      }
+      &:last-child{
+        .pricing-block{
+          margin-bottom: 0 !important;
+        }
+      }
+    }
+  }
+  .pricing-content{
+    div{
+      .pricing-block {
+        margin-bottom: 20px;
+      }
+      &:last-child{
+        .pricing-block{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .pricing-block {
+    .pricing-inner {
+      padding: 15px 0 15px;
+      h3{
+        font-size: 28px;
+      }
+      ul{
+        li{
+          h6{
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 575px){
+  .pricing-content{
+    div{
+      .pricing-simple {
+        margin-bottom: 15px;
+      }
+      &:last-child{
+        .pricing-simple{
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+  .pricing-simple{
+    .card-body{
+      h1 {
+        margin-bottom: 15px;
+      }
+    }
+  }
+  .pricing-block {
+    .pricing-inner {
+      padding: 15px 0 15px;
+    }
+  }
+  .pricing-card-design-2 {
+    .pricing-block{
+      .pricing-inner{
+        ul {
+          margin-bottom: 15px;
+        }
+      }
+    }
+  }
+}
+/**=====================
+    34. Pricing CSS Ends
+==========================**/

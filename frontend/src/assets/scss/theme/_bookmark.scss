@@ -1,0 +1,75 @@
+/**=====================
+    83. Bookmark CSS start
+==========================**/
+.bookmark {
+  ul {
+    li {
+      display: inline-block;
+      a {
+        padding: 0 6px;
+      }
+      .search-form {
+        position: absolute;
+        bottom: 53px;
+        .form-control-search {
+          top: 60px;
+          position: absolute;
+          transition: all linear 0.3s;
+          right: -50px;
+          transform: translateY(-35px) scaleY(0);
+          opacity: 0;
+          visibility: hidden;
+          svg {
+            width: 18px;
+            height: 18px;
+          }
+          input {
+            width: 300px;
+            background-color: $white;
+            box-shadow: 0 5px 21px rgba(0, 0, 0, 0.10);
+          }
+          &.open {
+              transform: translateY(0px) scaleY(1);
+              opacity: 1;
+              visibility: visible;
+              transition: all linear 0.3s;
+              z-index: 100;
+          }
+          &:after {
+            top: 12px;
+            left: 20px;
+            z-index: 1;
+          }
+          &:before {
+            left: 50px;
+            top: 9px;
+            z-index: 2;
+          }
+        }
+      }
+      a{
+        position: relative;
+        color: $theme-body-font-color;
+        svg {
+          vertical-align: middle;
+        }
+      }
+      &:first-child {
+        a {
+          padding-left: 0;
+        }
+      }
+      &:last-child {
+        a {
+          padding-right: 0;
+          svg {
+            color: $warning-color;
+          }
+        }
+      }
+    }
+  }
+}
+/**=====================
+    83. Bookmark CSS Ends
+==========================**/

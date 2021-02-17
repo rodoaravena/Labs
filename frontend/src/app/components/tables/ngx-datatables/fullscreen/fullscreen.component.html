@@ -1,0 +1,25 @@
+<!-- Container-fluid starts -->
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="card">
+                <div class="card-header">
+                    <h5>Fullscreen Table</h5>
+                </div>
+                <div class="card-body custom-datatable">
+                    <ngx-datatable class="bootstrap fullscreen" [columnMode]="'force'" [headerHeight]="50"
+                        [footerHeight]="0" [rowHeight]="50" [scrollbarV]="false" [scrollbarH]="false" [rows]="employee">
+                        <ngx-datatable-column name="Id" [width]="80"></ngx-datatable-column>
+                        <ngx-datatable-column name="Name" [width]="300"></ngx-datatable-column>
+                        <ngx-datatable-column name="Gender"></ngx-datatable-column>
+                        <ngx-datatable-column name="Age"></ngx-datatable-column>
+                        <ngx-datatable-column name="City" [width]="300" prop="address.city"></ngx-datatable-column>
+                        <ngx-datatable-column name="State" [width]="300" prop="address.state"></ngx-datatable-column>
+                    </ngx-datatable>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- Container-fluid Ends -->

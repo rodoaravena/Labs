@@ -1,0 +1,648 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid">
+  <div class="row" id="project">
+    <div class="col-sm-12">
+      <ngb-tabset>
+        <ngb-tab>
+          <ng-template ngbTabTitle class="nav-item">
+            <app-feather-icons [icon]="'home'" class="custom-ic"></app-feather-icons>Home
+            <div class="material-border"></div>
+          </ng-template>
+          <ng-template ngbTabContent class="tab-content">
+            <div class="tab-pane fade show" id="home" role="tabpanel" aria-labelledby="home">
+              <div class="row">
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="media">
+                        <div class="select2-drpdwn-project select-options">
+                          <select class="form-control form-control-primary btn-square" name="select">
+                            <option value="opt1">Today</option>
+                            <option value="opt2">Yesterday</option>
+                            <option value="opt3">Tomorrow</option>
+                            <option value="opt4">Monthly</option>
+                            <option value="opt5">Weekly</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="project-widgets text-center">
+                        <h1 class="font-primary counter" [CountTo]="45" [from]="0" [duration]="1"></h1>
+                        <h6 class="mb-0">Due Tasks</h6>
+                      </div>
+                    </div>
+                    <div class="card-footer project-footer">
+                      <h6 class="mb-0">Completed: <span class="counter" [CountTo]="14" [from]="0" [duration]="1"></span>
+                      </h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="media">
+                        <h5 class="mb-0">Features</h5>
+                      </div>
+                      <div class="project-widgets text-center">
+                        <h1 class="font-primary counter" [CountTo]="80" [from]="0" [duration]="1"></h1>
+                        <h6 class="mb-0">Proposals</h6>
+                      </div>
+                    </div>
+                    <div class="card-footer project-footer">
+                      <h6 class="mb-0">Implemented: <span class="counter" [CountTo]="14" [from]="0"
+                          [duration]="1"></span></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="media">
+                        <h5 class="mb-0">Issues</h5>
+                      </div>
+                      <div class="project-widgets text-center">
+                        <h1 class="font-primary counter" [CountTo]="34" [from]="0" [duration]="1"></h1>
+                        <h6 class="mb-0">Open</h6>
+                      </div>
+                    </div>
+                    <div class="card-footer project-footer">
+                      <h6 class="mb-0">Closed today: <span class="counter" [CountTo]="10" [from]="0"
+                          [duration]="1"></span></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-3 col-sm-6">
+                  <div class="card">
+                    <div class="card-body">
+                      <div class="media">
+                        <h5 class="mb-0">Overdue</h5>
+                      </div>
+                      <div class="project-widgets text-center">
+                        <h1 class="font-primary counter" [CountTo]="7" [from]="0" [duration]="1"></h1>
+                        <h6 class="mb-0">Tasks</h6>
+                      </div>
+                    </div>
+                    <div class="card-footer project-footer">
+                      <h6 class="mb-0">Task Solved: <span class="counter" [CountTo]="4" [from]="0"
+                          [duration]="1"></span></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div class="card-header project-header">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <h5>Task Distribution</h5>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="select2-drpdwn-project select-options">
+                            <select class="form-control form-control-primary btn-square" name="select">
+                              <option value="opt1">Today</option>
+                              <option value="opt2">Yesterday</option>
+                              <option value="opt3">Tomorrow</option>
+                              <option value="opt4">Monthly</option>
+                              <option value="opt5">Weekly</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body chart-block chart-vertical-center project-charts">
+                      <ngx-charts-pie-chart [view]="view" [scheme]="doughnutChartColorScheme" [results]="doughnutData"
+                        [explodeSlices]="true" [labels]="doughnutChartShowLabels" [arcWidth]=0.50 [doughnut]="true"
+                        [gradient]="doughnutChartGradient" (select)="onSelect($event)">
+                      </ngx-charts-pie-chart>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6">
+                  <div class="card">
+                    <div class="card-header project-header">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <h5>Schedule</h5>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="select2-drpdwn-project select-options">
+                            <select class="form-control form-control-primary btn-square" name="select">
+                              <option value="opt1">Today</option>
+                              <option value="opt2">Yesterday</option>
+                              <option value="opt3">Tomorrow</option>
+                              <option value="opt4">Monthly</option>
+                              <option value="opt5">Weekly</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body">
+                      <div class="schedule">
+                        <div class="media">
+                          <div class="media-body">
+                            <h6>Group Meeting</h6>
+                            <p>30 minutes</p>
+                          </div>
+                          <div ngbDropdown class="dropdown schedule-dropdown d-inline-block">
+                            <button class="btn" id="dropdownMenuButton" ngbDropdownToggle>
+                              <app-feather-icons [icon]="'more-horizontal'"></app-feather-icons>
+                            </button>
+                            <div ngbDropdownMenu aria-labelledby="dropdownBasic1">
+                              <button class="dropdown-item">Project</button>
+                              <button class="dropdown-item">Requirements</button>
+                              <button class="dropdown-item">Discussion</button>
+                              <button class="dropdown-item">Planning</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="media">
+                          <div class="media-body">
+                            <h6>Public Beta Release</h6>
+                            <p>10:00 PM</p>
+                          </div>
+                          <app-feather-icons [icon]="'more-horizontal'"></app-feather-icons>
+                        </div>
+                        <div class="media">
+                          <div class="media-body">
+                            <h6>Lunch</h6>
+                            <p>12:30 PM</p>
+                          </div>
+                          <app-feather-icons [icon]="'more-horizontal'"></app-feather-icons>
+                        </div>
+                        <div class="media">
+                          <div class="media-body">
+                            <h6>Clients Timing</h6>
+                            <p>2:00 PM to 6:00 PM</p>
+                          </div>
+                          <app-feather-icons [icon]="'more-horizontal'"></app-feather-icons>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Github Issues</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="row">
+                        <div class="col-xl-6 xl-100">
+                          <div class="row more-projects">
+                            <div class="col-sm-6 xl-4">
+                              <div class="projects-main">
+                                <div class="project-content">
+                                  <h6>Created</h6>
+                                  <h5 class="counter mb-0">27</h5>
+                                </div>
+                                <x-chartist class="project-small-chart-1 project-small" [data]="chart1.data"
+                                  [type]="chart1.type" [options]="chart1.options" [events]="chart1.events">
+                                </x-chartist>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 xl-4">
+                              <div class="projects-main">
+                                <div class="project-content">
+                                  <h6>Fixed</h6>
+                                  <h5 class="counter mb-0">8</h5>
+                                </div>
+                                <x-chartist class="project-small-chart-2 project-small" [type]="chart2.type"
+                                  [data]="chart2.data" [options]="chart2.options" [events]="chart2.events"></x-chartist>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 xl-4">
+                              <div class="projects-main">
+                                <div class="project-content">
+                                  <h6>Re-opened</h6>
+                                  <h5 class="counter mb-0">2</h5>
+                                </div>
+                                <x-chartist class="project-small-chart-3 project-small" [type]="chart3.type"
+                                  [data]="chart3.data" [options]="chart3.options" [events]="chart3.events"></x-chartist>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 xl-4">
+                              <div class="projects-main">
+                                <div class="project-content">
+                                  <h6>Closed</h6>
+                                  <h5 class="counter mb-0">10</h5>
+                                </div>
+                                <x-chartist class="project-small-chart-4 project-small" [type]="chart4.type"
+                                  [data]="chart4.data" [options]="chart4.options" [events]="chart4.events"></x-chartist>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 xl-4">
+                              <div class="projects-main">
+                                <div class="project-content">
+                                  <h6>Wont'fix</h6>
+                                  <h5 class="counter mb-0">25</h5>
+                                </div>
+                                <x-chartist class="project-small-chart-5 project-small" [type]="chart5.type"
+                                  [data]="chart5.data" [options]="chart5.options" [events]="chart5.events"></x-chartist>
+                              </div>
+                            </div>
+                            <div class="col-sm-6 xl-4">
+                              <div class="projects-main">
+                                <div class="project-content">
+                                  <h6>Need's test</h6>
+                                  <h5 class="counter mb-0">5</h5>
+                                </div>
+                                <x-chartist class="project-small-chart-6 project-small" [type]="chart6.type"
+                                  [data]="chart6.data" [options]="chart6.options" [events]="chart6.events"></x-chartist>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-xl-6 xl-100 github-lg">
+                          <div class="show-value-top d-flex">
+                            <div class="value-left d-inline-block">
+                              <div class="square bg-primary d-inline-block"></div><span>Closed Issues</span>
+                            </div>
+                            <div class="value-right d-inline-block">
+                              <div class="square d-inline-block bg-secondary"></div><span>Issues</span>
+                            </div>
+                          </div>
+                          <div class="flot-chart-container">
+                            <div class="flot-chart-placeholder" id="github-issues">
+                              <ngx-charts-bar-vertical-stacked [scheme]="verticalStackChartColorScheme"
+                                [results]="multiData" [gradient]="verticalStackChartgradient"
+                                [xAxis]="verticalStackChartshowXAxis" [yAxis]="verticalStackChartshowYAxis"
+                                [legend]="verticalStackChartshowLegend" [showXAxisLabel]="showXAxisLabel"
+                                [showYAxisLabel]="showYAxisLabel" [barPadding]=20 [yScaleMax]=8
+                                (select)="onSelect($event)">
+                              </ngx-charts-bar-vertical-stacked>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle class="nav-item">
+            <app-feather-icons [icon]="'activity'" class="custom-ic"></app-feather-icons>Budget Summary
+            <div class="material-border"></div>
+          </ng-template>
+          <ng-template ngbTabContent class="tab-content">
+            <div class="tab-pane fade show" id="budget" role="tabpanel" aria-labelledby="budget">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Current Progress</h5>
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive current-progress">
+                        <table class="table table-bordernone">
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/1.jpg" alt="">
+                                  <div class="d-inline-block">
+                                    <h6>Web application</h6>
+                                    <p>Design & development</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="d-inline-block align-middle"><span>Latest Updated Today at 1:30
+                                    PM</span><span class="ml-current"><i class="fa fa-clock-o"></i>10:32</span><span
+                                    class="ml-current"><i class="fa fa-comment"></i>540</span></div>
+                              </td>
+                              <td>
+                                <div class="progress sm-progress-bar">
+                                  <div class="progress-bar bg-primary" role="progressbar" style="width: 60%"
+                                    aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/4.jpg" alt="">
+                                  <div class="d-inline-block">
+                                    <h6>Login module</h6>
+                                    <p>Development</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="d-inline-block align-middle"><span>Latest Updated Today at 4:00
+                                    PM</span><span class="ml-current"><i class="fa fa-clock-o"></i>1:32</span><span
+                                    class="ml-current"><i class="fa fa-comment"></i>700</span></div>
+                              </td>
+                              <td>
+                                <div class="progress sm-progress-bar">
+                                  <div class="progress-bar bg-primary" role="progressbar" style="width: 50%"
+                                    aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/7.jpg" alt="">
+                                  <div class="d-inline-block">
+                                    <h6>Module testing</h6>
+                                    <p>Testing</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <div class="d-inline-block align-middle"><span>Latest Updated Today at 5:45
+                                    PM</span><span class="ml-current"><i class="fa fa-clock-o"></i>11:40</span><span
+                                    class="ml-current"><i class="fa fa-comment"></i>425</span></div>
+                              </td>
+                              <td>
+                                <div class="progress sm-progress-bar">
+                                  <div class="progress-bar bg-primary" role="progressbar" style="width: 90%"
+                                    aria-valuenow="90" aria-valuemin="0" aria-valuemax="100"></div>
+                                </div>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 xl-100">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Budget Distribution</h5>
+                    </div>
+                    <div class="card-body chart-block">
+                      <div class="flot-chart-container budget-chart">
+                        <google-chart [data]="pieChart1"></google-chart>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-xl-6 xl-100">
+                  <div class="card">
+                    <div class="card-header project-header">
+                      <div class="row">
+                        <div class="col-sm-8">
+                          <h5>Spent</h5>
+                        </div>
+                        <div class="col-sm-4">
+                          <div class="select2-drpdwn-project select-options">
+                            <select class="form-control form-control-primary btn-square" name="select">
+                              <option value="opt1">Today</option>
+                              <option value="opt2">Yesterday</option>
+                              <option value="opt3">Tomorrow</option>
+                              <option value="opt4">Monthly</option>
+                              <option value="opt5">Weekly</option>
+                            </select>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body spent">
+                      <div class="spent-graph">
+                        <div class="d-flex">
+                          <div class="project-budget">
+                            <h6>Weekly spent</h6>
+                            <h2 class="mb-0"><span><i data-feather="dollar-sign"></i>12,5000</span></h2>
+                          </div>
+                          <div class="projects-main mb-0">
+                            <x-chartist [data]="barChartSingle1.data" [type]="barChartSingle1.type"
+                              [options]="barChartSingle1.options">
+                            </x-chartist>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body spent">
+                      <div class="spent-graph">
+                        <div class="d-flex">
+                          <div class="project-budget">
+                            <h6>Total spent</h6>
+                            <h2 class="mb-0"><span><i data-feather="dollar-sign"></i>15,7452</span></h2>
+                          </div>
+                          <div class="projects-main mb-0">
+                            <x-chartist [data]="barChartSingle2.data" [type]="barChartSingle2.type"
+                              [options]="barChartSingle2.options">
+                            </x-chartist>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-body spent">
+                      <div class="spent-graph">
+                        <div class="d-flex">
+                          <div class="project-budget">
+                            <h6>Remaining</h6>
+                            <h2 class="mb-0"><span><i data-feather="dollar-sign"></i>18,5438</span></h2>
+                          </div>
+                          <div class="projects-main mb-0">
+                            <x-chartist [data]="barChartSingle3.data" [type]="barChartSingle3.type"
+                              [options]="barChartSingle3.options">
+                            </x-chartist>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="card-footer spent">
+                      <div class="spent-graph">
+                        <div class="d-flex">
+                          <div class="project-budget m-0">
+                            <h6>Total Budget</h6>
+                            <h2 class="mb-0"><span><i data-feather="dollar-sign"></i>34,5812</span></h2>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+        <ngb-tab>
+          <ng-template ngbTabTitle class="nav-item">
+            <app-feather-icons [icon]="'users'" class="custom-ic"></app-feather-icons>Team Members
+            <div class="material-border"></div>
+          </ng-template>
+          <ng-template ngbTabContent class="tab-content">
+            <div class="tab-pane fade show" id="team-members" role="tabpanel" aria-labelledby="team-members">
+              <div class="row">
+                <div class="col-sm-12">
+                  <div class="card">
+                    <div class="card-header">
+                      <h5>Team Members</h5>
+
+                    </div>
+                    <div class="card-body">
+                      <div class="table-responsive sellers team-members">
+                        <table class="table table-bordernone">
+                          <thead>
+                            <tr>
+                              <th scope="col">Name</th>
+                              <th scope="col">Position</th>
+                              <th scope="col">Office</th>
+                              <th scope="col">E-Mail</th>
+                              <th scope="col">Phone</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/6.jpg" alt="">
+                                  <div class="d-inline-block">
+                                    <p>Jerry Patterson</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Design Manager</p>
+                              </td>
+                              <td>
+                                <p>Integer</p>
+                              </td>
+                              <td>
+                                <p>jerry13@gmail.com</p>
+                              </td>
+                              <td>
+                                <p>+91 264 570 4611</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/2.png" alt="">
+                                  <div class="d-inline-block">
+                                    <p>Rosa Matthews</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Director of Sales</p>
+                              </td>
+                              <td>
+                                <p>Ipsum</p>
+                              </td>
+                              <td>
+                                <p>ros456@gmail.com</p>
+                              </td>
+                              <td>
+                                <p>+01 967 487 1873</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/3.jpg" alt="">
+                                  <div class="d-inline-block">
+                                    <p>Alvaro Aguirre</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Office Assistant</p>
+                              </td>
+                              <td>
+                                <p>Praesent</p>
+                              </td>
+                              <td>
+                                <p>alvar76@gmail.com</p>
+                              </td>
+                              <td>
+                                <p>+48 724 585 0012</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/15.png" alt="">
+                                  <div class="d-inline-block">
+                                    <p>Jerry Patterson</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Programmer Analyst</p>
+                              </td>
+                              <td>
+                                <p>Ipsum</p>
+                              </td>
+                              <td>
+                                <p>jerry13@gmail.com</p>
+                              </td>
+                              <td>
+                                <p>+91 264 570 4611</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/4.jpg" alt="">
+                                  <div class="d-inline-block">
+                                    <p>Anne Snyder</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Social Worker</p>
+                              </td>
+                              <td>
+                                <p>Donec</p>
+                              </td>
+                              <td>
+                                <p>annsny@gmail.com</p>
+                              </td>
+                              <td>
+                                <p>+61 480 087 1175</p>
+                              </td>
+                            </tr>
+                            <tr>
+                              <td>
+                                <div class="d-inline-block align-middle"><img
+                                    class="img-radius img-50 align-top m-r-15 rounded-circle"
+                                    src="assets/images/user/5.jpg" alt="">
+                                  <div class="d-inline-block">
+                                    <p>Alana Slacker</p>
+                                  </div>
+                                </div>
+                              </td>
+                              <td>
+                                <p>Systems Engineer</p>
+                              </td>
+                              <td>
+                                <p>Etiam</p>
+                              </td>
+                              <td>
+                                <p>alana82@gmail.com</p>
+                              </td>
+                              <td>
+                                <p>+75 483 761 4680</p>
+                              </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
+</div>
+<!-- Container-fluid Ends-->

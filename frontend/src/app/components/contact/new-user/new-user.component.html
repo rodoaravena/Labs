@@ -1,0 +1,69 @@
+<!-- Container-fluid starts-->
+<div class="container-fluid" [class.sidebaron]="sidebaron">
+    <div class="">
+        <div class="authentication-box contact-profile-form">
+            <div class="text-center"><img src="assets/images/endless-logo.png" alt=""></div>
+            <div class="card mt-4">
+                <div class="card-body">
+                    <div class="text-center user-profile">
+                        <div class="hovercard">
+                            <div class="contact-profile">
+                                <img class="rounded-circle img-100" alt=""
+                                    [src]="url? url:'assets/images/user/user.png'">
+                                <div class="icon-wrapper"><i class="icofont icofont-pencil-alt-5"><input class="upload"
+                                            type="file" (change)="readUrl($event)" /></i></div>
+                            </div>
+                        </div>
+                    </div>
+                    <form class="theme-form" [formGroup]="contactForm">
+                        <div class="form-group">
+                            <label class="col-form-label pt-0">Name</label>
+                            <input class="form-control" formControlName="name" type="text" required="">
+                            <div *ngIf="contactForm.controls.name.touched && contactForm.controls.name.errors?.required"
+                                class="text text-danger mt-1">
+                                name is required
+                            </div>
+                            <div *ngIf="contactForm.controls.name.touched && contactForm.controls.name.errors?.name"
+                                class="text text-danger mt-1">
+                                Invalid name
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Surname</label>
+                            <input class="form-control" type="text" formControlName="surname" required="">
+                            <div *ngIf="contactForm.controls.surname.touched && contactForm.controls.surname.errors?.required"
+                                class="text text-danger mt-1">
+                                surname is required
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Mobile</label>
+                            <input class="form-control" type="number" formControlName="mobile" required="">
+                            <div *ngIf="contactForm.controls.mobile.touched && contactForm.controls.mobile.errors?.required"
+                                class="text text-danger mt-1">
+                                mobile is required
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="col-form-label">Age</label>
+                            <input class="form-control" type="number" formControlName="age" required="">
+                            <div *ngIf="contactForm.controls.mobile.touched && contactForm.controls.mobile.errors?.required"
+                                class="text text-danger mt-1">
+                                age is required
+                            </div>
+                        </div>
+                        <div class="form-group form-row mt-3 mb-0">
+                            <button class="btn btn-primary mr-2" [disabled]="!contactForm.valid"
+                                (click)="submit(contactForm.value)" type="submit"> Submit
+                            </button>
+                            <button class="btn btn-primary" type="button" data-original-title="btn btn-info-gradien"
+                                (click)="cancel()" title="">
+                                Cancel</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Container-fluid Ends-->

@@ -1,0 +1,162 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Basic Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel1Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Responsive Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel2Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Center Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel3Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Merge Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel4Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Auto Width Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel5Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>URL Hash Navigations</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel6Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Events</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel7Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Stage Padding Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel8Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Right to Left Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel9Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Lazy load Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel10Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Animate Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel12Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Auto Play Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel13Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-header">
+          <h5>Auto Height Example</h5>
+        </div>
+        <div class="card-body">
+          <owl-carousel-o [options]="owlcarousel14Options">
+              <ng-template carouselSlide class="item" [id]="img.id" *ngFor="let img of owlcarousel1">
+                <img [src]="[img.img]" alt="">
+              </ng-template>
+          </owl-carousel-o>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

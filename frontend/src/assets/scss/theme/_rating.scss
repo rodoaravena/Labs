@@ -1,0 +1,83 @@
+/**=====================
+    89. Rating CSS start
+==========================**/
+.rating-size {
+  span {
+    font-size: 25px;
+  }
+}
+.star {
+  color: #b0c4de;
+  position: relative;
+  display: inline-block;
+  font-size: 2rem;
+}
+.filled {
+  color: #1e90ff;
+}
+.bad {
+  color: #deb0b0;
+}
+.filled.bad {
+  color: #ff1e1e;
+}
+.full {
+  color: red;
+}
+.half {
+  position: absolute;
+  display: inline-block;
+  overflow: hidden;
+  color: red;
+}
+.editable-rating {
+  position: relative;
+  .btn-position {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+  }
+}
+.br-theme-bars-1to10, .br-theme-bars-movie, .br-theme-bars-pill, .br-theme-bars-reversed, .br-theme-bars-horizontal {
+  .br-widget {
+    a{
+      background-color: rgba($primary-color, 0.4);
+      color: $primary-color;
+      &.br-active,
+      &.br-selected {
+        background-color: $primary-color;
+      }
+    }
+    .br-current-rating {
+      color: $primary-color;
+    }
+  }
+}
+.br-theme-bars-square {
+  .br-widget {
+    a{
+      border: 2px solid rgba($primary-color, 0.5);
+      color: rgba($primary-color, 0.5);
+      &.br-active, &.br-selected {
+        border: 2px solid $primary-color;
+        color: $primary-color;
+      }
+    }
+  }
+}
+.br-theme-fontawesome-stars-o {
+  .br-widget {
+    a{
+      &.br-selected,
+      &.br-active,
+      &.br-fractional {
+        &:after {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+/**=====================
+    89. Rating CSS Ends
+==========================**/

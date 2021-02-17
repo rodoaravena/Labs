@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>IMAGE GALLERY</h5>
+        </div>
+        <div class="card-body my-gallery gallery">
+          <div class="row" itemscope="" class="img-thumbnail" itemprop="thumbnail">
+            <section>
+              <div class="my-app-custom-plain-container-with-desc row">
+                <ng-container *ngFor="let img of imagesRect">
+                  <figure class="my-app-custom-image-with-desc col-xl-3 col-md-4 col-6">
+                    <img [src]="img.modal.img" (click)="openImageModalRowDescription(img)" />
+                  </figure>
+                </ng-container>
+              </div>
+              <ks-modal-gallery [id]="1" [modalImages]="imagesRect"
+                [plainGalleryConfig]="customPlainGalleryRowDescConfig" [currentImageConfig]="{downloadable: true}"
+                [buttonsConfig]="buttonsConfigCustom" (buttonBeforeHook)="onButtonBeforeHook($event)"
+                (buttonAfterHook)="onButtonAfterHook($event)">
+              </ks-modal-gallery>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,24 @@
+<div class="container-fluid">
+  <div class="row sticky-header-main">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Sticky Note <a href="javascript:void(0);" class="btn btn-primary pull-right m-l-10"
+              (click)="addStickyNote()">Add New Note</a></h5>
+        </div>
+        <div class="card-body">
+          <div class="sticky-note" id="board">
+            <div class="note ui-draggable ui-draggable-handle" *ngFor="let note of notes"
+              [style.display]="note.isDeleted ? 'none' : ''" ng-style="{'display': 'none'}">
+              <a href="javascript:void(0);" class="button remove" (click)="deleteNote(note)">X</a>
+              <div class="note_cnt" contenteditable="true">
+                <textarea class="title" placeholder="Enter note title" style="height: 64px;"></textarea>
+                <textarea class="cnt" placeholder="Enter note description here" style="height: 200px;"></textarea>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

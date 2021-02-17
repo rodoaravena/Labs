@@ -1,0 +1,93 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Basic Rating</h5>
+        </div>
+        <div class="card-body">
+          <ngb-rating [(rate)]="currentRate" class="rating-size"></ngb-rating>
+          <hr>
+          <pre class="mb-0">Rate: <b>{{currentRate}}</b></pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Events and readonly ratings</h5>
+        </div>
+        <div class="card-body editable-rating">
+          <ngb-rating [(rate)]="selected" (hover)="hovered=$event" (leave)="hovered=0" [readonly]="readonly"
+            class="rating-size"></ngb-rating>
+          <hr>
+          <pre class="mb-0">Selected: <b>{{selected}}</b> Hovered: <b>{{hovered}}</b></pre>
+          <button class="btn btn-sm btn-position btn-outline-{{readonly ? 'danger' : 'success'}}"
+            (click)="readonly = !readonly">
+            {{ readonly ? "readonly" : "editable"}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Form integration</h5>
+        </div>
+        <div class="card-body">
+          <p>NgModel and reactive forms can be used without the 'rate' binding</p>
+          <div class="form-group">
+            <ngb-rating [formControl]="ctrl" class="rating-size"></ngb-rating>
+            <div class="form-text small">
+              <div *ngIf="ctrl.valid" class="text-success">Thanks!</div>
+              <div *ngIf="ctrl.invalid" class="text-danger">Please rate us</div>
+            </div>
+          </div>
+          <hr>
+          <pre>Model: <b>{{ ctrl.value }}</b></pre>
+          <button class="btn btn-sm btn-outline-{{ ctrl.disabled ? 'danger' : 'success'}} mr-2" (click)="toggle()">
+            {{ ctrl.disabled ? "control disabled" : " control enabled" }}
+          </button>
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="ctrl.setValue(null)">Clear</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Custom decimal rating</h5>
+        </div>
+        <div class="card-body">
+          <p>Custom rating template provided via a variable. Shows fine-grained rating display</p>
+          <ng-template #t let-fill="fill">
+            <span class="star" [class.full]="fill === 100">
+              <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+            </span>
+          </ng-template>
+          <ngb-rating [(rate)]="heartRate" [starTemplate]="t" [readonly]="true" max="5"></ngb-rating>
+          <hr>
+          <pre>Rate: <b>{{heartRate}}</b></pre>
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="heartRate = 1.35">1.35</button>
+          <button class="btn btn-sm btn-outline-primary mr-2" (click)="heartRate = 4.72">4.72</button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Custom star template</h5>
+        </div>
+        <div class="card-body">
+          <p>Custom rating template provided as child element</p>
+          <ngb-rating [(rate)]="currentRate">
+            <ng-template let-fill="fill" let-index="index">
+              <span class="star" [class.filled]="fill === 100" [class.bad]="index < 3">&#9733;</span>
+            </ng-template>
+          </ngb-rating>
+          <hr>
+          <pre class="mb-0">Rate: <b>{{currentRate}}</b></pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,110 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Basic Timepicker</h5>
+        </div>
+        <div class="card-body">
+          <ngb-timepicker [(ngModel)]="time" class="time-picker-custom"></ngb-timepicker>
+          <hr>
+          <pre class="mb-0">Selected time: {{time | json}}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Meridian</h5>
+        </div>
+        <div class="card-body">
+          <ngb-timepicker [(ngModel)]="time" [meridian]="meridian" class="time-picker-custom"></ngb-timepicker>
+          <button class="btn btn-sm btn-outline-{{meridian ? 'primary' : 'danger'}}" (click)="toggleMeridian()">
+            Meridian - {{meridian ? "ON" : "OFF"}}
+          </button>
+          <hr>
+          <pre class="mb-0">Selected time: {{time | json}}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Seconds</h5>
+        </div>
+        <div class="card-body">
+          <ngb-timepicker [(ngModel)]="timeSeccond" [seconds]="seconds" class="time-picker-custom"></ngb-timepicker>
+          <button class="btn btn-sm btn-outline-{{seconds ? 'primary' : 'danger'}}" (click)="toggleSeconds()">
+            Seconds - {{seconds ? "ON" : "OFF"}}
+          </button>
+          <hr>
+          <pre class="mb-0">Selected time: {{timeSeccond | json}}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Spinners</h5>
+        </div>
+        <div class="card-body">
+          <ngb-timepicker [(ngModel)]="timeSpinners" [spinners]="spinners" class="time-picker-custom"></ngb-timepicker>
+          <hr />
+          <button class="m-t-1 btn btn-sm btn-outline-{{spinners ? 'primary' : 'danger'}}" (click)="toggleSpinners()">
+            Spinners - {{spinners ? "ON" : "OFF"}}
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Custom steps</h5>
+        </div>
+        <div class="card-body">
+          <ngb-timepicker [(ngModel)]="timeCustom" [seconds]="true" [hourStep]="hourStep" [minuteStep]="minuteStep"
+            [secondStep]="secondStep" class="time-picker-custom"></ngb-timepicker>
+          <div class="row">
+            <div class="col-sm-3">
+              <label for="changeHourStep">Hour Step</label>
+              <input id="changeHourStep" type="number" class="form-control form-control-sm" [(ngModel)]="hourStep" />
+            </div>
+            <div class="col-sm-3 xs-mt-timer-steps">
+              <label for="changeMinuteStep">Minute Step</label>
+              <input id="changeMinuteStep" type="number" class="form-control form-control-sm"
+                [(ngModel)]="minuteStep" />
+            </div>
+            <div class="col-sm-3 xs-mt-timer-steps">
+              <label for="changeSecondStep">Second Step</label>
+              <input id="changeSecondStep" type="number" class="form-control form-control-sm"
+                [(ngModel)]="secondStep" />
+            </div>
+          </div>
+          <hr>
+          <pre class="mb-0">Selected time: {{timeCustom | json}}</pre>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-12 col-xl-6">
+      <div class="card">
+        <div class="card-header">
+          <h5>Custom validation</h5>
+        </div>
+        <div class="card-body">
+          <p>Illustrates custom validation, you have to select time between 12:00 and 13:59</p>
+          <div class="form-group">
+            <ngb-timepicker [formControl]="ctrl" class="time-picker-custom" required></ngb-timepicker>
+            <div *ngIf="ctrl.valid" class="small form-text text-primary">Great choice</div>
+            <div class="small form-text text-danger" *ngIf="!ctrl.valid">
+              <div *ngIf="ctrl.errors['required']">Select some time during lunchtime</div>
+              <div *ngIf="ctrl.errors['tooLate']">Oh no, it's way too late</div>
+              <div *ngIf="ctrl.errors['tooEarly']">It's a bit too early</div>
+            </div>
+          </div>
+          <hr>
+          <pre class="mb-0">Selected time: {{ctrl.value | json}}</pre>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

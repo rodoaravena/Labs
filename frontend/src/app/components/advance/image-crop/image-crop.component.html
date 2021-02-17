@@ -1,0 +1,30 @@
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <div class="card">
+        <div class="card-header">
+          <h5>Image Cropper</h5>
+        </div>
+        <div>
+          <image-cropper [imageChangedEvent]="imageChangedEvent" [maintainAspectRatio]="true" [aspectRatio]="4 / 3"
+            [resizeToWidth]="128" [cropperMinWidth]="128" [onlyScaleDown]="true" [roundCropper]="false" format="png"
+            outputType="base64" (imageCropped)="imageCropped($event)" (imageLoaded)="imageLoaded()"
+            (cropperReady)="cropperReady()" (loadImageFailed)="loadImageFailed()"
+            [style.display]="showCropper ? null : 'none'"></image-cropper>
+        </div>
+        <div class="text-center">
+          <img [src]="croppedImage" />
+        </div>
+        <div class="card-body btn-showcase text-center">
+          <div class="image-cropper-btn">
+            <input class="btn btn-outline-primary" type="file" (change)="fileChangeEvent($event)" />
+          </div>
+          <button class="btn btn-outline-primary" (click)="rotateLeft()">Rotate left</button>
+          <button class="btn btn-outline-primary" (click)="rotateRight()">Rotate right</button>
+          <button class="btn btn-outline-primary" (click)="flipHorizontal()">Flip horizontal</button>
+          <button class="btn btn-outline-primary" (click)="flipVertical()">Flip vertical</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
