@@ -1,0 +1,22 @@
+<div class="container-fluid">
+  <div class="page-header">
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="page-header-left">
+          <h3>{{title}}</h3>
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a [routerLink]="'/dashboard/default'">
+                <app-feather-icons [icon]="'home'"></app-feather-icons>
+              </a></li>
+            <li class="breadcrumb-item" *ngIf="breadcrumbs?.parentBreadcrumb">{{breadcrumbs?.parentBreadcrumb}}</li>
+            <li class="breadcrumb-item active" *ngIf="breadcrumbs?.childBreadcrumb">{{breadcrumbs?.childBreadcrumb}}
+            </li>
+          </ol>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <app-bookmark></app-bookmark>
+      </div>
+    </div>
+  </div>
+</div>

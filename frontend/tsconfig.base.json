@@ -6,12 +6,12 @@
     "sourceMap": true,
     "declaration": false,
     "downlevelIteration": true,
+    "experimentalDecorators": true,
     "module": "esnext",
     "moduleResolution": "node",
     "importHelpers": true,
     "skipLibCheck": true,
     "target": "es2015",
-    "experimentalDecorators": true,
     "typeRoots": [
       "node_modules/@types"
     ],

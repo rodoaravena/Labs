@@ -1,0 +1,25 @@
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
+@import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
+
+@import '~animate.css/animate.min.css';
+
+@import "chartist/chartist";
+
+@import "~bootstrap/scss/bootstrap";
+
+@import "theme/variables";
+@import "style";
+@import "theme/responsive";
+
+@import "todo/todo";
+@import '~ngx-toastr/toastr.css';
+@import 'sweetalert/sweetalert2.scss';
+@import "~dragula/dist/dragula.css";
+@import "sticky/sticky.scss";
+@import "~@swimlane/ngx-datatable/index.css";
+@import "~@swimlane/ngx-datatable/themes/bootstrap.css";
+@import "~angular-custom-tour/styles/main.css";
+@import '~dropzone/dist/min/dropzone.min.css';
+@import '~leaflet/dist/leaflet.css';
+@import '~angular-archwizard/archwizard.scss';
+
