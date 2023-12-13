@@ -69,7 +69,7 @@ var mapData = {
 
 const Dashboard = () => {
   let [chartData, setChartData] = useState({
-    labels: ['1','2','3','4','5','6','7'] ,
+    labels: ["1", "2", "3", "4", "5", "6", "7"],
     datasets: [
       {
         label: "Data",
@@ -85,9 +85,9 @@ const Dashboard = () => {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [0,0,0,0,0,0],
+        data: [0, 0, 0, 0, 0, 0],
       },
-    ]
+    ],
   });
   const [bigChartData, setbigChartData] = React.useState("data1");
   const setBgChartData = (name) => {
@@ -96,257 +96,200 @@ const Dashboard = () => {
 
   useEffect(() => {
     var myHeaders = new Headers();
-myHeaders.append("Content-Type", "application/json");
+    myHeaders.append("Content-Type", "application/json");
 
-var raw = JSON.stringify({
-  "ranges": [
-    [
-      1701529774623,
-      1701572399999
-    ],
-    [
-      1701572400000,
-      1701658799999
-    ],
-    [
-      1701658800000,
-      1701745199999
-    ],
-    [
-      1701745200000,
-      1701831599999
-    ],
-    [
-      1701831600000,
-      1701917999999
-    ],
-    [
-      1701918000000,
-      1702004399999
-    ],
-    [
-      1702004400000,
-      1702048174623
-    ]
-  ],
-  "room": "1"
-});
+    var raw = JSON.stringify({
+      ranges: [
+        [1701529774623, 1701572399999],
+        [1701572400000, 1701658799999],
+        [1701658800000, 1701745199999],
+        [1701745200000, 1701831599999],
+        [1701831600000, 1701917999999],
+        [1701918000000, 1702004399999],
+        [1702004400000, 1702048174623],
+      ],
+      room: "1",
+    });
 
-var requestOptions = {
-  method: 'POST',
-  headers: myHeaders,
-  body: raw,
-  redirect: 'follow'
-};
+    var requestOptions = {
+      method: "POST",
+      headers: myHeaders,
+      body: raw,
+      redirect: "follow",
+    };
 
-///calculo de los ultimos 7 dias
-const dias = ['DO', 'LU', 'MA', 'MI', 'JU', 'VI', 'SA'];
+    ///calculo de los ultimos 7 dias
+    const dias = ["DO", "LU", "MA", "MI", "JU", "VI", "SA"];
 
-function getLast7Days() {
-  const today = new Date();
-  const daysArray = [];
+    function getLast7Days() {
+      const today = new Date();
+      const daysArray = [];
 
-  const day = today.getDay();
+      const day = today.getDay();
 
-  for (let i = day; daysArray.length < 7; i = i === 0 ? 6 : (i - 1)) {
-      const dayDate = dias[i];
-      daysArray.push(dayDate);
-  }
-
-  return daysArray.reverse();
-}
-
-    fetch('http://127.0.0.1:8000/api/activity/session/chart', requestOptions)
-    .then(
-      async response => {
-        console.log('recibo datos');
-        var datos = await response.text();
-        console.log("datos", JSON.parse(datos));
-
-        setChartData({
-            labels: getLast7Days(),
-            datasets: [
-              {
-                label: "Data",
-                fill: true,
-                borderColor: "#1f8ef1",
-                borderWidth: 2,
-                borderDash: [],
-                borderDashOffset: 0.0,
-                pointBackgroundColor: "#1f8ef1",
-                pointBorderColor: "rgba(255,255,255,0)",
-                pointHoverBackgroundColor: "#1f8ef1",
-                pointBorderWidth: 20,
-                pointHoverRadius: 4,
-                pointHoverBorderWidth: 15,
-                pointRadius: 4,
-                data: JSON.parse(datos),
-              },
-            ]
-          });
+      for (let i = day; daysArray.length < 7; i = i === 0 ? 6 : i - 1) {
+        const dayDate = dias[i];
+        daysArray.push(dayDate);
       }
-    )
-  }, [])
+
+      return daysArray.reverse();
+    }
+
+    fetch(
+      "http://127.0.0.1:8000/api/activity/session/chart",
+      requestOptions
+    ).then(async (response) => {
+      var datos = await response.text();
+      console.log("datos", JSON.parse(datos));
+
+      setChartData({
+        labels: getLast7Days(),
+        datasets: [
+          {
+            label: "Data",
+            fill: true,
+            borderColor: "#1f8ef1",
+            borderWidth: 2,
+            borderDash: [],
+            borderDashOffset: 0.0,
+            pointBackgroundColor: "#1f8ef1",
+            pointBorderColor: "rgba(255,255,255,0)",
+            pointHoverBackgroundColor: "#1f8ef1",
+            pointBorderWidth: 20,
+            pointHoverRadius: 4,
+            pointHoverBorderWidth: 15,
+            pointRadius: 4,
+            data: JSON.parse(datos),
+          },
+        ],
+      });
+    });
+  }, []);
   return (
     <>
       <div className="content">
         <Row>
-        <Col lg="4">
+          <Col lg="6">
             <Card className="card-chart">
               <CardHeader>
                 <h5 className="card-category">Últimos 7 días</h5>
                 <CardTitle tag="h3">
-                  <i className="tim-icons icon-bulb-63 text-primary" /> CO2 vs tiempo 
+                  <i className="tim-icons icon-bulb-63 text-primary" /> CO2 vs
+                  tiempo
                 </CardTitle>
               </CardHeader>
               <CardBody>
                 <div className="chart-area">
-                  <Line
-                    data={chartData}
-                    options={chartExample2.options}
-                  />
+                  <Line data={chartData} options={chartExample2.options} />
                 </div>
               </CardBody>
             </Card>
           </Col>
-          <Col lg="4">
-            <Card className="card-chart">
-              <CardHeader>
-                <h5 className="card-category">Daily Sales</h5>
-                <CardTitle tag="h3">
-                  <i className="tim-icons icon-delivery-fast text-info" />{" "}
-                  3,500€
-                </CardTitle>
-              </CardHeader>
-              <CardBody>
-                <div className="chart-area">
-                  <Bar
-                    data={chartExample3.data}
-                    options={chartExample3.options}
-                  />
-                </div>
-              </CardBody>
-            </Card>
+          <Col lg="3">
+            <Col md="12">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col xs="5">
+                      <div className="info-icon text-center icon-warning">
+                        <i className="tim-icons icon-chat-33" />
+                      </div>
+                    </Col>
+                    <Col xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Tickets abiertos</p>
+                        <CardTitle tag="h3">150GB</CardTitle>
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="tim-icons icon-refresh-01" /> Update Now
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
+            <Col md="12">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col xs="5">
+                      <div className="info-icon text-center icon-primary">
+                        <i className="tim-icons icon-shape-star" />
+                      </div>
+                    </Col>
+                    <Col xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Followers</p>
+                        <CardTitle tag="h3">+45k</CardTitle>
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="tim-icons icon-sound-wave" /> Last Research
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
           </Col>
-          <Col lg="4">
-            <Card className="card-chart">
-              <CardHeader>
-                <h5 className="card-category">Tickets abiertos</h5>
-                <CardTitle tag="h3">
-                  <i className="tim-icons icon-send text-success" /> 
-                </CardTitle>
-              </CardHeader>
-              <CardBody>
-                <div className="chart-area">
-                  <Line
-                    data={chartExample4.data}
-                    options={chartExample4.options}
-                  />
-                </div>
-              </CardBody>
-            </Card>
+          <Col lg="3">
+            <Col md="12">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col xs="5">
+                      <div className="info-icon text-center icon-success">
+                        <i className="tim-icons icon-single-02" />
+                      </div>
+                    </Col>
+                    <Col xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Users</p>
+                        <CardTitle tag="h3">150,000</CardTitle>
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="tim-icons icon-trophy" /> Customers feedback
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
+            <Col md="12">
+              <Card className="card-stats">
+                <CardBody>
+                  <Row>
+                    <Col xs="5">
+                      <div className="info-icon text-center icon-danger">
+                        <i className="tim-icons icon-molecule-40" />
+                      </div>
+                    </Col>
+                    <Col xs="7">
+                      <div className="numbers">
+                        <p className="card-category">Errors</p>
+                        <CardTitle tag="h3">12</CardTitle>
+                      </div>
+                    </Col>
+                  </Row>
+                </CardBody>
+                <CardFooter>
+                  <hr />
+                  <div className="stats">
+                    <i className="tim-icons icon-watch-time" /> In the last
+                    hours
+                  </div>
+                </CardFooter>
+              </Card>
+            </Col>
           </Col>
-          <Col lg="3" md="6">
-            <Card className="card-stats">
-              <CardBody>
-                <Row>
-                  <Col xs="5">
-                    <div className="info-icon text-center icon-warning">
-                      <i className="tim-icons icon-chat-33" />
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Number</p>
-                      <CardTitle tag="h3">150GB</CardTitle>
-                    </div>
-                  </Col>
-                </Row>
-              </CardBody>
-              <CardFooter>
-                <hr />
-                <div className="stats">
-                  <i className="tim-icons icon-refresh-01" /> Update Now
-                </div>
-              </CardFooter>
-            </Card>
-          </Col>
-          <Col lg="3" md="6">
-            <Card className="card-stats">
-              <CardBody>
-                <Row>
-                  <Col xs="5">
-                    <div className="info-icon text-center icon-primary">
-                      <i className="tim-icons icon-shape-star" />
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Followers</p>
-                      <CardTitle tag="h3">+45k</CardTitle>
-                    </div>
-                  </Col>
-                </Row>
-              </CardBody>
-              <CardFooter>
-                <hr />
-                <div className="stats">
-                  <i className="tim-icons icon-sound-wave" /> Last Research
-                </div>
-              </CardFooter>
-            </Card>
-          </Col>
-          <Col lg="3" md="6">
-            <Card className="card-stats">
-              <CardBody>
-                <Row>
-                  <Col xs="5">
-                    <div className="info-icon text-center icon-success">
-                      <i className="tim-icons icon-single-02" />
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Users</p>
-                      <CardTitle tag="h3">150,000</CardTitle>
-                    </div>
-                  </Col>
-                </Row>
-              </CardBody>
-              <CardFooter>
-                <hr />
-                <div className="stats">
-                  <i className="tim-icons icon-trophy" /> Customers feedback
-                </div>
-              </CardFooter>
-            </Card>
-          </Col>
-          <Col lg="3" md="6">
-            <Card className="card-stats">
-              <CardBody>
-                <Row>
-                  <Col xs="5">
-                    <div className="info-icon text-center icon-danger">
-                      <i className="tim-icons icon-molecule-40" />
-                    </div>
-                  </Col>
-                  <Col xs="7">
-                    <div className="numbers">
-                      <p className="card-category">Errors</p>
-                      <CardTitle tag="h3">12</CardTitle>
-                    </div>
-                  </Col>
-                </Row>
-              </CardBody>
-              <CardFooter>
-                <hr />
-                <div className="stats">
-                  <i className="tim-icons icon-watch-time" /> In the last hours
-                </div>
-              </CardFooter>
-            </Card>
-          </Col>
-          
         </Row>
         <Row>
           <Col lg="5">

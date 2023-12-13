@@ -4,6 +4,10 @@ from datetime import datetime, timedelta
 from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad, pad
 
+def get_dashboard_chart():
+    sessions = Session.objects.all().order_by("workstation", "start").values()
+    print(sessions)
+
 def formatTimestamp(timestamp):
     return datetime.fromtimestamp(timestamp / 1000).strftime("%H:%M:%S  %d/%m/%Y")
 

@@ -6,8 +6,7 @@ from rest_framework.status import (
 )
 from rest_framework.response import Response
 from django.db.models import Q
-from apps.monitoring import utils
-
+from apps.monitoring import utils 
 
 class GetTickets(APIView):
     """
@@ -22,5 +21,8 @@ class GetTickets(APIView):
 
     """
     def get(self, request, format='json'):
-        print(utils.count_active_tickets())
+        
+        return Response({
+            "open_tickets": utils.count_active_tickets()
+        })
         
