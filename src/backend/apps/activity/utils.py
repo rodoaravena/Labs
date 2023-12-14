@@ -5,8 +5,39 @@ from Crypto.Cipher import AES
 from Crypto.Util.Padding import unpad, pad
 
 def get_dashboard_chart():
-    sessions = Session.objects.all().order_by("workstation", "start").values()
-    print(sessions)
+    ranges = getThisWeekTimestamps()
+    sessions = Session.objects.filter(start__gte=ranges[0], end__lte=ranges[1]).order_by("start").values_list("start","end", "alive")
+    data = [0] * (len(ranges)+1) # array de ceros, donde se llenaran los valores para cada rango de tiempo.
+    try:
+        for idx, session in enumerate(sessions):
+            sessionStart, sessionEnd, sessionLastAlive = session
+            if sessionEnd is None:
+                if sessionLastAlive is None:
+                    continue
+                else:
+                    sessionEnd = sessionLastAlive
+            sessionTime = int(sessionEnd) - int(sessionStart)
+            rangeStart, rangeEnd = ranges
+            if (sessionStart >= rangeStart and sessionStart < rangeEnd):
+                currentEnd = min(sessionEnd, rangeEnd)
+                sessionRangeTime = currentEnd - sessionStart
+            elif (sessionEnd > rangeStart and sessionEnd <= rangeEnd):
+                sessionRangeTime = sessionEnd - max(sessionStart, rangeStart)
+            else:
+                continue
+
+            data[idx] += sessionRangeTime
+            sessionTime -= sessionRangeTime
+            if (sessionTime == 0):
+                break
+            elif (sessionTime > 0):
+                sessionStart = rangeEnd
+                
+    except Exception as exception:
+        import traceback
+        print(traceback.format_exc())
+        
+    print(data)
 
 def formatTimestamp(timestamp):
     return datetime.fromtimestamp(timestamp / 1000).strftime("%H:%M:%S  %d/%m/%Y")
@@ -38,6 +69,7 @@ def getTodayTimestamps():
 def getThisWeekTimestamps():
     now = datetime.now()
     today = getStartOfDay(now)
+    dayss=today.weekday()
     startOfWeek = today - timedelta(days=today.weekday())
     return (getTimestamp(startOfWeek), getTimestamp(now))
 

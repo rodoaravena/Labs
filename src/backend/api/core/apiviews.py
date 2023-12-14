@@ -11,7 +11,7 @@ from apps.monitoring import utils as monitoring
 from apps.activity import utils as activity
 
 class Dashboard(APIView):
-    def get(self, request, format='json'):
+    def post(self, request):
         response = {}
         ranges = request.data.get("ranges")
         response['open_tickets'] = monitoring.count_active_tickets()

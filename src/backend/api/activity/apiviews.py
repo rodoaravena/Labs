@@ -89,6 +89,7 @@ class GetChart(APIView):
             condition &= Q(workstation__room__id = room)
         elif campus is not None:
             condition &= Q(workstation__room__campus__id = campus)
+            print("campus")
 
         sessions = Session.objects.filter(condition).order_by("start").values_list("start", "end", "alive")
 
