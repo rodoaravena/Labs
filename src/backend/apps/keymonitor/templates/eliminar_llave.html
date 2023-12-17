@@ -1,0 +1,16 @@
+{% extends '_partials/_base.html' %}
+{% load static %}
+{% block titulo %}
+ Eliminar llave
+{% endblock titulo %}
+{% block content %}
+<form method="POST">
+    {%csrf_token %}
+    <h2>¿Desea eliminar la llave {{llave.id}}?</h2>
+    <button type= "submit">Eliminar</button>
+    <button >Cancelar</button>
+
+</form> 
+{% endblock  %}
+ 
+

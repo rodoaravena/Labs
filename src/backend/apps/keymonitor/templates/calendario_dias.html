@@ -1,0 +1,380 @@
+{% extends '_partials/_base.html' %}
+{% load static %}
+{% block pagetitle %}Calendario{% endblock %}
+{% block breadcumbs %}
+{% endblock %}
+
+{% block content %}
+
+<div class="modal fade" id="modalmodulo" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalle modulo#
+
+                </h5>
+
+            </div>
+            <div class="modal-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Salas</th>
+                            <th scope="col">Docente</th>
+                            <th scope="col">Cantidad de llaves</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        
+                    </tbody>
+                </table>
+
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="button" data-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+<div class="modal fade" id="modalreporte" data-backdrop="static" tabindex="-1" role="dialog">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Entrada y salida de llaves
+                </h5>
+            </div>
+            <div class="modal-body">
+                <table>
+
+                </table>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type="button" data-dismiss="modal">Cerrar</button>
+
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<div class="card card-custom">
+
+    <div class="card-header flex-wrap border-0 pt-6 pb-0">
+        <div class="card-title">
+            <h6 class="card-label">Horario de clases
+                <span class="text-muted pt-2 font-size-sm d-block">Cantidad de salas utilizadas por mòdulo de horario.</span>
+            </h6>
+            <div>
+                <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalreporte">Reportes</span>
+                <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalmodulo">mòdulo</span>
+            </div>
+        </div>
+        <div class="col-lg-9 col-xl-8">
+            <div class="row align-items-center">
+                <div class="col-md-4 my-2 my-md-0">
+                    <div class="input-icon">
+                        <input type="text" class="form-control" placeholder="Buscar" id="search" />
+                        <span>
+                            <i class="flaticon2-search-1 text-muted"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="table" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">Modulos</th>
+                    <th scope="col">Lunes</th>
+                    <th scope="col">Martes</th>
+                    <th scope="col">Miercoles</th>
+                    <th scope="col">Jueves</th>
+                    <th scope="col">Viernes</th>
+                    <th scope="col">Sabado</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>8:30 - 9:15</td>
+                    <td id="ld1">L</td>
+                    <td id="md1">M</td>
+                    <td id="mid1">M</td>
+                    <td id="jd1">J</td>
+                    <td id="vd1">V</td>
+                    <td id="sd1">S</td>   
+                </tr>
+                <tr>
+                    <td>9:25 - 10:10</td>
+                    <td id="ld2">L</td>
+                    <td id="md2">M</td>
+                    <td id="Mid2">M</td>
+                    <td id="jd2">J</td>
+                    <td id="vd2">V</td>
+                    <td id="sd2">S</td>
+                </tr>
+                <tr>
+                    <td>10:20 - 11:15</td>
+                    <td id="ld3">L</td>
+                    <td id="md3">M</td>
+                    <td id="mid3">M</td>
+                    <td id="jd3">J</td>
+                    <td id="vd3">V</td>
+                    <td id="sd3">S</td>
+                </tr>
+                <tr>
+                    <td>11:15 - 12:00</td>
+                    <td id="ld4">L</td>
+                    <td id="md4">M</td>
+                    <td id="mid4">M</td>
+                    <td id="jd4">J</td>
+                    <td id="vd4">V</td>
+                    <td id="sd4">S</td>
+                </tr>
+                <tr>
+                    <td>12:10 - 12:55</td>
+                    <td id="ld5">L</td>
+                    <td id="md5">M</td>
+                    <td id="mid5">M</td>
+                    <td id="jd5">J</td>
+                    <td id="vd5">V</td>
+                    <td id="sd5">S</td>
+                </tr>
+                <tr>
+                    <td>13:05 - 13:50</td>
+                    <td id="ld6">L</td>
+                    <td id="md6">M</td>
+                    <td id="mid6">M</td>
+                    <td id="jd6">J</td>
+                    <td id="vd6">V</td>
+                    <td id="sd6">S</td>
+                </tr>
+                <tr>
+                    <td>14:00 - 14:45</td>
+                    <td id="ld7">L</td>
+                    <td id="md7">M</td>
+                    <td id="mid7">M</td>
+                    <td id="jd7">J</td>
+                    <td id="vd7">V</td>
+                    <td id="sd7">S</td>
+                </tr>
+                <tr>
+                    <td>14:55 - 15:40</td>
+                    <td id="ld8">L</td>
+                    <td id="md8">M</td>
+                    <td id="mid8">M</td>
+                    <td id="jd8">J</td>
+                    <td id="vd8">V</td>
+                    <td id="sd8">S</td>
+                </tr>
+                <tr>
+                    <td>15:50 - 16:35</td>
+                    <td id="ld9">L</td>
+                    <td id="md9">M</td>
+                    <td id="mid9">M</td>
+                    <td id="jd9">J</td>
+                    <td id="vd9">V</td>
+                    <td id="sd9">S</td>
+                </tr>
+                <tr>
+                    <td>16:45 - 17:30</td>
+                    <td id="ld10">L</td>
+                    <td id="md10">M</td>
+                    <td id="mid10">M</td>
+                    <td id="jd10">J</td>
+                    <td id="vd10">V</td>
+                    <td>S</td>
+                </tr>
+                <tr>
+                    <td>17:40 - 18:25</td>
+                    <td id="ld11">L</td>
+                    <td id="md11">M</td>
+                    <td id="mid11">M</td>
+                    <td id="jd11">J</td>
+                    <td id="vd11">V</td>
+                    <td id="sd11">S</td>
+                </tr>
+                <tr>
+                    <td>19:00 - 19:45</td>
+                    <td id="ld12">L</td>
+                    <td id="md12">M</td>
+                    <td id="mid12">M</td>
+                    <td id="jd12">J</td>
+                    <td id="vd12">V</td>
+                    <td id="sd12">S</td>
+                </tr>
+                <tr>
+                    <td>19:46 - 20:30</td>
+                    <td id="ld13">L</td>
+                    <td id="md13">M</td>
+                    <td id="mid13">M</td>
+                    <td id="jd13">J</td>
+                    <td id="vd13">V</td>
+                    <td id="sd13">S</td>
+                </tr>
+                <tr>
+                    <td>20:40 - 21:25</td>
+                    <td id="ld14">L</td>
+                    <td id="md14">M</td>
+                    <td id="mid14">M</td>
+                    <td id="jd14">J</td>
+                    <td id="vd14">V</td>
+                    <td id="sd14">S</td>
+                </tr>
+                <tr>
+                    <td>21:26 - 22:10</td>
+                    <td id="ld15">L</td>
+                    <td id="md15">M</td>
+                    <td id="mid15">M</td>
+                    <td id="jd15">J</td>
+                    <td id="vd15">V</td>
+                    <td id="sd15">S</td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+{% endblock %}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.13/js/select2.min.js"></script>
+
+<script type="text/javascript">
+    console.log("conexion exitosa");
+    console.log(modulos)
+    console.log(ld1); 
+        var txtld1 = document.getElementById("ld1");
+        var txtmd1 = document.getElementById("md1");
+        var txtmid1 = document.getElementById("mid1");
+        var txtjd1 = document.getElementById("jd1").value;
+        var txtvd1 = document.getElementById("vd1").value;
+        var txtsd1 = document.getElementById("sd1").value;
+        txtld1.innerText="hola mundo";
+        txtmd1.innerText="chao mundo";
+
+
+
+   
+   
+   
+        function validate_calender() {
+        
+        var txtld2 = document.getElementById("ld2").value;
+        var txtmd2 = document.getElementById("md2").value;
+        var txtmid2 = document.getElementById("mid2").value;
+        var txtjd2 = document.getElementById("jd2").value;
+        var txtvd2 = document.getElementById("vd2").value;
+        var txtsd2 = document.getElementById("sd2").value;
+        
+        var txtld3 = document.getElementById("ld3").value;
+        var txtmd3 = document.getElementById("md3").value;
+        var txtmid3 = document.getElementById("mid3").value;
+        var txtjd3 = document.getElementById("jd3").value;
+        var txtvd3 = document.getElementById("vd3").value;
+        var txt = document.getElementById("sd3").value;
+        var msg = "";
+        var errors = 0;
+
+        return txtld1;
+
+        
+        if (email.trim() == "") {
+            msg+="Favor ingrese un email valido\n";
+            errors+=1;
+        }
+        if (username.trim() == "") {
+            msg+="Favor ingrese un nombre de usuario valido\n";
+            errors+=1;
+        }
+
+        if (password.trim() == "") {
+            msg+="Favor ingrese una contraseña valida\n";
+            errors+=1;
+        }
+        if (password != password2) {
+            msg+="Las contraseñas no coinciden\n";
+            errors+=1;
+        }
+        msg+="\n\nErrores: "+errors;
+
+        if (errors>0){
+            alert(msg);
+            return false;
+        }
+
+    }
+
+</script>
+<!--AUTOCOMPLETE-->
+<!-- <script>
+
+    $(function () {
+        $("#email").autocomplete({
+            source: "{% url 'email_autocomplete' %}",
+            appendTo: "#container",
+            select: function (event, ui) {
+                AutoCompleteSelectHandler(event, ui)
+            },
+            minLength: 2,
+        });
+    });
+
+    function AutoCompleteSelectHandler(event, ui) {
+        var selectedObj = ui.item;
+    }
+
+</script> -->
+
+<!--getpc-->
+<script>
+
+    $("#room_select").change(function () {
+        const roomId = $(this).val();
+        $.ajax({
+            type: "POST",
+            url: '{% url "getpc" %}',
+            data: {
+                'room_id': roomId,
+                'csrfmiddlewaretoken': $('input[name=csrfmiddlewaretoken]').val(),
+            },
+            success: function (data) {
+                let html_data = '<option value="">---------</option>';
+                data.forEach(function (data) {
+                    html_data += `<option value="${data.id}">${data.name}</option>`
+                });
+                $("#pc_select").html(html_data);
+            }
+        });
+    });
+</script>
+
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("#search").keyup(function(){
+    _this = this;
+    $.each($("#table tbody tr"), function() {
+    if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+    $(this).hide();
+    else
+    $(this).show();
+    });
+    });
+   });
+</script>
+
+{% endblock %}

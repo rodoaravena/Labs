@@ -1,0 +1,242 @@
+{% extends '_partials/_base.html' %}
+{% load static %}
+{% block pagetitle %}Listado docentes{% endblock %}
+
+
+{% block content %}
+<div class="modal fade" id="modalAddTeacher" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Agregar Docente</h5>
+                <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="kt_form_2">
+                    {% csrf_token %}
+                    <div class="col-lg-5">
+                        <label>{{ teacher_form.name.label }}</label>
+                        {{ teacher_form.name }}
+                    </div>
+                    <div class="col-lg-5">
+                        <label>{{ teacher_form.email.label }}</label>
+                        {{ teacher_form.email }}
+                    </div>
+                    <div class="col-lg-5">
+                        <label>{{ teacher_form.telefono.label }}</label>
+                        {{ teacher_form.telefono }}
+                    </div>
+                    <div class="col-lg-5">
+                        <label>{{ teacher_form.rut.label }}</label>
+                        {{ teacher_form.rut }}
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" type= "submit">Guardar</button>
+                        <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalUpdate" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Editar docente{{docente.rut}}</h5>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="kt_form_2">
+                    {% csrf_token %}
+                    <div class="col-lg-6">
+                        {{ teacher_form.as_p }}
+                    </div>
+                    <input type="hidden" name="teacher.rut" value="{{teacher.rut}}"></input>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" type= "submit">Guardar</button>
+                        <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalDetalleVer" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalle docente</h5>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Docente</th>
+                            <th>Sala</th>
+                            <th>Campus</th>
+                            <th>Llaves prestadas</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalRecordarEntrega" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Recordar entrega de llave a todos los docentes pendientes</h5>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+            </div>
+                
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalEntrega" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Recordar entrega docente</h5>
+            </div>
+            <div class="modal-body">
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button> 
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card card-custom">
+    
+    <div class="card-header flex-wrap border-0 pt-6 pb-0">
+        <div class="card-title">
+            <h3 class="card-label">Listado de docentes
+            <span class="text-muted pt-2 font-size-sm d-block">Listado de los docentes y sus llaves.</span></h3>
+            <div>
+            <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalAddTeacher">Agregar docente</span>
+            <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalRecordarEntrega">Recordar entrega llave</span>
+
+            </div>
+        </div>
+        
+        <div class="col-lg-9 col-xl-8">
+            <div class="row align-items-center">
+            <div class="col-md-4 my-2 my-md-0">
+            <div class="input-icon">
+			<input type="text" class="form-control" placeholder="Buscar" id="search" />
+			<span>
+			<i class="flaticon2-search-1 text-muted"></i>
+			</span>
+			</div>
+			</div>
+            </div>
+        </div>
+        <table  id="table" class="table">
+            <thead>
+                <tr>                    
+                    <th scope="col">Docente</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Telefono</th>
+                    <th scope="col">Rut </th>
+                    <th scope="col">Llaves prestadas</th>
+                    <th scope="col">Detalles</th>
+                    <th scope="col">Editar</th>
+                    <th scope="col">Entrega de llave</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for teacher in docente %}
+                <tr>                    
+                    <td>{{teacher.name}}</td>
+                    <td>{{teacher.email}}</td>
+                    <td>{{teacher.telefono}}</td>
+                    <td>{{teacher.rut}}</td>
+                    <td>{{teacher.llaves_prestadas}}</td>
+                    <td><button class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalDetalleVer">Ver</button></td>
+                    <td><button class="btn btn-danger btnVer" data-toggle="modal" data-target ="#modalUpdate">Ver</button></td>
+                    <td><button class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalEntrega">Recordar</button></td>
+                    
+                {% endfor %}    
+            </tbody>
+            
+        </table>
+
+
+
+
+{%endblock%}
+
+{% block scripts %}
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("#search").keyup(function(){
+    _this = this;
+    $.each($("#table tbody tr"), function() {
+    if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+    $(this).hide();
+    else
+    $(this).show();
+    });
+    });
+   });
+</script>
+
+{% endblock %}
+
+ 
+      
+        
+
+    

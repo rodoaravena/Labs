@@ -1,0 +1,17 @@
+{% extends '_partials/_base.html' %}
+{% load static %}
+{% load crispy_forms_tags %}
+{% block titulo %}
+  Agregar llave
+
+{% endblock titulo %}
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{key_form.as_p}}
+    <button type= "submit">Guardar</button>
+</form>
+
+
+{% endblock %}

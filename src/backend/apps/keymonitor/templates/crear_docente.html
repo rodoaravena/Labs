@@ -1,0 +1,21 @@
+{% extends '_partials/_base.html' %}
+{% load static %}
+
+{% block titulo %}
+<div class="card-title">
+    <h3 class="card-label">Agregar docente 
+    <span class="text-muted pt-2 font-size-sm d-block">Listado de los docentes y sus llaves.</span></h3>
+</div>
+
+{% endblock titulo %}
+
+
+{% block content %}
+<form method="POST">
+    {% csrf_token %}
+    {{teacher_form.as_p}}
+    <button type= "submit">Guardar</button>
+</form>
+
+
+{% endblock %}

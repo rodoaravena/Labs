@@ -1,0 +1,305 @@
+{% extends '_partials/_base.html' %}
+{% load static %}
+{% block pagetitle %}Listado salas{% endblock %}
+
+{% block content %}
+<div class="modal fade" id="modalAddKey" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Eliga una llave</h5>
+                <button data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="kt_form_2">
+                    {% csrf_token %}
+                    <div class="col-lg-6">
+                        <label>{{ key_form.room.label }}</label>
+                        {{ key_form.room }}
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" type= "submit">Guardar</button>
+                        <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+                    </div>
+           
+                </form>
+    
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalEntrega" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Solicitud de prestamo de llave</h5>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="kt_form_2">
+                    {% csrf_token %}
+                    <div class="col-lg-6">
+                        <label>{{ entrega_form.llave.label }}</label>
+                        {{ entrega_form.llave }}
+                    </div>
+                    <div class="col-lg-6">
+                        <label>{{ entrega_form.profesor.label}}</label>
+                        {{entrega_form.profesor}}
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" type= "submit">Entregar</button>
+                        <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modaldevolver" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Solicitud de devolución de llave</h5>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="kt_form_2">
+                    {% csrf_token %}
+                    <div class="col-lg-6">
+                        <label>{{ entrega_form.llave.label }}</label>
+                        {{ entrega_form.llave }}
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" type= "submit">Devolver</button>
+                        <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalDelete" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Confirmación de eliminación </h5>
+            </div>
+            <div class="modal-body">
+                <form method="POST" id="kt_form_2">
+                    {% csrf_token %}
+                    <div class="col-lg-6">
+                        {{ key_form.as_p}}
+                    </div>
+                    <div class="col-lg-3">                    
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-info" type= "submit">Eliminar</button>
+                        <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button> 
+                    </div>
+                </form>
+    
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalDetalle" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Detalle de llaves prestadas(SALA)</h5>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Llave</th>
+                            <th scope="col">Docente</th>
+                            <th scope="col">Llaves prestadas</th>
+                            <th scope="col">Ver QR</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        
+    </div>
+</div>
+
+<div class="modal fade" id="modalListKey" data-backdrop="static" tabindex="-1" role="dialog"
+    aria-labelledby="staticBackdrop" aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Listado de todos los docentes con llaves</h5>
+            </div>
+            <div class="modal-body">
+                <table>
+                    <thead>
+                        <tr>
+                            <th scope="col">Docente</th>
+                            <th scope="col">Llave</th>
+                            <th scope="col">Fecha de entrega</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for entrega in entrega %}
+                        <tr>
+                            <td>{{entrega.profesor}}</td>
+                            <td>{{entrega.llave}}</td>
+                            <td>{{entrega.key_entrega}}</td>
+                        </tr>                        
+                        {% endfor %}
+                    </tbody>
+                </table>
+                <div class="modal-footer">
+                    <button class="btn btn-success" type= "button" data-dismiss="modal">Cerrar</button>
+                </div>    
+            </div>
+        </div>     
+    </div>
+</div>
+
+
+
+<div class="card card-custom">
+
+    <div class="card-header flex-wrap border-0 pt-6 pb-0">
+        <div class="card-title">
+            <h3 class="card-label">Listado de salas
+                <span class="text-muted pt-2 font-size-sm d-block">Listado de todas las salas registradas en el
+                    sistema.</span>
+            </h3>
+            <div>
+            <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalAddKey">Agregar llave</span>
+            <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalEntrega">Prestar llave</span>
+            <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modaldevolver">Devolver llave</span>
+            <span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalListKey">Listado de llaves prestadas</span>
+            </div>
+        </div>
+        <div class="col-lg-9 col-xl-8">
+            <div class="row align-items-center">
+                <div class="col-md-4 my-2 my-md-0">
+                    <div class="input-icon">
+                        <input type="text" class="form-control" placeholder="Buscar" id="search" />
+                        <span>
+                            <i class="flaticon2-search-1 text-muted"></i>
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <table id="table" class="table">
+            <thead>
+                <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">Sala</th>
+                    <th scope="col">Campus</th>
+                    <th scope="col">Llaves disponibles</th>
+                    <th scope="col">Llaves prestadas </th>
+                    <th scope="col">Total de llaves</th>
+                    <th scope="col">Detalles</th>
+                    <th scope="col">Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for sala in room %}
+                <tr>
+                    <td>{{sala.id}}</td>
+                    <td>{{sala.room_name}}</td>
+                    <td>{{sala.campus}}</td>
+                    <td>{{sala.llaves_disponibles}}</td>
+                    <td>{{sala.llaves_prestadas}}</td>
+                    <td>{{sala.total_llaves}}</td>
+                    <td><span class="btn btn-primary btnVer" data-toggle="modal" data-target="#modalDetalle">Ver</td>
+                    <td><span class="btn btn-danger btnVer" data-toggle="modal" data-target="#modalDelete">Ver</span></td>
+
+                </tr>
+                {% endfor %}
+            </tbody>
+
+        </table>
+    </div>
+</div>
+
+
+
+<div class="modal fade " id="agregar_llave" role="dialog"></div>
+
+
+
+{% endblock %}
+
+
+
+<!-- Modal create Page key-->
+{% block scripts %}
+
+<script>
+    $(document).ready(function(){
+    $("#search").keyup(function(){
+    _this = this;
+    $.each($("#table tbody tr"), function() {
+    if($(this).text().toLowerCase().indexOf($(_this).val().toLowerCase()) === -1)
+    $(this).hide();
+    else
+    $(this).show();
+    });
+    });
+   });
+</script>
+
+{% endblock %}
+
+{% block extrajs %}
+<script>
+    function agregar_llave_modal(url) {
+        $('#agregar_llave').load(url, function () {
+            $(this).modal('show');
+        });
+    }
+
+</script>
+
+{% endblock extrajs %}
