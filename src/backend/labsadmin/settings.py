@@ -33,9 +33,8 @@ INSTALLED_APPS = [
     'apps.activity',
     'apps.authentication',
     'apps.core',
-    # 'apps.licenses',
-    #'crispy_forms',
     'apps.monitoring',
+    'apps.keymonitor',
     'apps.schedules',
     'apps.notification',
     'django_extensions'
@@ -153,7 +152,7 @@ TEMPLATES = [
             'apps/core/template',
             'apps/schedules/template',
             'apps/monitoring/template',
-            'apps/licenses/template'
+            'apps/keymonitor/template',
             ],
         
         'APP_DIRS': True,

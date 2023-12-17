@@ -10,11 +10,12 @@ class Campus(models.Model):
     location_longitude = models.CharField(max_length=50, blank=True, null=True)
     active = models.BooleanField(default=True)
     inactive_by = models.TextField(default="", blank=True, null=True)
+    
+    class Meta:
+        verbose_name = 'Campus'
+        verbose_name_plural = 'Campuses'
 
     def __str__(self):
-        return self.name
-
-    def __unicode__(self):
         return self.name
 
 
@@ -37,16 +38,8 @@ class Room(models.Model):
 class Workstation(models.Model):
     name = models.CharField(max_length=25)
     ip = models.CharField(max_length=50, blank=True, null=True)
-    pc_model = models.CharField(max_length=50, blank=True, null=True)
-    pc_serialnumber = models.CharField(max_length=50, blank=True, null=True)
-    processor_model = models.CharField(max_length=50, blank=True, null=True)
-    ram_capacity = models.CharField(max_length=50, blank=True, null=True)
-    disk_type = models.CharField(max_length=50, blank=True, null=True)
-    disk_capacity = models.CharField(max_length=50, blank=True, null=True)
-    monitor_model = models.CharField(max_length=50, blank=True, null=True)
-    monitor_serialnumber = models.CharField(
-        max_length=15, blank=True, null=True)
-    monitor_inches = models.PositiveIntegerField(default=0)
+    serial_number = models.CharField(max_length=50, blank=True, null=True)
+    specs = models.JSONField(null=True)
     room = models.ForeignKey(
         Room, on_delete=models.SET_NULL, blank=True, null=True)
     active = models.BooleanField(default=True)
@@ -57,3 +50,15 @@ class Workstation(models.Model):
 
     def __unicode__(self):
         return "{}".format(self.name)
+    
+class ExternalUser(models.Model):
+    unique_id = models.CharField(max_length=50)
+    full_name = models.CharField(max_length=50)
+    email=models.EmailField(null=True, blank=True)
+    phone_number = models.CharField(max_length=15, null=True, blank=True)
+    
+    def __str__(self) -> str:
+        return f'{self.unique_id} - {self.full_name}'
+    
+    
+    

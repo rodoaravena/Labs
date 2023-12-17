@@ -42,7 +42,7 @@ class Teacher(models.Model):
     
 
 
-class Entrega_Key(models.Model):
+class BorrowedKey(models.Model):
     llave=models.ForeignKey(Key, on_delete=models.CASCADE)
     profesor=models.ForeignKey(Teacher, on_delete=models.CASCADE)
     key_entrega =models.DateTimeField(default=timezone.now)
