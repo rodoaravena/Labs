@@ -15,12 +15,12 @@
   },
   "dependencies": {
     "autoprefixer": "10.4.14",
+    "axios": "^1.6.2",
     "bootstrap": "4.6.2",
     "chart.js": "3.9.1",
     "classnames": "2.3.2",
     "match-sorter": "6.3.1",
     "moment": "2.29.4",
-    "sass": "1.62.1",
     "nouislider": "15.4.0",
     "perfect-scrollbar": "1.5.5",
     "postcss": "8.4.23",
@@ -37,7 +37,8 @@
     "react-router-dom": "6.11.1",
     "react-scripts": "5.0.1",
     "react-select": "5.7.3",
-    "react-table": "7.8.0"
+    "react-table": "7.8.0",
+    "sass": "1.62.1"
   },
   "devDependencies": {
     "typescript": "5.0.4"
